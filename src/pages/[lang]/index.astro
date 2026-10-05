@@ -1,0 +1,376 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import AdBanner from '../../components/AdBanner.astro';
+import { daysData, generalInfo, type Language } from '../../utils/i18n';
+
+export function getStaticPaths() {
+	return [
+		{ params: { lang: 'pl' } },
+		{ params: { lang: 'en' } },
+	];
+}
+
+const { lang } = Astro.params as { lang: Language };
+
+const pageTitles = {
+	pl: 'Islandia 2026 – wyprawa rodzinna',
+	en: 'Iceland 2026 – Family Expedition',
+};
+
+const pageDescriptions = {
+	pl: 'Hæ, cześć! Zorganizowaliśmy 12-dniową wyprawę na Islandię w 2 rodziny z dziećmi w wieku 8–10 lat. Dzielimy się kompleksowym planem naszej podróży, który zawiera: trasę wokół wyspy, budżet, rezerwacje, noclegi, kilometry oraz listę rzeczy do wzięcia.',
+	en: 'Hæ, hi! We organized a 12-day trip to Iceland for 2 families with kids aged 8–10. Here you’ll find our complete trip plan, including the route around the island, budget, bookings, accommodation, mileage, and a packing list.',
+};
+
+const introContext = {
+	pl: {
+		title: 'Nasze główne założenia:',
+		items: [
+			'Objazd Islandii klasyczną trasą Ring Road (droga krajowa nr 1) z rozszerzeniami (m.in. o Półwysep Snæfellsnes), połączony z trekkingami, kąpielami w gorących źródłach oraz podziwianiem wodospadów, lodowców, wulkanów i gejzerów.',
+			'Domki zamiast campera – ynajem campera to koszt rzędu 600 EUR za dobę. Przy 12-dniowym wyjeździe wychodzi to 1,5 razy drożej, niż suma wydatków na wynajem auta i noclegi.',
+			'Nocujemy w 4 głównych bazach wypadowych (Hella, Höfn, Mývatn, Borgarnes) na 2–3 noce każda, co ogranicza poranne zamieszanie z pakowaniem.',
+			'Tempo dostosowane do dzieci: codziennie aktywności na świeżym powietrzu (krótkie trekkingi, chodzenie za wodospad, wejścia na kratery, czarne plaże) + atrakcje: rejs amfibią pośród gór lodowych (Jökulsárlón), restauracja z widokiem na krowy w oborze i kąpiele w gorących źródłach.',
+			'Optymalizacja kosztów: gotowanie w domkach oraz przygotowywanie liofilizatów/posiłków do termosów obiadowych.'
+		]
+	},
+	en: {
+		title: 'Our key expedition principles:',
+		items: [
+			'Circumnavigating Iceland along the Ring Road (Route 1) with extensions (e.g., Snæfellsnes Peninsula), combining hikes, hot springs, waterfalls, glaciers, volcanoes and geysers.',
+			'Renting cottages instead of a camper van – camper van rental runs around €600 per night. For a 12-day trip, that is 1.5 times more expensive than the combined cost of renting a car and staying in cabins.',
+			'Staying in 4 main accommodation hubs (Hella, Höfn, Mývatn, Borgarnes) for 2–3 nights each, minimizing morning packing chaos.',
+			'Child-friendly pace: daily outdoor activities (short hikes, walking behind waterfalls, crater climbs, black sand beaches) plus amphibian boat tours and cowshed restaurants.',
+			'Cost optimization: cooking in cottages and preparing food flasks for day trips.'
+		]
+	}
+};
+
+const packingListText = generalInfo.packingList.map((cat) => {
+	const items = cat.items[lang].map((item) => `[ ] ${item}`).join('\n');
+	return `${cat.category[lang]}:\n${items}`;
+}).join('\n\n');
+---
+
+<Layout 
+	title={`${pageTitles[lang]} - IceTrip`}
+	description={pageDescriptions[lang]}
+	lang={lang}
+	activeSlug="overview"
+	canonicalPath={`/${lang}/`}
+>
+	<article class="max-w-5xl mx-auto space-y-12 py-4">
+		
+		<!-- Header Banner -->
+		<header class="space-y-5 pb-8 border-b border-slate-200">
+			<div class="flex flex-wrap items-center gap-2.5">
+				<span class="px-3.5 py-1.5 rounded-full bg-sky-50 border border-sky-200 text-sky-800 text-xs font-bold uppercase tracking-wider">
+					{lang === 'pl' ? '26.07.2026 – 06.08.2026 (12 dni)' : '26.07.2026 – 06.08.2026 (12 days)'}
+				</span>
+				<span class="px-3.5 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-xs font-bold uppercase">
+					{lang === 'pl' ? 'Wymagana rezerwacja z wyprzedzeniem' : 'Early booking required'}
+				</span>
+			</div>
+			
+			<h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight font-serif">
+				{pageTitles[lang]}
+			</h1>
+
+			<p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl">
+				{pageDescriptions[lang]}
+			</p>
+
+		</header>
+
+		<!-- Główne założenia Section -->
+		<section id="assumptions" class="space-y-6 pt-6">
+			<h2 class="text-2xl sm:text-3xl font-bold text-slate-900 font-serif flex items-center gap-3">
+				<span class="w-8 h-8 rounded-lg bg-sky-100 text-sky-800 border border-sky-200 flex items-center justify-center text-sm font-black">01</span>
+				<span>{introContext[lang].title}</span>
+			</h2>
+			<div class="rounded-2xl border border-slate-200 bg-white shadow-xs">
+				<ul class="divide-y divide-slate-100">
+					{introContext[lang].items.map((item) => (
+						<li class="flex items-start gap-3 px-6 py-4 text-sm sm:text-base text-slate-700">
+							<span class="w-1.5 h-1.5 rounded-full bg-sky-600 mt-2 shrink-0"></span>
+							<span class="leading-relaxed">{item}</span>
+						</li>
+					))}
+				</ul>
+			</div>
+		</section>
+
+		<!-- Solar Eclipse Warning Banner -->
+		<div class="p-6 rounded-2xl bg-amber-50/80 border border-amber-200 shadow-xs space-y-3">
+			<div class="flex items-center gap-3 text-amber-900 font-bold text-lg font-serif">
+				<svg class="w-6 h-6 shrink-0 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+				</svg>
+				<h2>{generalInfo.eclipseNotice.title[lang]}</h2>
+			</div>
+			<p class="text-sm sm:text-base text-amber-950/90 leading-relaxed">
+				{generalInfo.eclipseNotice.text[lang]}
+			</p>
+			<div class="text-xs text-amber-900 bg-amber-100/70 p-3.5 rounded-xl border border-amber-200">
+				<strong>{lang === 'pl' ? 'Nasz komentarz:' : 'Our comment:'}</strong> {lang === 'pl' 
+					? 'jedyna szansa, żeby wyprawa spięła się budżetowo, to powrót przed 12 sierpnia.'
+					: 'the only way to keep accommodation and car rental prices reasonable is returning before the August 12 eclipse.'}
+			</div>
+		</div>
+
+		<!-- Top AdBanner -->
+		<AdBanner slotType="content" />
+
+		<!-- Logistics Kilometers Table -->
+		<section id="logistics" class="space-y-6 pt-6 border-t border-slate-200">
+			<h2 class="text-2xl sm:text-3xl font-bold text-slate-900 font-serif flex items-center gap-3">
+				<span class="w-8 h-8 rounded-lg bg-sky-100 text-sky-800 border border-sky-200 flex items-center justify-center text-sm font-black">02</span>
+				<span>{lang === 'pl' ? 'Tabela logistyczna – kilometry' : 'Logistics Table – Kilometers'}</span>
+			</h2>
+
+			<div class="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-xs">
+				<table class="w-full text-left text-sm text-slate-700">
+					<thead class="bg-slate-50 text-xs font-bold uppercase text-slate-500 border-b border-slate-200">
+						<tr>
+							<th scope="col" class="px-5 py-3.5">{lang === 'pl' ? 'Dzień' : 'Day'}</th>
+							<th scope="col" class="px-5 py-3.5">{lang === 'pl' ? 'Relacja trasy' : 'Route'}</th>
+							<th scope="col" class="px-5 py-3.5 text-right">{lang === 'pl' ? 'Dystans' : 'Distance'}</th>
+						</tr>
+					</thead>
+					<tbody class="divide-y divide-slate-100">
+						{generalInfo.logisticsKm.map((row) => (
+							<tr class="hover:bg-sky-50/40 transition-colors">
+								<td class="px-5 py-3.5 font-bold text-slate-900">{lang === 'pl' ? `Dzień ${row.day}` : `Day ${row.day}`}</td>
+								<td class="px-5 py-3.5 text-slate-600">{row.route}</td>
+								<td class="px-5 py-3.5 text-right font-semibold text-sky-700">{row.km}</td>
+							</tr>
+						))}
+					</tbody>
+				</table>
+			</div>
+		</section>
+
+		<!-- Accommodations & Budget Section -->
+		<section id="budget" class="space-y-6 pt-6 border-t border-slate-200">
+			<h2 class="text-2xl sm:text-3xl font-bold text-slate-900 font-serif flex items-center gap-3">
+				<span class="w-8 h-8 rounded-lg bg-sky-100 text-sky-800 border border-sky-200 flex items-center justify-center text-sm font-black">03</span>
+				<span>{lang === 'pl' ? 'Koszty i noclegi' : 'Budget & Accommodations'}</span>
+			</h2>
+
+			<div class="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-xs mb-6">
+				<table class="w-full text-left text-sm text-slate-700">
+					<thead class="bg-slate-50 text-xs font-bold uppercase text-slate-500 border-b border-slate-200">
+						<tr>
+							<th scope="col" class="px-5 py-3.5">{lang === 'pl' ? 'Daty' : 'Dates'}</th>
+							<th scope="col" class="px-5 py-3.5">{lang === 'pl' ? 'Miejsce / Obiekt' : 'Location / Accommodation'}</th>
+							<th scope="col" class="px-5 py-3.5 text-right">{lang === 'pl' ? 'Cena (2 rodziny)' : 'Price (2 families)'}</th>
+						</tr>
+					</thead>
+					<tbody class="divide-y divide-slate-100">
+						{generalInfo.accommodations.map((acc) => (
+							<tr class="hover:bg-sky-50/40 transition-colors">
+								<td class="px-5 py-3.5 text-xs font-semibold text-slate-500">
+									{typeof acc.dates === 'string' ? acc.dates : acc.dates[lang]}
+								</td>
+								<td class="px-5 py-3.5 font-medium text-slate-900">
+									{acc.link ? (
+										<a href={acc.link} target="_blank" rel="noopener noreferrer" class="hover:text-sky-700 underline underline-offset-4 decoration-slate-300 hover:decoration-sky-600 transition-colors">
+											{acc.hub} ↗
+										</a>
+									) : acc.hub}
+								</td>
+								<td class="px-5 py-3.5 text-right font-bold text-sky-800">{acc.price}</td>
+							</tr>
+						))}
+					</tbody>
+					<tfoot class="bg-slate-50 text-xs font-semibold text-slate-600 border-t border-slate-200">
+						<tr>
+							<td class="px-5 py-3.5 text-slate-500">{lang === 'pl' ? 'Suma (11 noclegów)' : 'Total (11 nights)'}</td>
+							<td class="px-5 py-3.5 text-slate-500">{lang === 'pl' ? '5 obiektów' : '5 properties'}</td>
+							<td class="px-5 py-3.5 text-right font-bold text-sky-900 text-sm">
+								29,433 PLN <span class="text-xs text-slate-500 font-normal">({lang === 'pl' ? '~14 717 PLN / rodzina' : '~14,717 PLN / family'})</span>
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+
+			<!-- Summary of costs for 1 family -->
+			<div class="rounded-2xl border border-sky-200 bg-gradient-to-br from-sky-50/70 via-white to-white p-6 sm:p-7 shadow-xs">
+				<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-slate-200">
+					<div>
+						<div class="flex items-center gap-2 mb-1.5">
+							<h3 class="text-xl sm:text-2xl font-bold text-slate-900 font-serif">
+								{generalInfo.budgetSummary.oneFamilySummary.title[lang]}
+							</h3>
+						</div>
+					</div>
+
+					<div class="text-left md:text-right">
+						<div class="flex items-baseline md:justify-end gap-2">
+							<span class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight font-serif">
+								{generalInfo.budgetSummary.oneFamilySummary.total}
+							</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- 3 Tiles Breakdown Pills -->
+				<div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 my-5">
+					{generalInfo.budgetSummary.oneFamilySummary.items.map((item) => (
+						<div class="flex items-center justify-between p-3.5 rounded-xl bg-white border border-slate-200 shadow-2xs">
+							<span class="text-xs text-slate-600 font-medium">{item.label[lang]}</span>
+							<span class="text-sm font-bold text-slate-900">{item.value}</span>
+						</div>
+					))}
+				</div>
+
+				<!-- Info note -->
+				<div class="flex items-start gap-3 text-xs text-slate-600 bg-slate-50 p-4 rounded-xl border border-slate-200 leading-relaxed">
+					<svg class="w-4 h-4 text-sky-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+					</svg>
+					<p>
+						{generalInfo.budgetSummary.oneFamilySummary.note[lang]}
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Bottom AdBanner -->
+		<AdBanner slotType="content" />
+
+		<!-- Packing List Section -->
+		<section id="packing" class="space-y-6 pt-6 border-t border-slate-200">
+			<div class="flex flex-wrap items-center justify-between gap-4">
+				<h2 class="text-2xl sm:text-3xl font-bold text-slate-900 font-serif flex items-center gap-3">
+					<span class="w-8 h-8 rounded-lg bg-sky-100 text-sky-800 border border-sky-200 flex items-center justify-center text-sm font-black">04</span>
+					<span>{lang === 'pl' ? 'Lista rzeczy do spakowania & sprzęt' : 'Packing List & Required Gear'}</span>
+				</h2>
+
+				<button
+					id="copy-packing-btn"
+					type="button"
+					data-copy-text={packingListText}
+					class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 hover:border-slate-300 text-slate-700 hover:text-slate-900 text-xs font-semibold shadow-2xs transition-all active:scale-95 cursor-pointer"
+					title={lang === 'pl' ? 'Skopiuj listę rzeczy do schowka' : 'Copy packing list to clipboard'}
+				>
+					<svg class="w-4 h-4 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+					</svg>
+					<span id="copy-packing-label">{lang === 'pl' ? 'Kopiuj listę' : 'Copy packing list'}</span>
+					<span id="copy-packing-success" class="hidden text-emerald-600 font-bold flex items-center gap-1">
+						✓ {lang === 'pl' ? 'Skopiowano listę!' : 'List copied!'}
+					</span>
+				</button>
+			</div>
+
+			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+				{generalInfo.packingList.map((cat) => (
+					<div class="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200 shadow-xs hover:shadow-md hover:border-sky-300 transition-all flex flex-col justify-between space-y-4">
+						<div class="space-y-3">
+							<h3 class="text-sm font-bold text-slate-900 uppercase tracking-wide border-b border-slate-100 pb-2.5 flex items-center justify-between">
+								<span>{cat.category[lang]}</span>
+								<span class="text-[11px] font-semibold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-full">{cat.items[lang].length}</span>
+							</h3>
+							<ul class="space-y-2 text-xs text-slate-700">
+								{cat.items[lang].map((item) => (
+									<li class="flex items-start gap-2.5 group/item">
+										<span class="w-4 h-4 rounded border border-slate-300 bg-slate-50 flex items-center justify-center text-sky-600 text-[10px] shrink-0 font-bold mt-0.5 group-hover/item:border-sky-500 group-hover/item:bg-sky-50 transition-colors">✓</span>
+										<span class="leading-snug">{item}</span>
+									</li>
+								))}
+							</ul>
+						</div>
+					</div>
+				))}
+			</div>
+		</section>
+
+		<!-- Must Have Apps & Tips -->
+		<section id="tips" class="p-6 sm:p-7 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-4">
+			<h3 class="text-xl font-bold text-slate-900 font-serif">
+				{lang === 'pl' ? 'Niezbędne aplikacje i wskazówki' : 'Must-Have Apps & Tips'}
+			</h3>
+			<ul class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 text-xs text-slate-600">
+				<li class="p-4 bg-slate-50 rounded-xl border border-slate-200/80">
+					<strong class="text-sky-900 font-bold text-sm block mb-1">SafeTravel.is</strong>
+					{lang === 'pl' ? 'Rejestracja planu podróży dla bezpieczeństwa.' : 'Register itinerary for emergency rescue safety.'}
+				</li>
+				<li class="p-4 bg-slate-50 rounded-xl border border-slate-200/80">
+					<strong class="text-sky-900 font-bold text-sm block mb-1">Vedur.is & Road.is</strong>
+					{lang === 'pl' ? 'Sprawdzanie pogody, wiatru i przejezdności dróg.' : 'Check real-time weather, wind speeds, and road conditions.'}
+				</li>
+				<li class="p-4 bg-slate-50 rounded-xl border border-slate-200/80">
+					<strong class="text-sky-900 font-bold text-sm block mb-1">Parka.app</strong>
+					{lang === 'pl' ? 'Opłacanie parkingów przy wodospadach i miastach.' : 'Pay for parking at waterfalls and national parks.'}
+				</li>
+			</ul>
+		</section>
+
+		<!-- 12-Day Grid Cards -->
+		<section id="days-grid" class="space-y-6 pt-6 border-t border-slate-200">
+			<div class="flex items-center justify-between">
+				<h2 class="text-2xl sm:text-3xl font-bold text-slate-900 font-serif flex items-center gap-3">
+					<span class="w-8 h-8 rounded-lg bg-sky-100 text-sky-800 border border-sky-200 flex items-center justify-center text-sm font-black">05</span>
+					<span>{lang === 'pl' ? 'Harmonogram dzień po dniu' : 'Day-by-Day Itinerary'}</span>
+				</h2>
+				<span class="text-xs text-slate-500 font-semibold hidden sm:inline">12 Rozdziałów / 12 Subpages</span>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+				{daysData.map((day) => (
+					<a 
+						href={`/${lang}/day/${day.slug}`}
+						class="group p-6 sm:p-7 rounded-2xl bg-white border border-slate-200 hover:border-sky-300 transition-all duration-300 flex flex-col justify-between hover:-translate-y-1 shadow-xs hover:shadow-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-sky-500"
+					>
+						<div>
+							<div class="flex items-center justify-between text-xs font-bold text-sky-700 uppercase tracking-wider mb-2.5">
+								<span>{day.date} • {lang === 'pl' ? `Dzień ${day.dayNumber}` : `Day ${day.dayNumber}`}</span>
+								<span class="px-2.5 py-0.5 rounded bg-slate-100 text-slate-700 border border-slate-200">{day.distance}</span>
+							</div>
+							<h3 class="text-xl font-bold text-slate-900 group-hover:text-sky-700 transition-colors mb-2 font-serif">
+								{day.title[lang]}
+							</h3>
+							<p class="text-xs text-slate-500 font-medium mb-3">
+								📍 Hub: {day.hub[lang]}
+							</p>
+							<p class="text-sm text-slate-600 line-clamp-2 mb-4 leading-relaxed">
+								{day.description[lang]}
+							</p>
+						</div>
+
+						<div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-sky-700 group-hover:text-sky-800">
+							<span>{lang === 'pl' ? 'Zobacz trasę & opis' : 'View itinerary & details'} →</span>
+							<span class="text-slate-400 font-medium">⏱️ {day.driveTime}</span>
+						</div>
+					</a>
+				))}
+			</div>
+		</section>
+
+	</article>
+
+	<script>
+		const copyBtn = document.getElementById('copy-packing-btn');
+		const copySuccess = document.getElementById('copy-packing-success');
+		const copyText = document.getElementById('copy-packing-label');
+
+		copyBtn?.addEventListener('click', async () => {
+			const text = copyBtn.getAttribute('data-copy-text');
+			if (!text) return;
+			try {
+				await navigator.clipboard.writeText(text);
+				if (copySuccess && copyText) {
+					copyText.classList.add('hidden');
+					copySuccess.classList.remove('hidden');
+					setTimeout(() => {
+						copySuccess.classList.add('hidden');
+						copyText.classList.remove('hidden');
+					}, 2200);
+				}
+			} catch (err) {
+				console.error('Failed to copy list:', err);
+			}
+		});
+	</script>
+</Layout>

@@ -1,0 +1,162 @@
+---
+import Header from '../components/Header.astro';
+import Sidebar from '../components/Sidebar.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+	title?: string;
+	description?: string;
+	lang?: 'pl' | 'en';
+	activeSlug?: string;
+	canonicalPath?: string;
+	ogImage?: string;
+}
+
+const { 
+	title = "IceTrip - przewodnik po wyprawie islandzkiej", 
+	description = "Kompleksowy, dostępny przewodnik wyprawy po Islandii z opisem trasy, lodowców i atrakcji kulturowych.",
+	lang = 'pl',
+	activeSlug = 'overview',
+	canonicalPath = '/pl/',
+	ogImage = 'https://images.unsplash.com/photo-1504893524553-b855bce32c67?auto=format&fit=crop&w=1200&q=80'
+} = Astro.props;
+
+const siteUrl = "https://icetrip.guide";
+const currentUrl = `${siteUrl}${canonicalPath}`;
+
+// Generate hreflang alternate links
+const pathWithoutLang = canonicalPath.replace(/^\/(pl|en)/, '') || '/';
+const plUrl = `${siteUrl}/pl${pathWithoutLang}`;
+const enUrl = `${siteUrl}/en${pathWithoutLang}`;
+---
+
+<!DOCTYPE html>
+<html lang={lang} class="scroll-smooth bg-[#F8FAFC] text-slate-800 antialiased selection:bg-sky-200 selection:text-slate-900">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/images/logo.svg" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- SEO Meta Tags -->
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<link rel="canonical" href={currentUrl} />
+
+		<!-- Hreflang Alternate Links -->
+		<link rel="alternate" hreflang="pl" href={plUrl} />
+		<link rel="alternate" hreflang="en" href={enUrl} />
+		<link rel="alternate" hreflang="x-default" href={plUrl} />
+
+		<!-- OpenGraph / Social Media Tags -->
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={currentUrl} />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:locale" content={lang === 'pl' ? 'pl_PL' : 'en_US'} />
+
+		<!-- Twitter Card Tags -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImage} />
+
+		<!-- Fonts: Clean Humanist Sans -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Sora:wght@400;500;600&display=swap" rel="stylesheet">
+	</head>
+	<body class="min-h-screen flex flex-col font-sans antialiased bg-slate-50 text-slate-900">
+
+		<!-- Header with language switcher -->
+		<Header lang={lang} currentPath={canonicalPath} />
+
+		<div class="flex-1 flex max-w-[1920px] w-full mx-auto relative">
+			<!-- Accessible Collapsible Sidebar with AdBanner -->
+			<Sidebar lang={lang} activeSlug={activeSlug} />
+
+			<!-- Main Content Region -->
+			<main id="main-content" tabindex="-1" class="flex-1 min-w-0 p-4 sm:p-8 lg:p-12 focus:outline-none focus-visible:ring-4 focus-visible:ring-sky-500 focus-visible:ring-inset">
+				<slot />
+			</main>
+		</div>
+
+		<!-- Footer -->
+		<Footer />
+
+		<!-- Client-Side Interactivity Script -->
+		<script is:inline>
+			(function() {
+				// Sidebar toggle controls
+				const toggleBtn = document.getElementById('sidebar-toggle');
+				const closeBtn = document.getElementById('sidebar-close-btn');
+				const sidebar = document.getElementById('sidebar-navigation');
+				const backdrop = document.getElementById('sidebar-backdrop');
+				const menuIconOpen = document.getElementById('menu-icon-open');
+				const menuIconClose = document.getElementById('menu-icon-close');
+
+				let isOpen = false;
+
+				function setSidebarState(open) {
+					isOpen = open;
+					if (toggleBtn) {
+						toggleBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+					}
+
+					if (sidebar) {
+						if (open) {
+							sidebar.classList.remove('-translate-x-full');
+							sidebar.classList.add('translate-x-0');
+						} else {
+							sidebar.classList.add('-translate-x-full');
+							sidebar.classList.remove('translate-x-0');
+						}
+					}
+
+					if (backdrop) {
+						if (open) {
+							backdrop.classList.remove('hidden');
+						} else {
+							backdrop.classList.add('hidden');
+						}
+					}
+
+					if (menuIconOpen && menuIconClose) {
+						if (open) {
+							menuIconOpen.classList.add('hidden');
+							menuIconClose.classList.remove('hidden');
+						} else {
+							menuIconOpen.classList.remove('hidden');
+							menuIconClose.classList.add('hidden');
+						}
+					}
+
+					if (open && closeBtn) {
+						closeBtn.focus();
+					} else if (!open && toggleBtn) {
+						toggleBtn.focus();
+					}
+				}
+
+				if (toggleBtn) toggleBtn.addEventListener('click', () => setSidebarState(!isOpen));
+				if (closeBtn) closeBtn.addEventListener('click', () => setSidebarState(false));
+				if (backdrop) backdrop.addEventListener('click', () => setSidebarState(false));
+
+				document.addEventListener('keydown', (e) => {
+					if (e.key === 'Escape' && isOpen) setSidebarState(false);
+				});
+			})();
+		</script>
+	</body>
+</html>
+
+<style is:global>
+	body {
+		font-family: 'Outfit', 'Sora', sans-serif;
+	}
+	h1, h2, h3, h4, h5, h6 {
+		font-family: 'Outfit', 'Sora', sans-serif;
+		font-weight: 700;
+	}
+</style>

@@ -1,0 +1,37 @@
+---
+interface Props {
+	slotType?: 'header' | 'content' | 'sidebar' | 'footer';
+	className?: string;
+}
+
+const { slotType = 'content', className = '' } = Astro.props;
+
+const slotDimensions = {
+	header: 'w-full max-w-[728px] h-[90px]',
+	content: 'w-full max-w-[728px] min-h-[120px] sm:min-h-[250px]',
+	sidebar: 'w-full max-w-[300px] min-h-[250px] sm:min-h-[600px]',
+	footer: 'w-full max-w-[970px] h-[90px]'
+};
+---
+
+<aside 
+	class={`my-6 mx-auto flex flex-col items-center justify-center p-4 rounded-xl border-2 border-dashed border-slate-300 bg-slate-100/50 text-center transition-all hover:border-slate-400 group ${slotDimensions[slotType]} ${className}`}
+	aria-label="Reklama / Advertisement"
+>
+	<!-- Placeholder Label -->
+	<div class="flex items-center gap-2 mb-2">
+		<span class="px-2 py-0.5 rounded text-[10px] font-bold tracking-widest uppercase bg-slate-200 text-slate-700 border border-slate-300">
+			AdSense Placeholder
+		</span>
+		<span class="text-[10px] text-slate-500 uppercase tracking-wider font-semibold">
+			REKLAMA / ADVERTISEMENT
+		</span>
+	</div>
+
+	<p class="text-xs text-slate-600 font-medium">
+		Miejsce na jednostkę reklamową Google AdSense ({slotType})
+	</p>
+	<p class="text-[10px] text-slate-400 mt-1 hidden sm:block">
+		[Ready for AdSense Script Injection - data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"]
+	</p>
+</aside>

@@ -1,0 +1,87 @@
+---
+const expeditions = [
+	{
+		title: "Glacier Ice Cave Trekking",
+		location: "Vatnajökull, Iceland",
+		duration: "5 Days",
+		price: "$2,490",
+		badge: "Popular",
+		description: "Explore glowing sapphire ice caves hidden underneath Europe's largest ice cap with certified mountain guides.",
+		color: "from-blue-600 to-ice-500"
+	},
+	{
+		title: "Aurora & Fjord Sailing",
+		location: "Tromsø, Norway",
+		duration: "7 Days",
+		price: "$3,850",
+		badge: "Featured",
+		description: "Sail silently through majestic northern fjords on our hybrid-electric expedition catamaran under the dancing lights.",
+		color: "from-teal-600 to-arctic-bright"
+	},
+	{
+		title: "Svalbard Polar Wildlife Expedition",
+		location: "Longyearbyen, Svalbard",
+		duration: "8 Days",
+		price: "$4,900",
+		badge: "Exclusive",
+		description: "Venture deep into polar bear habitat, Arctic fox terrain, and ancient sea ice packs aboard an ice-class vessel.",
+		color: "from-sky-600 to-indigo-500"
+	}
+];
+---
+
+<section id="expeditions" class="py-20 bg-arctic-dark relative">
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+		<div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+			<div>
+				<h2 class="text-xs font-bold text-ice-400 uppercase tracking-widest mb-3">Featured Itineraries</h2>
+				<p class="text-3xl sm:text-4xl font-extrabold text-white">Curated Winter Expeditions</p>
+			</div>
+			<p class="text-slate-400 max-w-md mt-4 md:mt-0 text-sm">
+				Small group sizes, high safety standards, and sustainable polar travel tailored for curious explorers.
+			</p>
+		</div>
+
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+			{expeditions.map((exp) => (
+				<div class="group relative rounded-3xl bg-arctic-deep/50 border border-arctic-accent/30 overflow-hidden hover:border-ice-500/50 transition-all duration-500 hover:-translate-y-2">
+					<div class="p-8">
+						<div class="flex items-center justify-between mb-4">
+							<span class="px-3 py-1 text-xs font-semibold rounded-full bg-ice-500/10 text-ice-300 border border-ice-500/20">
+								{exp.badge}
+							</span>
+							<span class="text-xs font-medium text-slate-400">{exp.duration}</span>
+						</div>
+						
+						<h3 class="text-xl font-bold text-white mb-2 group-hover:text-ice-300 transition-colors">
+							{exp.title}
+						</h3>
+						<p class="text-xs text-ice-400 font-medium mb-4 flex items-center gap-1">
+							<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+							</svg>
+							{exp.location}
+						</p>
+
+						<p class="text-sm text-slate-300 mb-6 leading-relaxed">
+							{exp.description}
+						</p>
+
+						<div class="pt-6 border-t border-arctic-accent/20 flex items-center justify-between">
+							<div>
+								<span class="text-xs text-slate-400 block">Starting from</span>
+								<span class="text-2xl font-bold text-white">{exp.price}</span>
+							</div>
+							<a href="#book" class="p-3 rounded-full bg-ice-500/10 hover:bg-ice-500 text-ice-300 hover:text-white transition-colors duration-300">
+								<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+			))}
+		</div>
+	</div>
+</section>

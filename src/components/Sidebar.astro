@@ -1,0 +1,87 @@
+---
+import AdBanner from './AdBanner.astro';
+import { daysData } from '../utils/i18n';
+
+interface Props {
+	lang?: 'pl' | 'en';
+	activeSlug?: string;
+}
+
+const { lang = 'pl', activeSlug = 'overview' } = Astro.props;
+
+const chapters = [
+	{ slug: "overview", path: `/${lang}/`, titlePl: "Islandia: w skrócie", titleEn: "Iceland: Overview", icon: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" },
+	...daysData.map((d) => ({
+		slug: d.slug,
+		path: `/${lang}/day/${d.slug}`,
+		titlePl: `Dzień ${d.dayNumber}: ${d.title.pl.replace(`Dzień ${d.dayNumber}: `, '')}`,
+		titleEn: `Day ${d.dayNumber}: ${d.title.en.replace(`Day ${d.dayNumber}: `, '')}`,
+		icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+	})),
+	{ slug: "packing", path: `/${lang}/#packing`, titlePl: "Lista rzeczy", titleEn: "Packing List", icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" }
+];
+---
+
+<!-- Mobile Overlay Backdrop -->
+<div 
+	id="sidebar-backdrop" 
+	class="fixed inset-0 bg-slate-900/40 backdrop-blur-xs z-40 hidden lg:hidden transition-opacity duration-300"
+	aria-hidden="true"
+></div>
+
+<!-- Sidebar Navigation -->
+<aside 
+	id="sidebar-navigation" 
+	class="fixed lg:sticky top-[80px] left-0 z-40 w-72 sm:w-80 h-[calc(100vh-80px)] bg-white border-r border-slate-200/80 overflow-y-auto transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out shadow-xl lg:shadow-none shrink-0 flex flex-col justify-between"
+	aria-label={lang === 'pl' ? "Nawigacja po wyprawie" : "Expedition chapter navigation"}
+>
+	<div class="p-4 sm:p-6 space-y-6">
+		<div class="flex items-center justify-between pb-3 border-b border-slate-200">
+			<h2 class="text-xs font-bold uppercase tracking-wider text-slate-500 flex items-center gap-2">
+				<svg class="w-4 h-4 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+				</svg>
+				<span>{lang === 'pl' ? 'Przewodnik' : 'Expedition Guide'}</span>
+			</h2>
+			<button 
+				id="sidebar-close-btn" 
+				type="button" 
+				class="lg:hidden p-1.5 rounded-lg text-slate-500 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 cursor-pointer"
+				aria-label={lang === 'pl' ? "Zamknij menu" : "Close sidebar"}
+			>
+				<svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+				</svg>
+			</button>
+		</div>
+
+		<nav role="tablist" aria-orientation="vertical" class="space-y-1">
+			{chapters.map((ch) => {
+				const isActive = activeSlug === ch.slug;
+				return (
+					<a 
+						href={ch.path}
+						role="tab"
+						aria-selected={isActive ? "true" : "false"}
+						aria-current={isActive ? "page" : undefined}
+						class={`group flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 ${
+							isActive 
+								? "bg-sky-50 text-sky-900 font-bold border border-sky-200/80 shadow-xs" 
+								: "text-slate-600 hover:text-slate-950 hover:bg-slate-100/80"
+						}`}
+					>
+						<svg class={`w-4 h-4 shrink-0 transition-colors ${isActive ? "text-sky-600" : "text-slate-400 group-hover:text-slate-600"}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+							<path stroke-linecap="round" stroke-linejoin="round" d={ch.icon} />
+						</svg>
+						<span class="truncate">{lang === 'pl' ? ch.titlePl : ch.titleEn}</span>
+					</a>
+				);
+			})}
+		</nav>
+
+		<!-- Sidebar AdBanner Placement -->
+		<div class="pt-4 border-t border-slate-200">
+			<AdBanner slotType="sidebar" />
+		</div>
+	</div>
+</aside>

@@ -1,0 +1,27 @@
+---
+// Root index page handles client-side i18n redirection to /pl/ or /en/
+---
+
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="refresh" content="0;url=/pl/" />
+		<title>IceTrip - Redirecting...</title>
+		<script is:inline>
+			(function() {
+				const savedLang = localStorage.getItem('icetrip_lang');
+				let targetLang = 'pl';
+				if (savedLang === 'en' || savedLang === 'pl') {
+					targetLang = savedLang;
+				} else if (navigator.language && navigator.language.startsWith('en')) {
+					targetLang = 'en';
+				}
+				window.location.replace('/' + targetLang + '/');
+			})();
+		</script>
+	</head>
+	<body class="bg-[#F8FAFC] text-slate-800 p-8 font-sans">
+		<p>Redirecting to IceTrip Expedition Guide...</p>
+	</body>
+</html>
