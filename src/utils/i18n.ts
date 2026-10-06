@@ -37,8 +37,8 @@ export const daysData: DayData[] = [
     hub: { pl: 'Árhús Cottage & Camping, Hella', en: 'Árhús Cottage & Camping, Hella' },
     accommodation: { pl: 'Árhús Cottage & Camping, Hella', en: 'Árhús Cottage & Camping, Hella', link: 'https://www.booking.com/hotel/is/arhus-cottage-and-camping.pl.html' },
     highlights: {
-      pl: ['Lądowanie 16:50 czasu lokalnego', 'Odbiór auta w Lotus Car Rental', 'Zakupy w markecie Bónus / Netto', 'Malownicza trasa do Hella'],
-      en: ['Landing at 16:50 local time', 'Rental car pickup at Lotus Car Rental', 'Grocery shopping at Bónus / Netto', 'Scenic drive to Hella']
+      pl: ['Lądowanie o 16:50 czasu lokalnego', 'Odbiór auta w Lotus Car Rental', 'Zakupy w markecie Bónus / Netto', 'Transfer do Árhús Cottage & Camping, Hella'],
+      en: ['Landing at 16:50 local time', 'Rental car pickup at Lotus Car Rental', 'Grocery shopping at Bónus / Netto', 'Transfer to Árhús Cottage & Camping, Hella']
     },
     food: {
       pl: ['Zakupy spożywcze w Bónus / Netto w Keflaviku (czynne do 21:30).'],
@@ -76,8 +76,8 @@ It's still light outside at 11:00 PM.`
     hub: { pl: 'Árhús Cottage & Camping, Hella', en: 'Árhús Cottage & Camping, Hella' },
     accommodation: { pl: 'Árhús Cottage & Camping, Hella', en: 'Árhús Cottage & Camping, Hella' },
     highlights: {
-      pl: ['Þingvellir (2h): Spacer w szczelinie między kontynentami', 'Geysir (1h): Wybuchy gejzera Strokkur co 5-10 minut', 'Gullfoss (1h): Potężny wodospad', 'Hrunalaug Hot Spring: Kąpiel w naturalnym źródle'],
-      en: ['Þingvellir (2h): Walk between continental tectonic plates', 'Geysir (1h): Strokkur geyser erupting every 5-10 mins', 'Gullfoss (1h): The powerful Gullfoss waterfall', 'Hrunalaug Hot Spring: Thermal bath in a historic stone tub']
+      pl: ['Þingvellir: Spacer w szczelinie między kontynentami (2h)', 'Geysir: Wybuchy gejzera Strokkur (1h)', 'Gullfoss: Potężny wodospad (1h)', 'Hrunalaug Hot Spring: Kąpiel w naturalnym źródle (1h 30m)'],
+      en: ['Þingvellir: Walk between continental tectonic plates (2h)', 'Geysir: Erupting Strokkur geyser(1h)', 'Gullfoss: The powerful Gullfoss waterfall (1h)', 'Hrunalaug Hot Spring: Thermal bath in a historic stone tub (1h 30m)']
     },
     food: {
       pl: [
@@ -125,8 +125,8 @@ We skipped restaurants and ate freeze-dried meals at a nice parking lot near Öx
     hub: { pl: 'Árhús Cottage & Camping, Hella', en: 'Árhús Cottage & Camping, Hella' },
     accommodation: { pl: 'Árhús Cottage & Camping, Hella', en: 'Árhús Cottage & Camping, Hella' },
     highlights: {
-      pl: ['Krater wulkaniczny Kerið z turkusowym jeziorem', 'Reykjadalur (4h): Trekking (3 km w jedną stronę) do gorącej rzeki (woda ok. 40°C)', 'Ukryty wodospad Ægissíðufoss blisko Hella'],
-      en: ['Kerið volcanic crater with neon turquoise water', 'Reykjadalur (4h): 3 km hike to a 40°C natural hot spring river', 'Hidden Ægissíðufoss waterfall near Hella']
+      pl: ['Krater wulkaniczny Kerið z turkusowym jeziorem (1h)', 'Reykjadalur: Trekking do 40°C gorącej rzeki (3 km w jedną stronę, 4h)', 'Ukryty wodospad Ægissíðufoss blisko Hella'],
+      en: ['Kerið volcanic crater with neon turquoise water (1h)', 'Reykjadalur: Hike to a 40°C natural hot spring river (3 km one way, 4h)', 'Hidden Ægissíðufoss waterfall near Hella']
     },
     food: {
       pl: ['Kaffi Krús (Selfoss): Pyszne lunche, tradycyjna zupa i dobra pizza.'],
@@ -165,18 +165,20 @@ On the way back, we stopped by Selfoss for dinner at Kaffi Krús and to do some 
     accommodation: { pl: 'Höfn Cottages', en: 'Höfn Cottages', link: 'https://www.booking.com/hotel/is/hofn-cottages.pl.html' },
     highlights: {
       pl: [
-        '08:55 – Seljalandsfoss: Słynny wodospad, za który można wejść (45 min)',
-        '10:05 – Skógafoss: Potężny 60m wodospad + schody na punkt widokowy (1h)',
-        '11:35 – Reynisfjara & Dyrhólaey: Maskonury, skalny łuk i czarny piasek (2h)',
-        '14:35 – Kanion Fjaðrárgljúfur: Bajkowo zielony kanion (1h)',
-        '16:35 – Park Skaftafell: Wodospad Svartifoss wśród bazaltowych organów (2h)'
+        '08:55 – Seljalandsfoss: ten wodospad, za który można wejść (45 min)',
+        '10:05 – Skógafoss: potężny 60m wodospad + schody na punkt widokowy (1h)',
+        '11:35 – Reynisfjara & Dyrhólaey: maskonury, skalny łuk i czarna plaża (2h)',
+        '14:35 – Kanion Fjaðrárgljúfur: bajkowo zielony kanion (1h)',
+        '16:35 – Park Skaftafell: wodospad Svartifoss wśród bazaltowych organów (2h)',
+        'Transfer do Höfn Cottages'
       ],
       en: [
         '08:55 – Seljalandsfoss: Walk behind the tumbling water waterfall (45 min)',
         '10:05 – Skógafoss: Massive 60m waterfall and staircase lookout (1h)',
-        '11:35 – Reynisfjara & Dyrhólaey: Puffins, arch, and basalt columns (2h)',
+        '11:35 – Reynisfjara & Dyrhólaey: Puffins, arch, and black beach (2h)',
         '14:35 – Fjaðrárgljúfur Canyon: Verdant serpentine canyon (1h)',
-        '16:35 – Skaftafell National Park: Hike to Svartifoss basalt waterfall (2h)'
+        '16:35 – Skaftafell National Park: Hike to Svartifoss basalt waterfall (2h)',
+        'Transfer to Höfn Cottages'
       ]
     },
     food: {
@@ -229,13 +231,13 @@ After lunch, we drove to see the Fjaðrárgljúfur canyon, and from there went s
     highlights: {
       pl: [
         'Park Skaftafell: Wodospad Svartifoss wśród bazaltowych organów (2h)',
-        'Skaftafellsjökull',
+        'Skaftafellsjökull: Wejście na lodowiec (1h)',
         'Jökulsárlón & Diamond Beach: Dryfujące bryły lodu na wulkanicznym czarnym piasku',
         'Rejs amfibią wśród gór lodowych (icelagoon.is - konieczna rezerwacja!)'
       ],
       en: [
         'Skaftafell National Park: Hike to Svartifoss basalt waterfall (2h)',
-        'Skaftafellsjökull',
+        'Skaftafellsjökull: Glacier tongue (1h)',
         'Jökulsárlón & Diamond Beach: Glistening icebergs stranded on black volcanic sand',
         'Amphibian Boat Tour navigating giant icebergs (icelagoon.is - booking necessary!)'
       ]
@@ -282,8 +284,8 @@ We decided to drop the rest of today's itinerary—after the boat ride, we went 
     hub: { pl: 'Vogar Travel Service, Mývatn', en: 'Vogar Travel Service, Mývatn' },
     accommodation: { pl: 'Vogar Travel Service, Mývatn', en: 'Vogar Travel Service, Mývatn', link: 'https://www.booking.com/hotel/is/vogahraun-guesthouse.pl.html' },
     highlights: {
-      pl: ['Stokksnes / Vestrahorn: Dramatyczna czarna góra wyrastająca wprost z oceanu', 'Djúpivogur (45 min): Malowniczy port i rzeźby jaj ptaków', 'Malownicza trasa przez Fiordy Wschodnie do Egilsstaðir i Mývatn', 'Grjótagjá: Jaskinia lawowa z gorącym źródłem'],
-      en: ['Stokksnes / Vestrahorn: Jagged black peak towering above tidal beach lagoons', 'Djúpivogur (45 min): Charming fishing village & granite bird egg sculptures', 'Breathtaking drive winding through East Fjords to Egilsstaðir and Lake Mývatn', 'Grjótagjá: Volcanic cave housing a geothermal spring']
+      pl: ['Stokksnes / Vestrahorn: Wioska Wikingów i widok na masyw górski', 'Djúpivogur: Malowniczy port i rzeźby jaj ptaków', 'Transfer przez Fiordy Wschodnie i Egilsstaðir do Vogar Travel Service, Mývatn', 'Grjótagjá: Jaskinia lawowa z gorącym źródłem'],
+      en: ['Stokksnes / Vestrahorn: Viking village and jagged black peak towering above tidal beach lagoons', 'Djúpivogur: Fishing village & granite bird egg sculptures', 'Drive winding through East Fjords and Egilsstaðir to Vogar Travel Service, Mývatn', 'Grjótagjá: Volcanic cave housing a geothermal spring']
     },
     food: {
       pl: ['Vogafjós Farm Resort (obok noclegu Vogar): Restauracja wewnątrz obory. Pijesz kawę patrzac na dojenie krów! Słynny podziemny chleb geotermalny Geysir bread z wędzonym pstrągiem.'],
@@ -325,13 +327,15 @@ The drive to Mývatn is quite long, featuring a gravel section along the way. We
         'Dettifoss: Najpotężniejszy pod względem masy wody wodospad w Europie',
         'Wulkan Krafla & Krater Víti: Turkusowe jezioro w kraterze wulkanu',
         'Hverir (Námafjall): Bulgoczące błota, solfatary i zjawiskowe formacje siarkowe',
-        'Earth Lagoon Mývatn: Popołudniowy relaks w nowoczesnym niebieskim spa'
+        'Earth Lagoon Mývatn: Popołudniowy relaks w nowoczesnym niebieskim spa',
+        'Hverfell: Spacer krawędzią krateru'
       ],
       en: [
         'Dettifoss: Europe’s most powerful waterfall by volume',
         'Krafla Volcano & Víti Crater: Stunning turquoise crater lake hike',
         'Hverir (Námafjall): Steam vents, boiling mud cauldrons, and surreal sulfur fields',
-        'Earth Lagoon Mývatn: Afternoon relaxation in mineral-rich milky blue waters'
+        'Earth Lagoon Mývatn: Afternoon relaxation in mineral-rich milky blue waters',
+        'Hverfell: Crater rim walk'
       ]
     },
     food: {
@@ -378,17 +382,17 @@ For dinner, we ate at a restaurant overlooking a cowshed — a fun change of pac
     hub: { pl: 'Lækjarkot Rooms and Cottages, Borgarnes', en: 'Lækjarkot Rooms and Cottages, Borgarnes' },
     accommodation: { pl: 'Lækjarkot Rooms and Cottages, Borgarnes', en: 'Lækjarkot Rooms and Cottages, Borgarnes', link: 'https://www.booking.com/hotel/is/laekjarkot-mobile-homes-and-rooms.pl.html' },
     highlights: {
-      pl: ['Wodospad Goðafoss ("Wodospad Bogów") leżący tuż przy drodze nr 1', 'Akureyri (2h): Ogród Botaniczny, starówka i legendarne lody Brynja', 'Przejazd przez malowniczą północną Islandię do Lækjarkot'],
-      en: ['Goðafoss ("Waterfall of the Gods") accessible right off Ring Road', 'Akureyri (2h): Botanical Gardens, northern architecture, & famous Brynja ice cream', 'Scenic drive crossing northern mountain passes to Lækjarkot']
+      pl: ['Wodospad Goðafoss ("Wodospad Bogów")', 'Akureyri: Ogród Botaniczny, starówka i legendarne lody Brynja (2h)', 'Przejazd przez północną Islandię do Lækjarkot Rooms and Cottages, Borgarnes'],
+      en: ['Goðafoss ("Waterfall of the Gods")', 'Akureyri: Botanical Gardens, northern architecture, & famous Brynja ice cream (2h)', 'Drive crossing northern mountain passes to Lækjarkot Rooms and Cottages, Borgarnes']
     },
     food: {
       pl: [
         'Akureyri Hot Dog Stand (Bæjarins Beztu Pylsur / Akureyri): Klasyczny islandzki hot-dog z prażoną cebulką i sosem pylsusinnep.',
-        'Lody Brynja (Akureyri): Najstarsza i najsłynniejsza lodziarnia na północy Islandii.'
+        'Lody Brynja (Akureyri): Najstarsza i najsłynniejsza lodziarnia na północy Islandii.',
       ],
       en: [
         'Akureyri Hot Dog Stand: Traditional Icelandic hot dog topped with crispy onions and sweet mustard.',
-        'Brynja Ice Cream (Akureyri): The North’s oldest and most beloved soft-serve ice cream shop.'
+        'Brynja Ice Cream (Akureyri): The North’s oldest and most beloved soft-serve ice cream shop.',
       ]
     },
     content: {
@@ -425,15 +429,15 @@ On the way to Lækjarkot, we took a break in Blönduós for coffee and a turn on
     accommodation: { pl: 'Lækjarkot Rooms and Cottages, Borgarnes', en: 'Lækjarkot Rooms and Cottages, Borgarnes' },
     highlights: {
       pl: [
-        'Hraunfossar & Barnafoss: Woda wypływająca prosto zza ściany pola lawy do turkusowej rzeki',
-        'Deildartunguhver: Najbardziej wydajne gorące źródło w Europie (97°C!)',
-        'Troll Garden',
-        'Borgarnes: basen'
+        'Hraunfossar & Barnafoss: lawowe wodospady',
+        'Deildartunguhver: najbardziej wydajne gorące źródło w Europie (97°C!)',
+        'Troll Garden: spacer ścieżką edukacyjną',
+        'Borgarnes: miejski basen'
       ],
       en: [
         'Hraunfossar & Barnafoss: Crystal clear cold rivulets emerging directly from underneath lava fields',
         'Deildartunguhver: Europe’s most powerful geothermal spring (97°C)',
-        'Troll Garden',
+        'Troll Garden: Educational pathway',
         'Borgarnes: swimming pool'
       ]
     },
@@ -467,15 +471,15 @@ On the way to Lækjarkot, we took a break in Blönduós for coffee and a turn on
     highlights: {
       pl: [
         'Góra Kirkjufell & wodospad Kirkjufellsfoss: Najczęściej fotografowana góra Islandii',
-        'Plaża Djúpalónssandur: Czarna plaża z kamieniami próby siły rybaków i wrakiem statku',
+        'Djúpalónssandur: Czarna plaża z wrakiem statku',
         'Arnarstapi: Klify bazaltowe, naturalny łuk skalny Gatklettur i posąg Bardura',
-        'Plaża Ytri Tunga - obserwacja fok'
+        'Plaża Ytri Tunga: Obserwacja fok'
       ],
       en: [
         'Kirkjufell Mountain & Kirkjufellsfoss: Iceland’s most iconic arrow-head peak',
-        'Djúpalónssandur Beach: Black pebble shore featuring historical lifting stones & shipwreck remains',
+        'Djúpalónssandur: Black pebble shore featuring shipwreck remains',
         'Arnarstapi: Cliffside coastal walk overlooking Gatklettur rock arch',
-        'Ytri Tunga beach - seals observation'
+        'Ytri Tunga beach: Seals observation'
       ]
     },
     food: {
@@ -511,16 +515,14 @@ Next, we headed to the black sand beach at Djúpalónssandur, where we relaxed t
     accommodation: { pl: 'Hótel Ísland Spa & Wellness, Reykjavík', en: 'Hótel Ísland Spa & Wellness, Reykjavík', link: 'https://www.booking.com/hotel/is/hotel-island.pl.html' },
     highlights: {
       pl: [
-        'Spacer po stolicy: Ulica Laugavegur, słynny kościół Hallgrímskirkja',
-        'Muzeum Perlan: Interaktywna jaskinia lodowa z prawdziwego lodu i symulator zorzy (punkt obowiązkowy dla dzieci!)',
-        'Stary Port w Reykjavíku: Obiad i spacer wzdłuż nabrzeża',
-        'Nocleg i relaks w Spa Hotel Ísland'
+        'Dolina Nátthagi: Spacer wzdłuż ostygłych pól lawowych',
+        'Reykjavík: Ulica Laugavegur, kościół Hallgrímskirkja, spacer wzdłuż nabrzeża',
+        'Transfer do Hótel Ísland Spa & Wellness, Reykjavík'
       ],
       en: [
-        'Capital Highlights: Rainbow Street, Laugavegur, & Hallgrímskirkja cathedral view tower',
-        'Perlan Museum: Walk inside a real 100-meter ice cave & northern lights planetarium show (must-see for kids!)',
-        'Old Harbor District: Historic docks, seafood bistros, & maritime atmosphere',
-        'Check-in & spa relaxation at Hotel Ísland'
+        'Nátthagi Valley: Walk along the cooled lava fields',
+        'Reykjavík: Laugavegur Street, Hallgrímskirkja Church, waterfront stroll',
+        'Transfer to Hótel Ísland Spa & Wellness, Reykjavík'
       ]
     },
     food: {
@@ -562,15 +564,13 @@ Highlight of the day is Perlan Museum atop Öskjuhlíð hill. Step inside an aut
     accommodation: { pl: 'Wylot do Polski', en: 'Return Flight' },
     highlights: {
       pl: [
-        'Seltún (Krísuvík): Kolorowe, parujące wzgórza i bulgoczące gorące źródła (40 min z Reykjavíku)',
-        'Most Między Kontynentami (Miðlína): Kładka nad szczeliną dzielącą płytę euroazjatycką od północnoamerykańskiej',
-        '16:00 – Oddanie samochodu w wypożyczalni Lotus',
-        '18:05 – Wylot samolotu z lotniska Keflavík (KEF)'
+        'Lava Show: pokaz lawy na żywo',
+        '15:00 – Oddanie samochodu w wypożyczalni Lotus',
+        '18:05 – Wylot z lotniska Keflavík (KEF)'
       ],
       en: [
-        'Seltún (Krísuvík): Vibrant steaming clay hills and bubbling mud springs',
-        'Bridge Between Continents (Miðlína): Footbridge spanning the rift between Eurasia and North America',
-        '16:00 – Return 4x4 rental car to Lotus Car Rental',
+        'Lava Show: Real lava show',
+        '15:00 – Return car to Lotus Car Rental',
         '18:05 – Departure flight from Keflavík Airport (KEF)'
       ]
     },
