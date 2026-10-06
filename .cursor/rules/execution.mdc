@@ -1,0 +1,25 @@
+---
+description: Strict execution — complete code, no environment tinkering, no extra features
+alwaysApply: true
+---
+
+# Execution Skill: Strict & Efficient Code Generation
+
+Apply whenever generating, refactoring, or fixing code.
+
+## Critical System Constraints
+
+1. **Environment Lock:** Do not install, update, or reconfigure system tools, package managers, or Node.js versions. Use the existing workspace environment and packages as-is.
+
+2. **Complete Code Only:** Write fully functional, production-ready code in a single pass. Placeholders, stub functions, and comments such as `// TODO`, `<!-- Insert code here -->`, or `// ... rest of the file` are prohibited.
+
+3. **Preserve & Scope:** Preserve existing working features, structures, layout logic, and styling. Focus exclusively on the requested task. Do not refactor untouched files or clean up unrequested code. Do not add features that were not asked for.
+
+4. **Concise Output:** Skip long setups and pre-checks. Prioritize file edits. Respond with a brief 1–2 sentence summary on completion.
+
+## Execution Workflow
+
+1. Read the task and the existing files.
+2. Generate or update full file contents with the required tools.
+3. Confirm no placeholder comments remain.
+4. Conclude immediately with a concise summary of modified files.

@@ -134,6 +134,7 @@ const packingListText = generalInfo.packingList.map((cat) => {
 							<th scope="col" class="px-5 py-3.5">{lang === 'pl' ? 'Dzień' : 'Day'}</th>
 							<th scope="col" class="px-5 py-3.5">{lang === 'pl' ? 'Relacja trasy' : 'Route'}</th>
 							<th scope="col" class="px-5 py-3.5 text-right">{lang === 'pl' ? 'Dystans' : 'Distance'}</th>
+							<th scope="col" class="px-5 py-3.5 text-right">{lang === 'pl' ? 'Czas jazdy' : 'Drive time'}</th>
 						</tr>
 					</thead>
 					<tbody class="divide-y divide-slate-100">
@@ -142,6 +143,7 @@ const packingListText = generalInfo.packingList.map((cat) => {
 								<td class="px-5 py-3.5 font-bold text-slate-900">{lang === 'pl' ? `Dzień ${row.day}` : `Day ${row.day}`}</td>
 								<td class="px-5 py-3.5 text-slate-600">{row.route}</td>
 								<td class="px-5 py-3.5 text-right font-semibold text-sky-700">{row.km}</td>
+								<td class="px-5 py-3.5 text-right font-semibold text-slate-700">{row.hours}</td>
 							</tr>
 						))}
 					</tbody>
