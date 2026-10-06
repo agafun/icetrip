@@ -528,20 +528,26 @@ Next, we headed to the black sand beach at Djúpalónssandur, where we relaxed t
     food: {
       pl: [
         'Bæjarins Beztu Pylsur (Reykjavík): Najsłynniejszy hot-dog w Europie, jedzony m.in. przez Billa Clintona!',
-        'Seabaron (Sægreifinn przy porcie): Słynna zupa z homara / krewetek i szaszłyki rybne.'
+        'Seabaron (Sægreifinn przy porcie): Słynna zupa z homara / krewetek i szaszłyki rybne.',
+        'Reykjavik Fish (Frakkastígur 25): klasyczne fish & chips'
       ],
       en: [
         'Bæjarins Beztu Pylsur (Reykjavík): World-famous hot dog stand enjoyed by presidents & travelers alike.',
-        'Seabaron (Sægreifinn at Old Harbor): Legendary lobster soup and grilled fish skewers.'
+        'Seabaron (Sægreifinn at Old Harbor): Legendary lobster soup and grilled fish skewers.',
+        'Reykjavik Fish (Frakkastígur 25): fish & chips fast food'
       ]
     },
     content: {
-      pl: `Wjeżdżamy do stolicy Islandii. Dzień rozpoczynamy od spaceru głównym deptakiem Laugavegur pod imponujący kościół Hallgrímskirkja.
+      pl: `Tego dnia mieliśmy trochę zagwozdkę, co zrobić, bo na następny dzień zapowiadano deszcze. Postanowiliśmy zobaczyć z bliska niesamowite pola lawowe, które przywitały nas pierwszego dnia. Tak trafiliśmy do doliny Nátthagi. 
+      
+      Popołudnie zgodnie z pierwotnym planem spędziliśmy w centrum Reykjavíku. Nie jest to duże miasto, spacer głównym deptakiem do kościoła Hallgrímskirkja i powrót nabrzeżem zajął nam ok. 2 godziny. Na obiadokolację fish & chips w Reykjavik Fish.
+      
+      Hotel w porządku, spa tylko dla dorosłych, więc pomięliśmy tę atrakcję.`,
+      en: `On this day, we were in a bit of a dilemma about what to do, as rain was forecast for the following day. We decided to get an up-close look at the incredible lava fields that had welcomed us on our very first day, which led us to Nátthagi Valley.
 
-Głównym punktem dnia jest Muzeum Perlan – interaktywne centrum naukowe umieszczone w zbiornikach wodnych na wzgórzu Öskjuhlíð. Dzieci i dorośli zachwycą się 100-metrową jaskinią z prawdziwego lodu. Wieczorny odpoczynek w spa.`,
-      en: `Arrive in vibrant Reykjavík! Begin with a stroll up colorful Laugavegur street to iconic Hallgrímskirkja cathedral.
+In the afternoon, as originally planned, we explored central Reykjavík. It isn't a large city—walking down the main pedestrian street to Hallgrímskirkja Church and strolling back along the waterfront took us about 2 hours. For dinner, we grabbed fish and chips at Reykjavik Fish.
 
-Highlight of the day is Perlan Museum atop Öskjuhlíð hill. Step inside an authentic 100-meter indoor ice cave crafted from real glacial ice and watch a planetarium aurora show. Evening spa relaxation at Hotel Ísland.`
+The hotel was decent enough, but since the spa was adults-only, we passed on that.`
     },
     images: [
       {
@@ -579,12 +585,12 @@ Highlight of the day is Perlan Museum atop Öskjuhlíð hill. Step inside an aut
       en: ['Final snacks at Keflavík Airport prior to boarding.']
     },
     content: {
-      pl: `Ostatnie godziny na bajecznej wyspie. Przed wylotem zwiedzamy geotermalny obszar Seltún pełen dymiących kominów siarkowych.
+      pl: `Ostatnie godziny na wyspie. Przedpołudniem pada zapowiadany deszcz, więc postanowiliśmy jeszcze zaszaleć przed wyjazdem i udaliśmy się na reklamowany wszędzie Lava Show. Pomimo dość komercyjnego klimatu, jakim się ten pokaz prezentuje, było to ciekawe doświadczenie. Cały pokaz trwa ok. 1h, w czasie którego zlewana jest prawdziwa lawa o temperaturze 1,100°C, oprócz tego jest też film edukacyjny. Drogo, ale fajnie.
 
-Następnie przejeżdżamy na Most Między Kontynentami, by stanąć jedną nogą w Ameryce Północnej, a drugą w Europie. O 16:00 oddajemy auto w Lotus Car Rental i przygotowujemy się do wylotu o 18:05.`,
-      en: `Final unforgettable hours on the island of ice and fire. Explore Seltún geothermal field featuring multi-colored steaming clay hills.
-
-Visit the Bridge Between Continents to stand with one foot in North America and the other in Europe. At 16:00, return the rental car to Lotus Car Rental before catching our 18:05 return flight.`
+      Ok. 15:00 oddaliśmy auto w Lotus Car Rental i sprawnie zostaliśmy przewiezieni na lotnisko. Wylot bez opóźnień o 18:05.`,
+      en: `Our final hours on the island. In the morning, the forecast rain arrived, so we decided to splurge one last time before leaving and headed to the widely advertised Lava Show. Despite the rather commercial vibe surrounding the presentation, it turned out to be a fascinating experience. The entire show lasts about an hour, during which actual molten lava heated to 1,100°C is poured out, alongside an educational video. Pricy, but cool.
+      
+Around 3:00 PM, we returned our vehicle to Lotus Car Rental and were promptly shuttled over to the airport. Our flight departed right on schedule at 6:05 PM."`
     },
     images: [
       {
