@@ -45,16 +45,16 @@ export const daysData: DayData[] = [
       en: ['Grocery supplies at Bónus / Netto in Keflavik (usually open until 21:30).']
     },
     content: {
-      pl: `Samolot opóźniony ok. 1,5h - lądowanie po 18:00 czasu lokalnego na lotnisku w Keflavíku. Odbiór samochodu z wypożyczalni Lotus Car Rental bardzo sprawny. Zaraz obok market Netto - szybkie zakupy i jazda w kierunku Południowego Wybrzeża. Droga prowadzi przez świeże, czarne pola lawowe. 
-      
-      Zakwaterowanie w domkach Árhús Cottage and Camping około 22:00. Na miejscu okazuje się, że jeden domek nie ma łazienki, ani kuchni, a drugi ma tylko 3 łóżka. We wspólnej kuchni kempingowej nie ma w ogóle sprzętu typu talerze, sztućce, czy garnki - trzeba mieć swoje, by móc gotować. Jest czajnik i kuchenka. 
-      
-      O 23:00 wciąż jest jasno.`,
-      en: `Flight delayed by about 1.5 hours – landing after 6:00 PM local time at Keflavík Airport. Car pick-up at Lotus Car Rental was super quick and smooth. Right next door is a Netto supermarket – quick grocery run, and then we head towards the South Coast. The road goes through fresh and black lava fields.
+      pl: `Samolot wylądował na lotnisku w Keflavíku z półtoragodzinnym opóźnieniem - po 18:00 czasu lokalnego. Dojazd do wypożyczalni Lotus Car Rental i wypożyczenie samochodu przebiegło bardzo sprawnie. Zaraz obok znajduje market Netto - szybkie zakupy i jazda w kierunku Południowego Wybrzeża. Droga prowadziła przez przez surowy krajobraz czarnych pól lawowych, co nas ogromnie zaciekawiło.
 
-We checked into our cabins at Árhús Cottage and Camping around 10:00 PM. Upon arrival, we found out that one cabin had neither a bathroom nor a kitchen, and the second one only had 3 beds. The shared campsite kitchen had no equipment whatsoever—no plates, cutlery, or pots—so you need to bring your own if you want to cook. There was only a kettle and a stovetop available.
+Zakwaterowaliśmy się w domkach Árhús Cottage and Camping dopiero około 22:00. Na miejscu okazało się, że jeden domek nie ma łazienki, ani kuchni, a drugi dysponuje jedynie trzema łóżkami. W ogólnodostępnej kuchni kempingowej nie ma w ogóle wyposażenia typu talerze, sztućce, czy garnki - trzeba mieć swoje, by móc gotować. Jest natomiast czajnik i kuchenka.
 
-It's still light outside at 11:00 PM.`
+O 23:00 wciąż jest jasno.`,
+      en: `Our flight landed at Keflavík Airport with a hour-and-a-half delay—just after 6:00 PM local time. Transferring to Lotus Car Rental and picking up the car went very smoothly. Right next door is a Netto supermarket, where we grabbed a few quick groceries before setting off toward the South Coast. The drive took us through a rugged landscape of black lava fields, which completely fascinated us.
+
+We checked into our cabins at Árhús Cottage and Camping around 10:00 PM. Upon arrival, we found out that one cabin had neither a bathroom nor a kitchen, while the second one only had three beds. The shared campsite kitchen had no equipment whatsoever—no plates, cutlery, or pots—so you need to bring your own if you plan to cook. There was, however, a kettle and a stovetop.
+
+At 11:00 PM, it was still broad daylight.`
     },
     images: [
       {
@@ -94,16 +94,16 @@ It's still light outside at 11:00 PM.`
       en: 'Water mist at Gullfoss will soak you instantly. Waterproof jackets/ponchos are recommended!'
     },
     content: {
-      pl: `Dzień poświęcony klasycznej pętli Złotego Kręgu. Zaczęliśmy od Parku Narodowego Þingvellir (70 km z Helli, 1h 10 min jazdy), gdzie przeszliśmy malowniczym wąwozem Almannagjá pomiędzy płytami kontynentalnymi. Warto podjechać na Öxarárfoss Parking P2 - najbliżej wodospadu. Ścieżki widoczne przy Thingvellir National Park Service Centre są zamknięte z racji ochrony przyrody.
+      pl: `Dzień poświęcony klasycznej pętli Złotego Kręgu. Pierwszym punktem był Park Narodowy Þingvellir, gdzie przeszliśmy wąwozem Almannagjá, wyznaczającym styk płyt tektonicznych. Warto podjechać na Öxarárfoss Parking P2 - najbliżej wodospadu. Ścieżki widoczne przy Thingvellir National Park Service Centre są wyłączone z ruchu ze względu na ochronę roślinności.
 
-Następnie skierowaliśmy się do doliny gejzerów Haukadalur (60 km, 50 min), by podziwiać wybuchy Strokkur co 5-10 minut. Następnie Gullfoss - trzeba podjechać samochodem jeszcze 10 min. Dzień skończyliśmy relaksującą kąpielą w kameralnym źródle Hrunalaug - wymagana wcześniejsza rezerwacja (wejścia limitowane). Nam szczęśliwie udało się wejść czekając ok. 15 minut.
+Z Þingvellir skierowaliśmy się do doliny gejzerów Haukadalur, gdzie obserwowaliśmy wyrzuty wody z gejzeru Strokkur, powtarzające się co 5–10 minut. Następnie podjechaliśmy pod wodospad Gullfoss. Dzień zakończyliśmy w gorącym źródle Hrunalaug - wymagana wcześniejsza rezerwacja (wejścia limitowane). Nam szczęśliwie udało się wejść czekając ok. 15 minut.
 
 Tego dnia nie zatrzymywaliśmy się w restauracjach, jedliśmy liofilizaty na całkiem urokliwym parkingu przy Öxarárfoss.`,
-      en: `A full day exploring the renowned Golden Circle loop. We started at Þingvellir National Park (70 km from Hella), walking through the Almannagjá rift valley between the North American and Eurasian plates. It's recommended to visit the Öxarárfoss waterfall parking lot P2 to be closest to the waterfall. Paths near Thingvellir National Park Service Centre are closed due to conservation.
+      en: `A day dedicated to the classic Golden Circle loop. Our first stop was Þingvellir National Park, where we walked through the Almannagjá gorge marking the boundary between two tectonic plates. It's worth driving up to Öxarárfoss Parking P2, as it's closest to the waterfall. The paths near the Þingvellir National Park Service Centre are closed off to protect the local vegetation.
 
-Next, we drove to Haukadalur geothermal valley to watch Strokkur blast water 30 meters into the air. A short 10-min drive brought us to roaring Gullfoss, followed by a warm soak at Hrunalaug natural hot spring. Booking is required (limited entry), but we managed to get in after a 15-minute wait. 
+From Þingvellir, we headed to the Haukadalur geothermal valley to watch Strokkur erupt every 5–10 minutes. Next, we drove over to Gullfoss waterfall. We finished the day with a relaxing soak in the Hrunalaug hot spring—advance booking is required as entry is limited. Luckily, we managed to get in after waiting about 15 minutes.
 
-We skipped restaurants and ate freeze-dried meals at a nice parking lot near Öxarárfoss.`
+We didn't stop at any restaurants that day, instead having freeze-dried meals at a quite charming parking area near Öxarárfoss.`
     },
     images: [
       {
@@ -137,12 +137,16 @@ We skipped restaurants and ate freeze-dried meals at a nice parking lot near Öx
       en: 'Changing areas at Reykjadalur are simple wooden screens. Wear your swimsuit under hiking gear.'
     },
     content: {
-      pl: `Jadąc do Reykjadalur uznaliśmy, że trochę odwrócimy kolejność zwiedzania i najpierw podjedziemy na krater Kerið, ponieważ trekking może okazać się dłuższy niż szacowany czas. Trekking z parkingu Hveragerði do rzeki Reykjadalur to ok. 3 km podejścia - z dziećmi wyszło 1,5-2h w jedną stronę. Kąpiel w całkowicie naturalnej, ciepłej rzece (woda osiąga około 40°C) wynagrodziła trudy wejścia. Do jedzenia zupa pomidorowa w termosach.
+      pl: `Jadąc do Reykjadalur uznaliśmy, że odwrócimy kolejność zwiedzania i najpierw podjedziemy na krater Kerið, ponieważ trekking może okazać się dłuższy niż szacowany czas. Wstęp na krater Kerið jest płatny – bilet kupuje się w budce przy wejściu. 
 
-W drodze powrotnej zjechaliśmy do Selfoss na obiad w Kaffi Krús i zakupy. Na wodospad Ægissíðufoss zabrakło chęci i sił.`,
-      en: `On our way to Reykjadalur, we decided to slightly adjust our itinerary and visit the Kerið crater first, anticipating that the hike might take longer than expected. The trail from the Hveragerði parking lot to the Reykjadalur river is about a 3 km uphill walk—with kids, it took us around 1.5 to 2 hours one way. Bathing in a completely natural, warm river (where the water reaches around 40°C) made every bit of the effort worth it. We had tomato soup from our thermos flasks to eat.
+Trekking z parkingu w Hveragerði do ciepłej rzeki Reykjadalur to ok. 3 km podejścia - z dziećmi zajęło 1,5-2h w jedną stronę. Kąpiel w naturalnie podgrzewanej wodzie o temperaturze blisko 40°C zrekompensowała wysiłek. Do jedzenia zupa pomidorowa w termosach.
 
-On the way back, we stopped by Selfoss for dinner at Kaffi Krús and to do some shopping. By the time we were done, we simply lacked the energy and motivation to visit the Ægissíðufoss waterfall.`
+W drodze powrotnej zatrzymaliśmy się w Selfoss na obiad w restauracji Kaffi Krús i zakupy. Na wodospad Ægissíðufoss zabrakło chęci i sił.`,
+      en: `On the way to Reykjadalur, we decided to reverse the order of our itinerary and visit the Kerið crater first, as we anticipated the hike might take longer than estimated. Admission to Kerið crater is paid—you buy tickets at the booth near the entrance.
+
+The hike from the parking lot in Hveragerði up to the warm Reykjadalur river is an uphill walk of about 3 km—with kids, it took us 1.5 to 2 hours one way. Bathing in naturally heated water close to 40°C made the effort completely worthwhile. For food, we had hot tomato soup from our thermoses.
+
+On the way back, we stopped in Selfoss for lunch at Kaffi Krús and picked up some groceries. We simply lacked the energy and motivation to visit the Ægissíðufoss waterfall.`
     },
     images: [
       {
@@ -198,16 +202,16 @@ On the way back, we stopped by Selfoss for dinner at Kaffi Krús and to do some 
       en: 'DANGER: Reynisfjara beach is infamous for lethal sneaker waves. Never turn your back to the ocean or step close to the tide!'
     },
     content: {
-      pl: `Najbardziej obfity w atrakcje dzień wyprawy, trzeba pilnować harmonogramu. Wystartowaliśmy o o 08:30 z Hella. Pierwszy przystanek to Seljalandsfoss, gdzie przechodzi się za ścianą spadającej wody, warto podejść jeszcze kawałek dalej, gdzie woda wpada do kanionu szczelinowego. Następnie podjechaliśmy pod Skógafoss, by wspiąć się po metalowych schodach na taras widokowy.
+      pl: `Najbardziej obfity w atrakcje dzień wyprawy wymagał ścisłego trzymania się harmonogramu. Wyjechaliśmy z Helli o 8:30. Pierwszym przystankiem był wodospad Seljalandsfoss, gdzie ścieżka prowadzi za ścianę spadającej wody. Warto podejść jeszcze kawałek dalej pod wodospad Gljúfrabúi, gdzie woda wpada do kanionu szczelinowego. Następnie podjechaliśmy pod Skógafoss, by wspiąć się po metalowych schodach na taras widokowy.
 
-Przed południem dotarliśmy do klifu Dyrhólaey wypatrywać maskonurów, gdzie okazało się, że można zrobić bardzo fajny spacer klifami aż do plaży. Tam dzieci zgłodniały, więc postanowiliśmy podjechać do Black Beach Restaurant (dużo ludzi, ale dość sprawnie poszło) i zwiedzić czarną plażę od drugiej strony, przy jaskini Hálsanefshellir. To było warte zobaczenia. 
+Przed południem dotarliśmy do klifu Dyrhólaey z myślą o obserwacji maskonurów, gdzie okazało się, że można zrobić bardzo fajny spacer klifami aż do plaży. Tam dzieci zgłodniały, więc postanowiliśmy podjechać do Black Beach Restaurant (dużo ludzi, ale dość sprawnie poszło) i zwiedzić czarną plażę od drugiej strony, przy jaskini Hálsanefshellir. To było warte zobaczenia.
 
-Po obiedzie podjechaliśmy zobaczyć kanion Fjaðrárgljúfur i stamtąd prosto do Höfn na nocleg. Svartifoss przenosimy na następny dzień.`,
-      en: `The most action-packed day of the trip—sticking to the schedule is a must. We set off at 8:30 AM from Hella. Our first stop was Seljalandsfoss, where you can walk right behind the wall of falling water; it's well worth walking a bit further to where the water cascades into a slot canyon. Next, we drove up to Skógafoss and climbed the metal stairs up to the viewing platform.
+Po obiedzie podjechaliśmy zobaczyć kanion Fjaðrárgljúfur, po czym ruszyliśmy bezpośrednio na nocleg do Höfn, przekładając wizytę przy Svartifoss na kolejny dzień. Domki w Höfn Cottages mają aneks kuchenny, więc można śmiało gotować. Prysznice ogólnodostępne, ale czysto i woda ciepła.`,
+      en: `The most packed day of our trip required sticking strictly to our schedule. We set off from Hella at 8:30 AM. Our first stop was Seljalandsfoss, where the path takes you right behind the cascading wall of water. It’s well worth walking a bit further to Gljúfrabúi waterfall, where the water plunges into a hidden canyon. Next, we drove up to Skógafoss to climb the metal stairs up to the observation deck.
 
-      Before noon, we reached the Dyrhólaey cliff to look for puffins, where we discovered a really nice cliffside walk leading all the way down to the beach. By then, the kids were getting hungry, so we decided to head over to the Black Beach Restaurant (busy, but service was pretty efficient) and explore the black sand beach from the other side, near the Hálsanefshellir cave. That was definitely worth seeing. 
+Before noon, we reached the Dyrhólaey cliff hoping to spot puffins, where we discovered a great walking trail along the cliffs leading down toward the beach. By then, the kids were getting hungry, so we drove over to Black Beach Restaurant (it was crowded, but service was fairly quick) and explored the black sand beach from the other side, near the Hálsanefshellir cave. That was well worth seeing.
 
-After lunch, we drove to see the Fjaðrárgljúfur canyon, and from there went straight to Höfn for the night. We pushed Svartifoss to the next day.`
+After lunch, we went to see Fjaðrárgljúfur canyon before heading straight to Höfn for our overnight stay, pushing our visit to Svartifoss to the following day. The cabins at Höfn Cottages have a kitchenette, so you can easily cook your own meals. The showers are shared, but everything was clean and the water was hot.`
     },
     images: [
       {
@@ -253,16 +257,12 @@ After lunch, we drove to see the Fjaðrárgljúfur canyon, and from there went s
       ]
     },
     content: {
-      pl: `Nie odpuściliśmy wodospadu Svartifoss i całe szczęście, bo jest chyba najbardziej urokliwy ze wszysktich na Islandii. To ten z bazaltowymi kolumnami przypominającymi organy. Przy wejściu na szlak jest spore centrum turystyczne z ławeczkami, tam zjedliśmy na obiad liofilizaty.
-      
-      Niedaleko znajduje się łatwo dostępny szlak na czoło lodowca Skaftafellsjökull, więc podjechaliśmy tam po obiedzie. Popołudniu mieliśmy rezerwację na rejs amfibią po lagunie, ale wcześniej mieliśmy chwilę, by przespacerować się na Diamentową Plażę.
-      
-      Z reszty planu na dziś zrezygnowaliśmy - po rejsie pojechaliśmy do domków, a ojcowie załatwiali szybkie zakupy.`,
-      en: `We didn't skip the Svartifoss waterfall, and thank goodness, because it's probably the most charming of all waterfalls in Iceland. This is the one with the basalt columns resembling church organ pipes. There's a sizable visitor center with benches at the trailhead, where we had freeze-dried meals for lunch.
+      pl: `Nie odpuściliśmy wodospadu Svartifoss i całe szczęście, bo jest chyba najbardziej urokliwy ze wszysktich na Islandii. To ten z bazaltowymi kolumnami przypominającymi organy. Przy wejściu na szlak działa spore centrum turystyczne z ławeczkami, tam zjedliśmy na obiad liofilizaty. Niedaleko znajduje się łatwo dostępny szlak na samo czoło lodowca Skaftafellsjökull, więc tym bardziej powrót w tę okolicę był trafioną decyzją. 
 
-Nearby, there's an easily accessible trail leading to the Skaftafellsjökull glacier tongue, so we drove over there after lunch. In the afternoon, we had an amphibian boat tour reserved on the lagoon, but beforehand, we had a little time to stroll along Diamond Beach.
+Popołudniu mieliśmy zarezerwowany rejs amfibią po lagunie lodowcowej Jökulsárlón, ale wcześniej mieliśmy chwilę, by przespacerować się na Diamentową Plażę.`,
+      en: `We didn't skip Svartifoss, and thank goodness, as it is probably the most charming waterfall in all of Iceland. This is the one surrounded by basalt columns resembling church organ pipes. There is a sizable visitor center with benches at the trailhead, where we had freeze-dried meals for lunch. Nearby, there is an easily accessible trail leading right up to the Skaftafellsjökull glacier tongue, making our decision to return to this area even more worthwhile.
 
-We decided to drop the rest of today's itinerary—after the boat ride, we went straight to the cabins, while the dads handled a quick grocery run.`
+In the afternoon, we had booked an amphibian boat tour on the Jökulsárlón glacier lagoon, but beforehand, we had enough time for a stroll along Diamond Beach.`
     },
     images: [
       {
@@ -292,16 +292,16 @@ We decided to drop the rest of today's itinerary—after the boat ride, we went 
       en: ['Vogafjós Farm Resort (next to Vogar stay): Unique restaurant inside a cowshed. Enjoy Geysir rye bread baked underground with smoked trout.']
     },
     content: {
-      pl: `Rano udaliśmy się na półwysep Stokksnes pod ikoniczną górę Vestrahorn (15 km od Höfn). Na miejscu okazało się, że można tam zwiedzać wioskę Wikingów (opuszczony plan filmowy). Następnie ruszyliśmy w jedną z najpiękniejszych tras widokowych Europy – przez meandrujące Fiordy Wschodnie.
+      pl: `Rano ruszyliśmy na półwysep Stokksnes, położony niedaleko od Höfn, u stóp góry Vestrahorn. Na miejscu okazało się, że można tam zwiedzać wioskę Wikingów, zbudowaną na potrzeby produkcji filmowej. Następnie ruszyliśmy w jedną z najpiękniejszych tras widokowych Europy – przez meandrujące Fiordy Wschodnie.
 
-Zatrzymaliśmy się w urokliwej wiosce Djúpivogur, gdzie, szukając rzeźb jaj, chcieliśmy zjeść zupę z termosów w jakimś ładnym miejscu, ale tego dnia koszmarnie wiało i ostatecznie zjedliśmy szybko na ławce koło samochodu.
+Zatrzymaliśmy się w wiosce Djúpivogur, gdzie, szukając instalacji artystycznej z kamiennymi jajami (Eggin í Gleðivík), planowaliśmy zjeść zupę z termosów w jakimś ładnym miejscu, jednak porywisty wiatr zmusił nas do szybkiego posiłku na ławce tuż przy samochodzie.
 
-Droga do Mývatn jest dość długa, po drodze fragment szutrowy. Zakupy i przerwa na podwieczorek w Egilsstaðir (bardzo dużo turystów, na stacjach paliw i w supermarketach tłumy ludzi). Tuż przed naszym noclegiem zjechaliśmy jeszcze do Grjótagjá (jaskinia lawowa z gorącym źródłem - szczerze, mocno rozczarowujące).`,
-      en: `In the morning, we headed to the Stokksnes peninsula, home to the iconic Vestrahorn mountain (15 km from Höfn). Once there, we discovered you can explore a Viking village on-site (an abandoned movie set). After that, we set off along one of the most scenic driving routes in Europe—winding through the breathtaking East Fjords.
+Droga do Mývatn jest dość długa, po drodze fragment szutrowy. W Egilsstaðir zrobiliśmy zakupy i przerwę na podwieczorek (bardzo dużo turystów, na stacjach paliw i w supermarketach tłumy ludzi). Przed samym noclegiem wstąpiliśmy do jaskini lawowej Grjótagjá z gorącym źródłem. Zakwaterowanie w Vogar Travel Service zaskoczyło nas bardzo pozytywnie: obiekt ma dużą, świetnie wyposażoną wspólną kuchnię i czyste, duże ogólnodostępne łazienki.`,
+      en: `In the morning, we set off for the Stokksnes peninsula, located near Höfn at the foot of Mount Vestrahorn. Once there, we discovered you can tour a Viking village built as a movie set. After that, we embarked on one of Europe's most beautiful scenic drives—winding through the East Fjords.
 
-We stopped in the charming village of Djúpivogur, where, while hunting for the famous egg sculptures, we hoped to eat our thermos soup somewhere nice. However, the wind was absolutely brutal that day, so we ended up grabbing a quick bite on a bench right next to the car.
+We stopped in the village of Djúpivogur, where, while hunting for the Eggin í Gleðivík stone egg art installation, we planned to eat our thermos soup somewhere nice. However, a howling wind forced us to grab a quick bite on a bench right next to the car.
 
-The drive to Mývatn is quite long, featuring a gravel section along the way. We stopped in Egilsstaðir for groceries and an afternoon snack break (it was packed with tourists—huge crowds at both the gas stations and supermarkets). Just before reaching our accommodation for the night, we took a quick detour to Grjótagjá (a lava cave with a hot spring inside—honestly, pretty disappointing).`
+The drive to Mývatn is quite long, featuring a gravel section along the way. In Egilsstaðir, we stopped for groceries and an afternoon snack (it was packed with tourists—huge crowds at both gas stations and supermarkets). Just before reaching our accommodation, we popped into the Grjótagjá lava cave with its geothermal spring. Our stay at Vogar Travel Service was a very pleasant surprise: the property features a large, well-equipped shared kitchen and clean, spacious shared bathrooms.`
     },
     images: [
       {
@@ -347,20 +347,16 @@ The drive to Mývatn is quite long, featuring a gravel section along the way. We
       en: 'MIDGE WARNING: Swarms of non-biting midges hover around Lake Mývatn on calm summer days. Wearing a head mesh net will save your sanity!'
     },
     content: {
-      pl: `Dzień pełen wulkanicznej energii. Jadąc przez 70 km niesamowitego marsjańskiego krajobrazu, dotarliśmy Dettifoss. Niestety, w deszczu padającym poziomo, sam wodospad był praktycznie niewidoczny, a my w ciągu 15 minut byliśmy przemoczeni do suchej nitki. 
-      
-      Następnie podjechaliśmy na Krafla, żeby zobaczyć kalderę i turkusowe jezioro w kraterze Víti, ale znowu, we mgle nie było nic widać. To jest teren prywatny, nie ma tam za bardzo możliwości dłuższego spaceru - generalnie można było to pominąć.
-      
-      Zjechaliśmy na dymiące pola geotermalne Hverir i tam pogoda się poprawiła na tyle, że można było pospacerować wśród siarkowych wyziewów. Popołudnie spędziliśmy w luksusowych termach Earth Lagoon Mývatn (drogo, ale warto; mało ludzi).
-      
-      Kolację zjedliśmy w polecanej restauracji z widokiem na oborę - fajna odmiana, do obory można wejść i pogłaskać krowy. Korzystając z tego, że dzień się nie kończy, pojechaliśmy jeszcze na krótką wędrówkę na wulkan Hverfell i to był bardzo dobry pomysł, bo widok z góry jest wyjątkowo atrakcyjny.`,
-      en: `A day packed with volcanic energy. Driving through 70 km of incredible, Mars-like terrain, we reached Dettifoss. Unfortunately, with rain blowing completely sideways, the waterfall itself was practically invisible, and within 15 minutes, we were soaked to the bone.
+      pl: `Dzień pełen wulkanicznej energii. Jadąc przez niesamowity marsjański krajobraz, dotarliśmy Dettifoss. Trafiliśmy na poziomo padający deszcz i porywisty wiatr, przez sam wodospad był praktycznie niewidoczny, a my w ciągu 15 minut byliśmy przemoczeni do suchej nitki.
 
-Next, we drove up to Krafla to see the caldera and the turquoise lake inside the Víti crater, but once again, the heavy fog completely blocked the view. It's private land with limited options for a longer walk—honestly, we could have skipped it.
+Następnie skierowaliśmy się w stronę wulkanu Krafla i krateru Víti. Gęsta mgła uniemożliwiła jednak zobaczenie turkusowego jeziora. Teren ten stanowi własność prywatną i nie oferuje dłuższego szlaku pieszego - generalnie można było to pominąć. Pogoda poprawiła się na polach geotermalnych Hverir, co pozwoliło na spacer pośród dymiących formacji siarkowych. Popołudnie spędziliśmy w luksusowych termach Earth Lagoon Mývatn (drogo, ale warto; mało ludzi).
 
-We then headed down to the steaming geothermal fields of Hverir, where the weather cleared up enough for us to wander among the sulfur vents. We spent the afternoon unwinding at the luxurious Earth Lagoon Mývatn (expensive, but worth it; not crowded).
+Kolację zjedliśmy w polecanej restauracji z widokiem na oborę - fajna odmiana, a do obory można wejść i pogłaskać krowy. Korzystając z tego, że dzień się nie kończy, pojechaliśmy jeszcze na krótką wędrówkę na wulkan Hverfell i to był bardzo dobry pomysł, bo widok z góry jest naprawdę atrakcyjny.`,
+      en: `A day packed with volcanic energy. Driving through an incredible, Mars-like terrain, we reached Dettifoss. We were met with sideways rain and gusty winds, rendering the waterfall practically invisible and leaving us soaked to the bone within 15 minutes.
 
-For dinner, we ate at a restaurant overlooking a cowshed — a fun change of pace, as you can actually go inside the barn to pet the cows. Taking advantage of the endless summer daylight, we ended the day with a short hike up the Hverfjall volcano, which turned out to be a fantastic decision — the view from the rim is absolutely spectacular.`
+Next, we headed toward the Krafla volcano and the Víti crater, but dense fog completely blocked the view of the turquoise crater lake. The site is private property and doesn't offer much in terms of longer hiking trails—honestly, we could have skipped it. The weather improved at the Hverir geothermal fields, allowing for a walk among the steaming sulfur vents. We spent the afternoon unwinding at the luxurious Mývatn Nature Baths / Earth Lagoon (expensive, but worth it; uncrowded).
+
+We had dinner at a recommended restaurant with a view directly into a cowshed—a fun change of pace, and you can actually go inside the barn to pet the cows. Taking advantage of the endless summer daylight, we went on a short hike up the Hverfjall volcano, which turned out to be a fantastic idea—the view from the rim is truly spectacular.`
     },
     images: [
       {
@@ -396,17 +392,17 @@ For dinner, we ate at a restaurant overlooking a cowshed — a fun change of pac
       ]
     },
     content: {
-      pl: `Po spokojnym dniu spędzonym lokalnie, kolejny dzień "tranzytowy". Z Mývatn wyruszyliśmy pod Goðafoss – półokrągły wodospad, w którego wody według legendy w 1000 roku wrzucono pogańskie posągi bogów.
+      pl: `Po spokojnym dniu spędzonym lokalnie, kolejny dzień "tranzytowy". Z Mývatn wyruszyliśmy pod Goðafoss związanego z legendą o wrzuceniu pogańskich posągów bogów w 1000 roku.
 
-Kolejny przystanek to Akureyri, klimatyczna stolica Północy. Zwiedziliśmy najdalej na północ wysunięty ogród botaniczny na świecie, a w ramach drugiego śniadania zjedliśmy tradycyjne lody w Brynja. Warto wziąć mniejszą porcję. 
+Kolejnym przystankiem było Akureyri, klimatyczna stolica Północy. Zwiedziliśmy najdalej na północ wysunięty ogród botaniczny na świecie, a w ramach drugiego śniadania zjedliśmy tradycyjne lody w Brynja. Porcje w Brynja są bardzo obfite, a lody mocno maślane, więc warto wziąć mniejsze.
 
-Po drodze do Lækjarkot przerwa na kawę i trampoliny w Blönduós. W Lækjarkot mamy zarezerwowane domki holenderskie - okazuje się, że standard bardzo dobry.`,
+Po drodze do Lækjarkot zrobiliśmy przerwę na kawę i trampoliny w Blönduós. W Lækjarkot Rooms and Cottages mamy zarezerwowane domki holenderskie - standard bardzo dobry. Z każdym noclegiem było trochę lepiej, więc dobrze, że nie jechaliśmy w przeciwną stronę.`,
 
-      en: `After a quiet day spent exploring locally, we had another 'transit' day ahead. We set off from Mývatn for Goðafoss—a spectacular semi-circular waterfall where, according to legend, pagan idols were thrown into the waters in the year 1000.
+      en: `After a quiet day spent exploring locally, we had another "transit" day. From Mývatn, we set off for Goðafoss, a waterfall tied to the legend of pagan idols being cast into its waters in the year 1000.
 
-Our next stop was Akureyri, the charming capital of the North. We visited the world's northernmost botanical garden and stopped by Brynja for traditional Icelandic ice cream as a mid-morning treat. Pro tip: go for a smaller portion.
+Our next stop was Akureyri, the charming capital of the North. We visited the world's northernmost botanical garden and grabbed traditional ice cream at Brynja for a mid-morning treat. Portions at Brynja are huge and the ice cream is rich and buttery, so it's wise to order a smaller size.
 
-On the way to Lækjarkot, we took a break in Blönduós for coffee and a turn on the outdoor trampolines. At Lækjarkot, we had booked Dutch-style cabins—which turned out to be of a very high standard.`
+On the drive to Lækjarkot, we stopped in Blönduós for coffee and a turn on the trampolines. At Lækjarkot Rooms and Cottages, we had booked Dutch-style cabins—the standard was very high. Every accommodation seemed to be a step up from the last, so we were glad we weren't travelling in the opposite direction.`
     },
     images: [
       {
@@ -446,8 +442,8 @@ On the way to Lækjarkot, we took a break in Blönduós for coffee and a turn on
       en: ['Settlement Center Restaurant (Borgarnes): Excellent value all-you-can-eat soup & salad lunch buffet.']
     },
     content: {
-      pl: `Spokojniejszy dzień poświęcony lokalnym atrakcjom. Najpierw pojechaliśmy do Hraunfossar - ciekawe miejsce, króciutki spacer wzdłuż wodospadów. W Krauma zobaczyliśmy tylko Deildartunguhver – źródło pompujące 180 litrów wrzącej wody na sekundę (97°C). Nie chcąc przepłacać za gorące źródła, postanowiliśmy odzwiedzić miejski basen w Borgarnes - tam też podgrzewają wodę. Sam basen był super, choć niestety tymczasowo nie działały zjeżdżalnie, ku rozczarowaniu dzieci. Wcześniej, jeszcze w drodze do Borgarnes, odwiedziliśmy Ogród Trolli - ścieżkę edukacyjną wśród pól lawowych z elementami zabawowymi. Na obiad liofilizaty w parku koło basenu.`,
-      en: `A more relaxed day dedicated to local sights. First, we drove to Hraunfossar—a fascinating spot with a very short walk alongside the waterfalls. At Krauma, we only checked out Deildartunguhver, a hot spring pumping out 180 liters of boiling water per second (97°C). Wanting to avoid overpaying for thermal baths, we decided to visit the public swimming pool in Borgarnes instead, where the water is heated too. The pool complex itself was great, though unfortunately the waterslides were temporarily out of order, much to the kids' disappointment. Earlier, on our way to Borgarnes, we visited Fossatún Troll Garden—an educational trail winding through lava fields with fun interactive elements for children. For lunch, we had freeze-dried meals in the park next to the pool.`
+      pl: `Spokojniejszy dzień poświęcony lokalnym atrakcjom. Najpierw pojechaliśmy do wodospadów Hraunfossar, wypływających wprost spod pola lawy - ciekawe miejsce, króciutki spacer wzdłuż rzeki. Następnie w Krauma obejrzeliśmy gorące źródło Deildartunguhver, pompujące 180 litrów wrzącej wody na sekundę. Nie chcąc wydawać majątku na termy, postanowiliśmy odwiedzić miejski basen w Borgarnes (tak samo zasilany wodą geotermalną). Sam basen był super, choć niestety tymczasowo nie działały zjeżdżalnie, ku rozczarowaniu dzieci. Wcześniej odwiedziliśmy Ogród Trolli Fossatún - ścieżkę edukacyjną wśród skał z elementami zabawowymi. Na obiad liofilizaty w parku koło basenu.`,
+      en: `A more relaxed day focused on local sights. First, we drove to Hraunfossar waterfalls, which flow directly out from under a lava field—a fascinating spot for a short walk along the river. Next, at Krauma, we checked out Deildartunguhver, a hot spring pumping 180 liters of boiling water per second. Not wanting to spend a fortune on thermal baths, we opted for the public swimming pool in Borgarnes instead (also heated by geothermal water). The pool itself was great, though the waterslides were temporarily closed, much to the kids' disappointment. Earlier, we visited Fossatún Troll Garden—an educational trail among rocks with interactive play elements. For lunch, we had freeze-dried meals in the park next to the pool.`
     },
     images: [
       {
@@ -487,12 +483,12 @@ On the way to Lækjarkot, we took a break in Blönduós for coffee and a turn on
       en: ['FRISTA Food Truck Arnarstapi - fantastic fish of the day', 'Local cafes in Arnarstapi: coffee, homemade cakes.']
     },
     content: {
-      pl: `Półwysep Snæfellsnes nazywany jest "Islandią w pigułce" i jest to całkowicie zgodne z prawdą. Była to chyba najlepsza i najbardziej widokowa wycieczka. Pierwszym celem była słynna góra Kirkjufell oraz odbijający się w rzece wodospad Kirkjufellsfoss. Mieliśmy przez chwilę myśl, czy by nie wyjść na szczyt Kirkufjell, ale opis szlaku w wyższych partiach (trudności, ekspozycja) trochę ostudziły nasz zapał.
+      pl: `Półwysep Snæfellsnes nazywany jest "Islandią w pigułce" i jest to całkowicie zgodne z prawdą. Była to chyba najlepsza i najbardziej widokowa wycieczka. Pierwszym celem była góra Kirkjufell i wodospad Kirkjufellsfoss. Mieliśmy przez chwilę myśl, czy by nie wyjść na szczyt Kirkufjell, ale opis szlaku w wyższych partiach (trudności, ekspozycja) trochę ostudził nasz zapał.
 
-Następnie pojechaliśmy na czarną plażę Djúpalónssandur, gdzie relaksowaliśmy się wśród szumu fal. Obiad zjedliśmy w food tracku w Arnastarpi, następnie zrobiliśmy spacer po malowniczych klifach, gdzie gniazdują mewy. Przed powrotem do domku popołudniowa kawa w lokalnej kafejce. W trasie powrotnej zahaczyliśmy jeszcze o plażę Ytri Tunga, na której leniwie wylegują się foki (można je obserwować z bliska).`,
-      en: `The Snæfellsnes Peninsula is often called 'Iceland in a nutshell,' and that couldn't be more accurate. It was easily the best and most scenic trip of the whole journey. Our first destination was the famous Mount Kirkjufell and the Kirkjufellsfoss waterfall reflecting in the river. We briefly considered hiking to the top of Kirkjufell, but the trail description for the upper sections (technical difficulty and high exposure) quickly cooled our enthusiasm.
+Kolejnym miejscem była czarna plaża Djúpalónssandur, gdzie relaksowaliśmy się wśród szumu fal. Obiad zjedliśmy w food tracku FRISTA w Arnastarpi (dorsz z frytkami), a następnie zrobiliśmy spacer po malowniczych klifach, gdzie gniazdują mewy. Przed powrotem do domku popołudniowa kawa w lokalnej kawiarni. W trasie powrotnej zahaczyliśmy jeszcze o plażę Ytri Tunga, gdzie z bliska obserwowaliśmy foki wylegujące się na przybrzeżnych skałach.`,
+      en: `The Snæfellsnes Peninsula is often called "Iceland in a nutshell," and that couldn't be truer. It was easily the best and most scenic excursion of the trip. Our first destination was Mount Kirkjufell and the Kirkjufellsfoss waterfall. We briefly considered hiking to the top of Kirkjufell, but the description of the upper trail (difficulties, exposure) quickly dampened our enthusiasm.
 
-Next, we headed to the black sand beach at Djúpalónssandur, where we relaxed to the sound of crashing waves. We grabbed lunch at a food truck in Arnarstapi, followed by a walk along the dramatic cliffs where nesting gulls reside. Before heading back to our cabin, we stopped for an afternoon coffee at a charming local café. On the drive back, we made one last stop at Ytri Tunga beach, where seals lazily lounge on the rocks (you can observe them from remarkably close up).`
+Our next stop was the black sand beach at Djúpalónssandur, where we relaxed to the sound of crashing waves. For lunch, we grabbed fish and chips (cod) from the FRISTA food truck in Arnarstapi, followed by a walk along the scenic cliffs where gulls nest. Before returning to our cabin, we enjoyed an afternoon coffee at a local café. On the drive back, we made one last stop at Ytri Tunga beach, where we observed seals lazily lounging on the coastal rocks up close.`
     },
     images: [
       {
@@ -538,16 +534,16 @@ Next, we headed to the black sand beach at Djúpalónssandur, where we relaxed t
       ]
     },
     content: {
-      pl: `Tego dnia mieliśmy trochę zagwozdkę, co zrobić, bo na następny dzień zapowiadano deszcze. Postanowiliśmy zobaczyć z bliska niesamowite pola lawowe, które przywitały nas pierwszego dnia. Tak trafiliśmy do doliny Nátthagi. 
-      
-      Popołudnie zgodnie z pierwotnym planem spędziliśmy w centrum Reykjavíku. Nie jest to duże miasto, spacer głównym deptakiem do kościoła Hallgrímskirkja i powrót nabrzeżem zajął nam ok. 2 godziny. Na obiadokolację fish & chips w Reykjavik Fish.
-      
-      Hotel w porządku, spa tylko dla dorosłych, więc pomięliśmy tę atrakcję.`,
-      en: `On this day, we were in a bit of a dilemma about what to do, as rain was forecast for the following day. We decided to get an up-close look at the incredible lava fields that had welcomed us on our very first day, which led us to Nátthagi Valley.
+      pl: `W obliczu zapowiadanych na kolejny dzień opadów zmieniliśmy plany i zdecydowaliśmy, że trzeba spędzić jeszcze jak najwięcej czasu na zewnątrz. Postanowiliśmy zobaczyć z bliska niesamowite pola lawowe, które przywitały nas pierwszego dnia. Tak trafiliśmy do doliny Nátthagi.
 
-In the afternoon, as originally planned, we explored central Reykjavík. It isn't a large city—walking down the main pedestrian street to Hallgrímskirkja Church and strolling back along the waterfront took us about 2 hours. For dinner, we grabbed fish and chips at Reykjavik Fish.
+Popołudnie zgodnie z pierwotnym planem spędziliśmy w centrum Reykjavíku. Nie jest to duże miasto: spacer głównym deptakiem Laugavegur do kościoła Hallgrímskirkja i powrót nabrzeżem zajął nam ok. 2 godziny. Na obiadokolację fish & chips w Reykjavik Fish.
 
-The hotel was decent enough, but since the spa was adults-only, we passed on that.`
+Hótel Ísland Spa & Wellness zupełnie w porządku i przyzwoity, ale spa tylko dla dorosłych, więc pomięliśmy tę atrakcję.`,
+      en: `Facing a rain forecast for the next day, we changed our plans and decided to spend as much time outdoors as possible. We chose to get a close-up look at the incredible lava fields that had greeted us on our very first day, leading us to Nátthagi Valley.
+
+As originally planned, we spent the afternoon exploring central Reykjavík. It isn't a large city: walking down the main pedestrian street Laugavegur to Hallgrímskirkja Church and returning along the waterfront took us about 2 hours. For dinner, we had fish & chips at Reykjavik Fish.
+
+Hótel Ísland Spa & Wellness was completely fine and decent, but since the spa was adults-only, we passed on that feature.`
     },
     images: [
       {
@@ -585,12 +581,12 @@ The hotel was decent enough, but since the spa was adults-only, we passed on tha
       en: ['Final snacks at Keflavík Airport prior to boarding.']
     },
     content: {
-      pl: `Ostatnie godziny na wyspie. Przedpołudniem pada zapowiadany deszcz, więc postanowiliśmy jeszcze zaszaleć przed wyjazdem i udaliśmy się na reklamowany wszędzie Lava Show. Pomimo dość komercyjnego klimatu, jakim się ten pokaz prezentuje, było to ciekawe doświadczenie. Cały pokaz trwa ok. 1h, w czasie którego zlewana jest prawdziwa lawa o temperaturze 1,100°C, oprócz tego jest też film edukacyjny. Drogo, ale fajnie.
+      pl: `Ostatnie godziny na wyspie. Przed południem padał zapowiadany deszcz, więc udaliśmy się na reklamowany w wielu miejscach Lava Show. Pomimo dość komercyjnego klimatu, było to ciekawe doświadczenie. Pokaz, podczas którego prezentowany jest proces wylewania prawdziwej, rozgrzanej do 1100°C lawy, połączony jest z prelekcją edukacyjną i trwa ok. 1h. Drogo, ale fajnie.
 
-      Ok. 15:00 oddaliśmy auto w Lotus Car Rental i sprawnie zostaliśmy przewiezieni na lotnisko. Wylot bez opóźnień o 18:05.`,
-      en: `Our final hours on the island. In the morning, the forecast rain arrived, so we decided to splurge one last time before leaving and headed to the widely advertised Lava Show. Despite the rather commercial vibe surrounding the presentation, it turned out to be a fascinating experience. The entire show lasts about an hour, during which actual molten lava heated to 1,100°C is poured out, alongside an educational video. Pricy, but cool.
+Około 15:00 oddaliśmy auto w Lotus Car Rental i sprawnie zostaliśmy przewiezieni na lotnisko. Wylot bez opóźnień o 18:05.`,
+      en: `Our final hours on the island. The forecasted rain arrived in the morning, so we headed to the widely advertised Lava Show. Despite the rather commercial atmosphere, it was a fascinating experience. The show, featuring the pouring of real lava heated to 1,100°C alongside an educational talk, lasts about an hour. Expensive, but cool.
       
-Around 3:00 PM, we returned our vehicle to Lotus Car Rental and were promptly shuttled over to the airport. Our flight departed right on schedule at 6:05 PM."`
+Around 3:00 PM, we returned our car at Lotus Car Rental and were promptly shuttled to the airport. Flight departed without delay at 6:05 PM.`
     },
     images: [
       {
