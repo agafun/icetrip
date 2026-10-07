@@ -44,6 +44,10 @@ export const daysData: DayData[] = [
       pl: ['Zakupy spożywcze w Bónus / Netto w Keflaviku (czynne do 21:30).'],
       en: ['Grocery supplies at Bónus / Netto in Keflavik (usually open until 21:30).']
     },
+    safetyTip: {
+      pl: 'Niektóre kempingi w kuchniach wspólnych mają na wyposażeniu tylko kuchenkę i czajnik - nie ma garnków, talerzy, kubków, ani sztućców (problem nie dotyka osób podróżującyh kamperami, ale wynajmując domek, można oczekiwać, że sprzęt będzie na miejscu). Warto mieć swoją menażkę i kubki.',
+      en: 'Some campsite shared kitchens are only equipped with a stove and a kettle — no pots, plates, mugs, or cutlery (this is not an issue for campervan travelers, but you might expect cookware when renting a cabin). It is a good idea to bring your own mess kit and camping mugs.'
+    },
     content: {
       pl: `Samolot wylądował na lotnisku w Keflavíku z półtoragodzinnym opóźnieniem - po 18:00 czasu lokalnego. Dojazd do wypożyczalni Lotus Car Rental i wypożyczenie samochodu przebiegło bardzo sprawnie. Zaraz obok znajduje market Netto - szybkie zakupy i jazda w kierunku Południowego Wybrzeża. Droga prowadziła przez przez surowy krajobraz czarnych pól lawowych, co nas ogromnie zaciekawiło.
 
@@ -343,8 +347,8 @@ The drive to Mývatn is quite long, featuring a gravel section along the way. In
       en: ['Vogafjós Farm Resort (next to Vogar stay): Unique restaurant inside a cowshed. Enjoy Geysir rye bread baked underground with smoked trout.']
     },
     safetyTip: {
-      pl: 'UWAGA NA MESZKI! Wokół jeziora Mývatn w upalne dni latają chmary niegroźnych, ale niezwykle uciążliwych meszek. Warto mieć moskitierę na głowę!',
-      en: 'MIDGE WARNING: Swarms of non-biting midges hover around Lake Mývatn on calm summer days. Wearing a head mesh net will save your sanity!'
+      pl: 'Wokół jeziora Mývatn w upalne dni latają chmary niegroźnych, ale niezwykle uciążliwych meszek. Warto mieć moskitierę na głowę.',
+      en: 'Swarms of non-biting midges hover around Lake Mývatn on calm summer days. Wearing a head mesh net will save your sanity.'
     },
     content: {
       pl: `Dzień pełen wulkanicznej energii. Jadąc przez niesamowity marsjański krajobraz, dotarliśmy Dettifoss. Trafiliśmy na poziomo padający deszcz i porywisty wiatr, przez sam wodospad był praktycznie niewidoczny, a my w ciągu 15 minut byliśmy przemoczeni do suchej nitki.
@@ -482,6 +486,10 @@ On the drive to Lækjarkot, we stopped in Blönduós for coffee and a turn on th
       pl: ['FRISTA Food Truck Arnarstapi - doskonała ryba dnia', 'Lokale w centrum Arnarstapi - kawa, ciasta'],
       en: ['FRISTA Food Truck Arnarstapi - fantastic fish of the day', 'Local cafes in Arnarstapi: coffee, homemade cakes.']
     },
+    safetyTip: {
+      pl: 'Podczas obserwacji fok należy zachować dystans 50m lub 100m, gdy mają młode.',
+      en: 'When seal watching, keep a safe distance of at least 50 meters (or 100 meters when pups are present).'
+    },
     content: {
       pl: `Półwysep Snæfellsnes nazywany jest "Islandią w pigułce" i jest to całkowicie zgodne z prawdą. Była to chyba najlepsza i najbardziej widokowa wycieczka. Pierwszym celem była góra Kirkjufell i wodospad Kirkjufellsfoss. Mieliśmy przez chwilę myśl, czy by nie wyjść na szczyt Kirkufjell, ale opis szlaku w wyższych partiach (trudności, ekspozycja) trochę ostudził nasz zapał.
 
@@ -585,7 +593,7 @@ Hótel Ísland Spa & Wellness was completely fine and decent, but since the spa 
 
 Około 15:00 oddaliśmy auto w Lotus Car Rental i sprawnie zostaliśmy przewiezieni na lotnisko. Wylot bez opóźnień o 18:05.`,
       en: `Our final hours on the island. The forecasted rain arrived in the morning, so we headed to the widely advertised Lava Show. Despite the rather commercial atmosphere, it was a fascinating experience. The show, featuring the pouring of real lava heated to 1,100°C alongside an educational talk, lasts about an hour. Expensive, but cool.
-      
+
 Around 3:00 PM, we returned our car at Lotus Car Rental and were promptly shuttled to the airport. Flight departed without delay at 6:05 PM.`
     },
     images: [
