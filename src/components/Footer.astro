@@ -1,4 +1,9 @@
 ---
+interface Props {
+	lang?: 'pl' | 'en';
+}
+
+const { lang = 'pl' } = Astro.props;
 ---
 
 <footer class="bg-white border-t border-slate-200 text-slate-500 py-10 mt-auto">
@@ -11,24 +16,22 @@
 			</div>
 
 			<!-- Right: Accessible Links -->
-			<nav aria-label="Nawigacja w stopce / Footer navigation">
+			<nav aria-label={lang === 'pl' ? 'Nawigacja w stopce' : 'Footer navigation'}>
 				<ul class="flex items-center gap-8 text-xs font-semibold text-slate-600">
 					<li>
 						<a 
-							href="#privacy-policy" 
+							href={`/${lang}/privacy-policy`}
 							class="hover:text-sky-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 rounded-md px-2 py-1 transition-colors underline underline-offset-4 decoration-slate-300 hover:decoration-sky-600"
 						>
-							<span class="lang-pl">Polityka prywatności</span>
-							<span class="lang-en hidden">Privacy Policy</span>
+							{lang === 'pl' ? 'Polityka prywatności' : 'Privacy Policy'}
 						</a>
 					</li>
 					<li>
 						<a 
-							href="#contact" 
+							href={`/${lang}/contact`}
 							class="hover:text-sky-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 rounded-md px-2 py-1 transition-colors underline underline-offset-4 decoration-slate-300 hover:decoration-sky-600"
 						>
-							<span class="lang-pl">Kontakt</span>
-							<span class="lang-en hidden">Contact</span>
+							{lang === 'pl' ? 'Kontakt' : 'Contact'}
 						</a>
 					</li>
 				</ul>

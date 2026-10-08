@@ -1,0 +1,91 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import type { Language } from '../../utils/i18n';
+
+export function getStaticPaths() {
+	return [
+		{ params: { lang: 'pl' } },
+		{ params: { lang: 'en' } },
+	];
+}
+
+const { lang } = Astro.params as { lang: Language };
+const isPolish = lang === 'pl';
+const title = isPolish ? 'Polityka prywatności - IceTrip' : 'Privacy Policy - IceTrip';
+const description = isPolish
+	? 'Krótka informacja o danych, plikach cookie i reklamach na stronie IceTrip.'
+	: 'A concise notice about data, cookies, and advertising on IceTrip.';
+---
+
+<Layout title={title} description={description} lang={lang} activeSlug="privacy-policy" canonicalPath={`/${lang}/privacy-policy`}>
+	<article class="mx-auto max-w-3xl space-y-8 py-4">
+		<header class="space-y-3">
+			<p class="text-xs font-bold uppercase tracking-widest text-sky-700">IceTrip · {isPolish ? 'aktualizacja: 8 października 2026' : 'updated: October 8, 2026'}</p>
+			<h1 class="text-3xl font-extrabold tracking-tight text-slate-900 font-serif sm:text-4xl">
+				{isPolish ? 'Polityka prywatności' : 'Privacy Policy'}
+			</h1>
+			<p class="text-base leading-relaxed text-slate-600 sm:text-lg">
+				{isPolish
+					? 'Poniżej wyjaśniamy, jakie informacje mogą być przetwarzane podczas korzystania z przewodnika IceTrip.'
+					: 'This page explains what information may be processed when you use the IceTrip guide.'}
+			</p>
+		</header>
+
+		<section class="space-y-3 rounded-2xl border border-slate-200 bg-white p-6 shadow-xs sm:p-7">
+			<h2 class="text-xl font-bold text-slate-900 font-serif">{isPolish ? 'Administrator danych' : 'Data controller'}</h2>
+			<p class="text-sm leading-relaxed text-slate-700 sm:text-base">
+				{isPolish
+					? 'Administratorem danych jest [imię i nazwisko lub pełna nazwa podmiotu], z adresem [adres] i adresem e-mail [adres e-mail]. W sprawach prywatności skontaktuj się z nami przez stronę '
+					: 'The data controller is [full name or legal organization name], with an address at [address] and email [email address]. For privacy questions, contact us through the '
+				}
+				<a href={`/${lang}/contact`} class="font-semibold text-sky-700 underline underline-offset-4 hover:text-sky-900">{isPolish ? 'stronę kontaktową' : 'Contact page'}</a>.
+				{isPolish ? ' Uzupełnij dane w nawiasach przed publikacją.' : ' Replace the bracketed details before publishing.'}
+			</p>
+		</section>
+
+		<section class="space-y-3 rounded-2xl border border-slate-200 bg-white p-6 shadow-xs sm:p-7">
+			<h2 class="text-xl font-bold text-slate-900 font-serif">{isPolish ? 'Jakie dane przetwarzamy' : 'Information we process'}</h2>
+			<ul class="list-disc space-y-2 pl-5 text-sm leading-relaxed text-slate-700 sm:text-base">
+				<li>{isPolish
+					? 'Strona nie ma formularza kontaktowego ani kont użytkowników. Jeśli napiszesz do nas e-mail, wykorzystamy adres nadawcy i treść wiadomości, aby odpowiedzieć; przechowamy wiadomość przez [uzupełnij okres przechowywania].'
+					: 'The site has no contact form or user accounts. If you email us, we use your address and message to reply, and keep the message for [add retention period].'}</li>
+				<li>{isPolish
+					? 'Przeglądarka może zapisać w pamięci lokalnej wybór języka (klucz „icetrip_lang”), aby zapamiętać preferowany język.'
+					: 'Your browser may store your language preference in local storage (the “icetrip_lang” key) so the site can remember your preferred language.'}</li>
+				<li>{isPolish
+					? 'Strona korzysta z Google Fonts oraz na niektórych podstronach ładuje zdjęcia z Unsplash. Przy pobieraniu tych zasobów dostawcy mogą otrzymać standardowe dane połączenia, takie jak adres IP i informacje o przeglądarce.'
+					: 'The site uses Google Fonts and loads some images from Unsplash. When your browser requests these resources, the providers may receive standard connection data such as your IP address and browser information.'}</li>
+				<li>{isPolish
+					? 'Dostawca hostingu może zapisywać techniczne logi serwera. Uzupełnij przed publikacją: [nazwa dostawcy hostingu i okres przechowywania logów].'
+					: 'The hosting provider may keep technical server logs. Complete before publishing: [hosting provider name and server log retention period].'}</li>
+			</ul>
+		</section>
+
+		<section class="space-y-3 rounded-2xl border border-violet-200 bg-violet-50/80 p-6 shadow-xs sm:p-7">
+			<h2 class="text-xl font-bold text-violet-950 font-serif">Google AdSense i pliki cookie</h2>
+			<p class="text-sm leading-relaxed text-violet-950/90 sm:text-base">
+				{isPolish
+					? 'Obecnie strona zawiera wyłącznie miejsca zastępcze reklam AdSense i nie ładuje kodu reklamowego Google. Po włączeniu AdSense Google i jego partnerzy mogą używać plików cookie oraz podobnych identyfikatorów do wyświetlania, pomiaru i personalizacji reklam, także na podstawie wcześniejszych wizyt na tej lub innych stronach. Mogą przetwarzać m.in. adres IP, identyfikatory przeglądarki oraz informacje o interakcjach z reklamami. Jeśli w panelu AdSense włączysz dodatkowych partnerów reklamowych, uzupełnij ich nazwy i linki do zasad prywatności: [lista partnerów]. Szczegóły: '
+					: 'The site currently contains AdSense placeholders only and does not load Google ad code. Once AdSense is enabled, Google and its partners may use cookies and similar identifiers to serve, measure, and personalize ads, including based on previous visits to this or other sites. They may process information such as IP address, browser identifiers, and ad interactions. If you enable additional advertising partners in AdSense, add their names and privacy links here: [partner list]. Details: '
+				}
+				<a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer" class="font-semibold underline underline-offset-4">{isPolish ? 'jak Google używa danych na stronach partnerów' : 'how Google uses data on partner sites'}</a>.
+			</p>
+			<p class="text-sm leading-relaxed text-violet-950/90 sm:text-base">
+				{isPolish ? 'Ustawienia reklam Google możesz zmienić tutaj: ' : 'You can manage Google ad personalization here: '}
+				<a href="https://adssettings.google.com/" target="_blank" rel="noopener noreferrer" class="font-semibold underline underline-offset-4">{isPolish ? 'Ustawienia reklam' : 'Ads Settings'}</a>.
+				{isPolish
+					? ' Przed włączeniem reklam dla użytkowników z EOG, Wielkiej Brytanii lub Szwajcarii skonfiguruj wymagany przez Google certyfikowany CMP zgodny z TCF.'
+					: ' Before serving ads to users in the EEA, UK, or Switzerland, configure the Google-certified CMP required by Google that integrates with the TCF.'}
+			</p>
+		</section>
+
+		<section class="space-y-3 rounded-2xl border border-slate-200 bg-white p-6 shadow-xs sm:p-7">
+			<h2 class="text-xl font-bold text-slate-900 font-serif">{isPolish ? 'Twoje prawa' : 'Your rights'}</h2>
+			<p class="text-sm leading-relaxed text-slate-700 sm:text-base">
+				{isPolish
+					? 'W zakresie przewidzianym przez RODO możesz żądać dostępu do danych, ich sprostowania lub usunięcia, ograniczenia przetwarzania, przeniesienia danych albo wnieść sprzeciw. Jeśli podstawą jest zgoda, możesz ją wycofać. Masz też prawo złożyć skargę do Prezesa Urzędu Ochrony Danych Osobowych. W sprawie realizacji praw napisz na adres administratora podany powyżej.'
+					: 'Where provided by the GDPR, you may request access, correction or deletion, restriction of processing, or data portability, and you may object to processing. If processing is based on consent, you may withdraw it. You may also complain to the Polish Personal Data Protection Office (UODO). To exercise your rights, contact the controller using the details above.'}
+			</p>
+		</section>
+	</article>
+</Layout>
