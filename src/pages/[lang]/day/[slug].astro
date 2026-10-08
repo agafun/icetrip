@@ -3,6 +3,7 @@ import Layout from '../../../layouts/Layout.astro';
 import ImageGallery from '../../../components/ImageGallery.astro';
 import AdBanner from '../../../components/AdBanner.astro';
 import { daysData, type Language } from '../../../utils/i18n';
+import { getDayMapScreenshot, getDayPhotos } from '../../../utils/dayAssets';
 
 export function getStaticPaths() {
 	const paths = [];
@@ -30,6 +31,8 @@ const { day, prevDay, nextDay } = Astro.props;
 const title = `${day.title[lang]} - Islandia 2026`;
 const description = day.description[lang];
 const canonicalPath = `/${lang}/day/${slug}`;
+const mapScreenshot = getDayMapScreenshot(day.dayNumber);
+const galleryPhotos = getDayPhotos(day.dayNumber);
 ---
 
 <Layout 
@@ -38,7 +41,7 @@ const canonicalPath = `/${lang}/day/${slug}`;
 	lang={lang}
 	activeSlug={slug}
 	canonicalPath={canonicalPath}
-	ogImage={day.images[0]?.url}
+	ogImage={galleryPhotos[0]?.url ?? mapScreenshot ?? day.images[0]?.url}
 >
 	<article class="max-w-4xl mx-auto space-y-10 py-4">
 		
@@ -93,6 +96,16 @@ const canonicalPath = `/${lang}/day/${slug}`;
 						<span>{lang === 'pl' ? '🗺️ Otwórz trasę w Google Maps' : '🗺️ Open route in Google Maps'}</span>
 						<span>↗</span>
 					</a>
+					{mapScreenshot && (
+						<figure class="mt-3 overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-xs">
+							<img
+								src={mapScreenshot}
+								alt={lang === 'pl' ? `Mapa trasy: ${day.title[lang]}` : `Route map: ${day.title[lang]}`}
+								class="block h-auto w-full"
+								loading="lazy"
+							/>
+						</figure>
+					)}
 				</div>
 			)}
 		</header>
@@ -159,8 +172,8 @@ const canonicalPath = `/${lang}/day/${slug}`;
 		<AdBanner slotType="content" />
 
 		<!-- Image Gallery -->
-		{day.images && day.images.length > 0 && (
-			<ImageGallery images={day.images} lang={lang} />
+		{galleryPhotos.length > 0 && (
+			<ImageGallery images={galleryPhotos} lang={lang} />
 		)}
 
 		<!-- Prev / Next Navigation Footer -->

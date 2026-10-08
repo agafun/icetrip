@@ -1,6 +1,7 @@
 ---
 interface ImageItem {
 	url: string;
+	thumbnailUrl: string;
 	alt: { pl: string; en: string };
 	caption: { pl: string; en: string };
 }
@@ -21,21 +22,99 @@ const { images, lang = 'pl' } = Astro.props;
 		<span>{lang === 'pl' ? 'Galeria zdjęć' : 'Photo Gallery'}</span>
 	</h3>
 
-	<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-		{images.map((img) => (
-			<figure class="group relative rounded-2xl bg-white border border-slate-200/90 overflow-hidden shadow-sm transition-all duration-300 hover:border-sky-300 hover:shadow-md">
-				<div class="overflow-hidden bg-slate-100">
-					<img 
-						src={img.url} 
-						alt={img.alt[lang]} 
-						loading="lazy"
-						class="w-full h-56 object-cover transform group-hover:scale-105 transition-transform duration-500"
-					/>
-				</div>
-				<figcaption class="p-3.5 text-xs text-slate-600 bg-slate-50 border-t border-slate-200">
-					{img.caption[lang]}
-				</figcaption>
-			</figure>
+	<div data-photo-gallery class="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
+		{images.map((img, index) => (
+			<button
+				type="button"
+				data-gallery-open
+				data-full={img.url}
+				data-alt={img.alt[lang]}
+				data-caption={img.caption[lang]}
+				aria-label={lang === 'pl' ? `Otwórz ${img.alt[lang]}` : `Open ${img.alt[lang]}`}
+				class="group overflow-hidden rounded-xl border border-slate-200 bg-slate-100 shadow-sm transition hover:border-sky-400 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600"
+			>
+				<img
+					src={img.thumbnailUrl}
+					alt={img.alt[lang]}
+					width="560"
+					height="400"
+					loading={index < 4 ? 'eager' : 'lazy'}
+					decoding="async"
+					class="h-32 w-full object-cover transition-transform duration-300 group-hover:scale-105 sm:h-40"
+				/>
+			</button>
 		))}
 	</div>
+
+	<dialog
+		data-gallery-dialog
+		aria-label={lang === 'pl' ? 'Galeria pełnoekranowa' : 'Fullscreen gallery'}
+		class="fixed inset-0 m-0 h-screen max-h-none w-screen max-w-none border-0 bg-slate-950/95 p-0 text-white backdrop:bg-slate-950/95"
+	>
+		<div class="flex h-full flex-col">
+			<div class="flex items-center justify-between px-4 py-3 sm:px-6">
+				<p data-gallery-counter class="text-sm font-semibold" aria-live="polite"></p>
+				<button data-gallery-close type="button" class="rounded-full p-2 text-2xl leading-none hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white" aria-label={lang === 'pl' ? 'Zamknij galerię' : 'Close gallery'}>×</button>
+			</div>
+			<div class="flex min-h-0 flex-1 items-center justify-center gap-2 px-2 sm:gap-6 sm:px-6">
+				<button data-gallery-previous type="button" class="shrink-0 rounded-full bg-white/10 px-3 py-4 text-xl hover:bg-white/20 sm:px-5" aria-label={lang === 'pl' ? 'Poprzednie zdjęcie' : 'Previous photo'}>‹</button>
+				<img data-gallery-full-image alt="" class="hidden max-h-full max-w-full object-contain" />
+				<button data-gallery-next type="button" class="shrink-0 rounded-full bg-white/10 px-3 py-4 text-xl hover:bg-white/20 sm:px-5" aria-label={lang === 'pl' ? 'Następne zdjęcie' : 'Next photo'}>›</button>
+			</div>
+			<p data-gallery-caption class="min-h-10 px-4 py-2 text-center text-sm text-white/80"></p>
+		</div>
+	</dialog>
 </section>
+
+<script>
+	for (const gallery of document.querySelectorAll<HTMLElement>('[data-photo-gallery]')) {
+		const buttons = Array.from(gallery.querySelectorAll<HTMLButtonElement>('[data-gallery-open]'));
+		const dialog = gallery.parentElement?.querySelector<HTMLDialogElement>('[data-gallery-dialog]');
+		if (!dialog || buttons.length === 0) continue;
+
+		const fullImage = dialog.querySelector<HTMLImageElement>('[data-gallery-full-image]')!;
+		const counter = dialog.querySelector<HTMLElement>('[data-gallery-counter]')!;
+		const caption = dialog.querySelector<HTMLElement>('[data-gallery-caption]')!;
+		const closeButton = dialog.querySelector<HTMLButtonElement>('[data-gallery-close]')!;
+		let activeIndex = 0;
+		let opener: HTMLButtonElement | undefined;
+
+		function showImage(index: number) {
+			activeIndex = (index + buttons.length) % buttons.length;
+			const button = buttons[activeIndex];
+			fullImage.src = button.dataset.full ?? '';
+			fullImage.alt = button.dataset.alt ?? '';
+			fullImage.classList.remove('hidden');
+			caption.textContent = button.dataset.caption ?? '';
+			counter.textContent = `${activeIndex + 1} / ${buttons.length}`;
+		}
+
+		buttons.forEach((button, index) => button.addEventListener('click', () => {
+			opener = button;
+			showImage(index);
+			dialog.showModal();
+			closeButton.focus();
+		}));
+		dialog.querySelector('[data-gallery-close]')?.addEventListener('click', () => dialog.close());
+		dialog.querySelector('[data-gallery-previous]')?.addEventListener('click', () => showImage(activeIndex - 1));
+		dialog.querySelector('[data-gallery-next]')?.addEventListener('click', () => showImage(activeIndex + 1));
+		dialog.addEventListener('click', (event) => {
+			if (event.target === dialog) dialog.close();
+		});
+		dialog.addEventListener('close', () => {
+			fullImage.removeAttribute('src');
+			fullImage.classList.add('hidden');
+			opener?.focus();
+		});
+		dialog.addEventListener('keydown', (event) => {
+			if (event.key === 'ArrowLeft') {
+				event.preventDefault();
+				showImage(activeIndex - 1);
+			}
+			if (event.key === 'ArrowRight') {
+				event.preventDefault();
+				showImage(activeIndex + 1);
+			}
+		});
+	}
+</script>
