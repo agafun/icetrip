@@ -61,24 +61,34 @@ const packingListText = generalInfo.packingList.map((cat) => {
 	<article class="max-w-5xl mx-auto space-y-12 py-4">
 		
 		<!-- Header Banner -->
-		<header class="space-y-5 pb-8 border-b border-slate-200">
-			<div class="flex flex-wrap items-center gap-2.5">
-				<span class="px-3.5 py-1.5 rounded-full bg-sky-50 border border-sky-200 text-sky-800 text-xs font-bold uppercase tracking-wider">
-					{lang === 'pl' ? '26.07.2026 – 06.08.2026 (12 dni)' : '26.07.2026 – 06.08.2026 (12 days)'}
-				</span>
-				<span class="px-3.5 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-xs font-bold uppercase">
-					{lang === 'pl' ? 'Wymagana rezerwacja z wyprzedzeniem' : 'Early booking required'}
-				</span>
+		<header class="relative isolate -mx-4 flex min-h-[26rem] w-[calc(100%+2rem)] items-center overflow-hidden bg-slate-100 py-10 sm:-mx-8 sm:w-[calc(100%+4rem)] sm:py-14 lg:left-[calc(50%+10rem)] lg:mx-0 lg:aspect-[4032/1575] lg:min-h-0 lg:w-[calc(100vw-20rem)] lg:-translate-x-1/2 lg:py-0">
+			<img
+				src="/images/highlight1IMG_5298.jpeg"
+				alt=""
+				aria-hidden="true"
+				fetchpriority="high"
+				loading="eager"
+				decoding="async"
+				class="absolute inset-0 -z-20 h-full w-full object-fill lg:object-contain lg:object-center"
+			/>
+			<div class="relative z-10 mx-auto max-w-5xl space-y-5 px-5 sm:px-10 lg:-translate-y-[120px] lg:px-12">
+				<div class="flex flex-wrap items-center gap-2.5">
+					<span class="rounded-full border border-sky-200/90 bg-white/85 px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider text-sky-900 shadow-sm backdrop-blur-sm">
+						{lang === 'pl' ? '26.07.2026 – 06.08.2026 (12 dni)' : '26.07.2026 – 06.08.2026 (12 days)'}
+					</span>
+					<span class="rounded-full border border-amber-200/90 bg-white/85 px-3.5 py-1.5 text-xs font-bold uppercase text-amber-900 shadow-sm backdrop-blur-sm">
+						{lang === 'pl' ? 'Wymagana rezerwacja z wyprzedzeniem' : 'Early booking required'}
+					</span>
+				</div>
+
+				<h1 class="max-w-4xl text-3xl font-extrabold leading-tight tracking-tight text-slate-950 font-serif sm:text-5xl lg:text-6xl">
+					{pageTitles[lang]}
+				</h1>
+
+				<p class="max-w-3xl text-base leading-relaxed text-slate-800 sm:text-lg lg:translate-y-[200px]">
+					<span class="box-decoration-clone rounded-sm bg-slate-100/90 px-2 py-1 shadow-sm">{pageDescriptions[lang]}</span>
+				</p>
 			</div>
-			
-			<h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight font-serif">
-				{pageTitles[lang]}
-			</h1>
-
-			<p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl">
-				{pageDescriptions[lang]}
-			</p>
-
 		</header>
 
 		<!-- Główne założenia Section -->
