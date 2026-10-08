@@ -27,7 +27,7 @@ const introContext = {
 		title: 'Nasze główne założenia:',
 		items: [
 			'Objazd Islandii klasyczną trasą Ring Road (droga krajowa nr 1) z rozszerzeniami (m.in. o Półwysep Snæfellsnes), połączony z trekkingami, kąpielami w gorących źródłach oraz podziwianiem wodospadów, lodowców, wulkanów i gejzerów.',
-			'Domki zamiast campera – ynajem campera to koszt rzędu 600 EUR za dobę. Przy 12-dniowym wyjeździe wychodzi to 1,5 razy drożej, niż suma wydatków na wynajem auta i noclegi.',
+			'Domki zamiast campera – wynajem campera to koszt rzędu 600 EUR za dobę. Przy 12-dniowym wyjeździe wychodzi to 1,5 razy drożej, niż suma wydatków na wynajem auta i noclegi.',
 			'Nocujemy w 4 głównych bazach wypadowych (Hella, Höfn, Mývatn, Borgarnes) na 2–3 noce każda, co ogranicza poranne zamieszanie z pakowaniem.',
 			'Tempo dostosowane do dzieci: codziennie aktywności na świeżym powietrzu (krótkie trekkingi, chodzenie za wodospad, wejścia na kratery, czarne plaże) + atrakcje: rejs amfibią pośród gór lodowych (Jökulsárlón), restauracja z widokiem na krowy w oborze i kąpiele w gorących źródłach.',
 			'Optymalizacja kosztów: gotowanie w domkach oraz przygotowywanie liofilizatów/posiłków do termosów obiadowych.'
@@ -73,9 +73,6 @@ const packingListText = generalInfo.packingList.map((cat) => {
 				<span class="rounded-full border border-sky-200/90 bg-white/85 px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider text-sky-900 shadow-sm backdrop-blur-sm">
 					{lang === 'pl' ? '26.07.2026 – 06.08.2026 (12 dni)' : '26.07.2026 – 06.08.2026 (12 days)'}
 				</span>
-				<span class="rounded-full border border-amber-200/90 bg-white/85 px-3.5 py-1.5 text-xs font-bold uppercase text-amber-900 shadow-sm backdrop-blur-sm">
-					{lang === 'pl' ? 'Wymagana rezerwacja z wyprzedzeniem' : 'Early booking required'}
-				</span>
 			</div>
 
 			<h1 class="max-w-4xl text-3xl font-extrabold leading-[1.5] tracking-tight text-slate-950 font-serif sm:text-5xl lg:text-6xl">
@@ -109,17 +106,17 @@ const packingListText = generalInfo.packingList.map((cat) => {
 		</section>
 
 		<!-- Solar Eclipse Warning Banner -->
-		<div class="p-6 rounded-2xl bg-amber-50/80 border border-amber-200 shadow-xs space-y-3">
-			<div class="flex items-center gap-3 text-amber-900 font-bold text-lg font-serif">
-				<svg class="w-6 h-6 shrink-0 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+		<div class="p-6 rounded-2xl bg-violet-50/80 border border-violet-200 shadow-xs space-y-3">
+			<div class="flex items-center gap-3 text-violet-900 font-bold text-lg font-serif">
+				<svg class="w-6 h-6 shrink-0 text-violet-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
 					<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
 				</svg>
 				<h2>{generalInfo.eclipseNotice.title[lang]}</h2>
 			</div>
-			<p class="text-sm sm:text-base text-amber-950/90 leading-relaxed">
+			<p class="text-sm sm:text-base text-violet-950/90 leading-relaxed">
 				{generalInfo.eclipseNotice.text[lang]}
 			</p>
-			<div class="text-xs text-amber-900 bg-amber-100/70 p-3.5 rounded-xl border border-amber-200">
+			<div class="text-xs text-violet-900 bg-violet-100/70 p-3.5 rounded-xl border border-violet-200">
 				<strong>{lang === 'pl' ? 'Nasz komentarz:' : 'Our comment:'}</strong> {lang === 'pl' 
 					? 'jedyna szansa, żeby wyprawa spięła się budżetowo, to powrót przed 12 sierpnia.'
 					: 'the only way to keep accommodation and car rental prices reasonable is returning before the August 12 eclipse.'}
@@ -150,7 +147,16 @@ const packingListText = generalInfo.packingList.map((cat) => {
 						{generalInfo.logisticsKm.map((row) => (
 							<tr class="hover:bg-sky-50/40 transition-colors">
 								<td class="px-5 py-3.5 font-bold text-slate-900">{lang === 'pl' ? `Dzień ${row.day}` : `Day ${row.day}`}</td>
-								<td class="px-5 py-3.5 text-slate-600">{row.route}</td>
+								<td class="px-5 py-3.5 text-slate-600">
+									{daysData.find((day) => day.dayNumber === row.day)?.mapsUrl ? (
+										<a
+											href={daysData.find((day) => day.dayNumber === row.day)?.mapsUrl}
+											target="_blank"
+											rel="noopener noreferrer"
+											class="underline decoration-slate-300 underline-offset-4 hover:text-sky-700 hover:decoration-sky-600"
+										>{row.route}</a>
+									) : row.route}
+								</td>
 								<td class="px-5 py-3.5 text-right font-semibold text-sky-700">{row.km}</td>
 								<td class="px-5 py-3.5 text-right font-semibold text-slate-700">{row.hours}</td>
 							</tr>
@@ -304,16 +310,16 @@ const packingListText = generalInfo.packingList.map((cat) => {
 			</h3>
 			<ul class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 text-xs text-slate-600">
 				<li class="p-4 bg-slate-50 rounded-xl border border-slate-200/80">
-					<strong class="text-sky-900 font-bold text-sm block mb-1">SafeTravel.is</strong>
-					{lang === 'pl' ? 'Rejestracja planu podróży dla bezpieczeństwa.' : 'Register itinerary for emergency rescue safety.'}
+					<strong class="text-sky-900 font-bold text-sm block mb-1">Vedur.is</strong>
+					{lang === 'pl' ? 'Sprawdzanie pogody, wiatru i opadów.' : 'Check the weather, wind, and precipitation.'}
 				</li>
 				<li class="p-4 bg-slate-50 rounded-xl border border-slate-200/80">
-					<strong class="text-sky-900 font-bold text-sm block mb-1">Vedur.is & Road.is</strong>
-					{lang === 'pl' ? 'Sprawdzanie pogody, wiatru i przejezdności dróg.' : 'Check real-time weather, wind speeds, and road conditions.'}
+					<strong class="text-sky-900 font-bold text-sm block mb-1">Road.is</strong>
+					{lang === 'pl' ? 'Sprawdzanie przejezdności dróg.' : 'Check road conditions and passability.'}
 				</li>
 				<li class="p-4 bg-slate-50 rounded-xl border border-slate-200/80">
 					<strong class="text-sky-900 font-bold text-sm block mb-1">Parka.app</strong>
-					{lang === 'pl' ? 'Opłacanie parkingów przy wodospadach i miastach.' : 'Pay for parking at waterfalls and national parks.'}
+					{lang === 'pl' ? 'Opłacanie parkingów przy atrakcjach turystycznych.' : 'Pay for parking at tourist attractions.'}
 				</li>
 			</ul>
 		</section>
@@ -341,9 +347,6 @@ const packingListText = generalInfo.packingList.map((cat) => {
 							<h3 class="text-xl font-bold text-slate-900 group-hover:text-sky-700 transition-colors mb-2 font-serif">
 								{day.title[lang]}
 							</h3>
-							<p class="text-xs text-slate-500 font-medium mb-3">
-								📍 Hub: {day.hub[lang]}
-							</p>
 							<p class="text-sm text-slate-600 line-clamp-2 mb-4 leading-relaxed">
 								{day.description[lang]}
 							</p>
