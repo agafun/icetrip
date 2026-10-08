@@ -72,6 +72,9 @@ const enUrl = `${siteUrl}/en${pathWithoutLang}`;
 		<!-- Header with language switcher -->
 		<Header lang={lang} currentPath={canonicalPath} />
 
+		<!-- Optional full-width page hero, rendered above the sidebar and content -->
+		<slot name="hero" />
+
 		<div class="flex-1 flex max-w-[1920px] w-full mx-auto relative">
 			<!-- Accessible Collapsible Sidebar with AdBanner -->
 			<Sidebar lang={lang} activeSlug={activeSlug} />
