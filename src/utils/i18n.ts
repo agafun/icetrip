@@ -21,6 +21,7 @@ export interface DayData {
   food: { pl: string[]; en: string[] };
   content: { pl: string; en: string };
   safetyTip?: { pl: string; en: string };
+  safetyTips?: { pl: string; en: string }[];
   images: { url: string; alt: { pl: string; en: string }; caption: { pl: string; en: string } }[];
 }
 
@@ -44,10 +45,16 @@ export const daysData: DayData[] = [
       pl: ['Zakupy spożywcze w Bónus / Netto w Keflaviku (czynne do 21:30).'],
       en: ['Grocery supplies at Bónus / Netto in Keflavik (usually open until 21:30).']
     },
-    safetyTip: {
-      pl: 'Niektóre kempingi w kuchniach wspólnych mają na wyposażeniu tylko kuchenkę i czajnik - nie ma garnków, talerzy, kubków, ani sztućców (problem nie dotyka osób podróżującyh kamperami, ale wynajmując domek, można oczekiwać, że sprzęt będzie na miejscu). Warto mieć swoją menażkę i kubki.',
-      en: 'Some campsite shared kitchens are only equipped with a stove and a kettle — no pots, plates, mugs, or cutlery (this is not an issue for campervan travelers, but you might expect cookware when renting a cabin). It is a good idea to bring your own mess kit and camping mugs.'
-    },
+    safetyTips: [
+      {
+        pl: 'Niektóre kempingi w kuchniach wspólnych mają na wyposażeniu tylko kuchenkę i czajnik - nie ma garnków, talerzy, kubków, ani sztućców (problem nie dotyka osób podróżującyh kamperami, ale wynajmując domek, można oczekiwać, że sprzęt będzie na miejscu). Warto mieć swoją menażkę i kubki.',
+        en: 'Some campsite shared kitchens are only equipped with a stove and a kettle — no pots, plates, mugs, or cutlery (this is not an issue for campervan travelers, but you might expect cookware when renting a cabin). It is a good idea to bring your own mess kit and camping mugs.'
+      },
+      {
+        pl: 'Zanim odjedziesz spod wypożyczalni, rzuć oko na auto, a w szczególności POD auto - nasze miało rozerwaną matę w podwoziu.',
+        en: 'Before driving away from the rental company, take a close look at the car, and especially UNDER the car — ours had a torn underbody shield.'
+      }
+    ],
     content: {
       pl: `Samolot wylądował na lotnisku w Keflavíku z półtoragodzinnym opóźnieniem - po 18:00 czasu lokalnego. Dojazd do wypożyczalni Lotus Car Rental i wypożyczenie samochodu przebiegło bardzo sprawnie. Zaraz obok znajduje market Netto - szybkie zakupy i jazda w kierunku Południowego Wybrzeża. Droga prowadziła przez przez surowy krajobraz czarnych pól lawowych, co nas ogromnie zaciekawiło.
 
@@ -541,6 +548,10 @@ Our next stop was the black sand beach at Djúpalónssandur, where we relaxed to
         'Reykjavik Fish (Frakkastígur 25): fish & chips fast food'
       ]
     },
+    safetyTip: {
+      pl: 'Nie wolno wchodzić na zastygniętą lawę, ani jej dotykać. Może ona emitować toksyczne gazy.',
+      en: 'It is forbidden to walk on or touch solidified lava. It may emit toxic gases.'
+    },
     content: {
       pl: `W obliczu zapowiadanych na kolejny dzień opadów zmieniliśmy plany i zdecydowaliśmy, że trzeba spędzić jeszcze jak najwięcej czasu na zewnątrz. Postanowiliśmy zobaczyć z bliska niesamowite pola lawowe, które przywitały nas pierwszego dnia. Tak trafiliśmy do doliny Nátthagi.
 
@@ -608,10 +619,10 @@ Around 3:00 PM, we returned our car at Lotus Car Rental and were promptly shuttl
 
 export const generalInfo = {
   eclipseNotice: {
-    title: { pl: 'Ciekawostka: całkowite zaćmienie słońca 12 sierpnia 2026', en: 'Note: Total Solar Eclipse on August 12, 2026' },
+    title: { pl: 'Zaćmienie słońca 12 sierpnia 2026', en: 'Total Solar Eclipse on August 12, 2026' },
     text: {
-      pl: 'Wyprawa w sierpniu 2026 roku zbiega się z historycznym wydarzeniem – całkowitym zaćmieniem słońca (12 sierpnia) widocznym z Islandii, co powoduje, że ceny wystrzeliły w kosmos - hotel w Reykjaviku kosztował jedyne 80.000 zł!',
-      en: 'This expedition (July 26 – August 6, 2026) finishes right before August 12, avoiding extreme price spikes caused by the total solar eclipse in Iceland. Hotel in Reykjavik costs 80,000 PLN!'
+      pl: 'Wyprawa w sierpniu 2026 roku zbiega się z historycznym wydarzeniem – całkowitym zaćmieniem słońca widocznym z Europy po raz pierwszy od 1999 roku. W szczególności na zachodnim wybrzeżu Islandii dochodzi absolutny rekord długości trwania zaćmienia - ponad 2 minuty. Już na etapie planowania noclegów w lutym 2026 średnie ceny za noc w stolicy były powyżej 1000 USD (ok. 4000 zł), a co bardziej fantazyjne apartamenty i luksusowe obiekty próbowały łowić chętnych za spekulacyjne kwoty sięgające wręcz absurdalnych $20,000–$25,000 (80 000-100 000 zł).',
+      en: 'The August 2026 trip coincides with a historic event—a total solar eclipse visible from Europe for the first time since 1999. On the west coast of Iceland in particular, the duration of totality reaches an absolute record of over 2 minutes. As early as the accommodation planning stage in February 2026, average nightly rates in the capital exceeded $1,000, while more extravagant apartments and luxury properties attempted to lure buyers with speculative prices reaching absurd levels of $20,000–$25,000.'
     }
   },
   logisticsKm: [
@@ -709,7 +720,7 @@ export const generalInfo = {
           'Wysokie buty trekkingowe z membraną',
           'Buty na zmianę do auta i domków',
           'Klapki basenowe',
-          'Elektryczna suszarki do butów'
+          'Elektryczne suszarki do butów'
 
         ],
         en: [
@@ -728,7 +739,8 @@ export const generalInfo = {
           'Termos obiadowy, łyżkowidelec, scyzoryk',
           'Termos na herbatę',
           'Butelka na wodę',
-          'Kawa, kakao, herbata, kawiarka, kubki metalowe',
+          'Kawa, kakao, herbata',
+          'Kawiarka, kubki metalowe',
           'Sól, cukier, kostki bulionowe',
           'Liofilizaty'
         ],
@@ -737,7 +749,8 @@ export const generalInfo = {
           'Thermos food flask, spork, pocket knife',
           'Thermos beverage flask',
           'Water bottle',
-          'Coffee, cocoa, tea, French press, metal mugs',
+          'Coffee, cocoa, tea',
+          'French press, metal mugs',
           'Salt, sugar, bouillon cubes',
           'Freeze-dried meals'
         ]

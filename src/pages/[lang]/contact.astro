@@ -11,10 +11,10 @@ export function getStaticPaths() {
 
 const { lang } = Astro.params as { lang: Language };
 const isPolish = lang === 'pl';
-const title = isPolish ? 'Kontakt - IceTrip' : 'Contact - IceTrip';
+const title = isPolish ? 'Kontakt - icetrip' : 'Contact - icetrip';
 const description = isPolish
-	? 'Dane kontaktowe autorów przewodnika IceTrip.'
-	: 'Contact details for the IceTrip guide authors.';
+	? 'Dane kontaktowe autorów przewodnika icetrip.'
+	: 'Contact details for the icetrip guide authors.';
 ---
 
 <Layout title={title} description={description} lang={lang} activeSlug="contact" canonicalPath={`/${lang}/contact`}>
@@ -26,8 +26,8 @@ const description = isPolish
 			</h1>
 			<p class="text-base leading-relaxed text-slate-600 sm:text-lg">
 				{isPolish
-					? 'Masz pytanie dotyczące przewodnika lub naszej wyprawy na Islandię? Napisz do nas.'
-					: 'Have a question about the guide or our trip to Iceland? Get in touch.'}
+					? 'Masz pytanie? Napisz do nas!'
+					: 'Have a question? Write to us!'}
 			</p>
 		</header>
 
@@ -38,22 +38,15 @@ const description = isPolish
 			<dl class="divide-y divide-slate-100 text-sm sm:text-base">
 				<div class="grid gap-1 py-4 sm:grid-cols-[12rem_1fr] sm:gap-4">
 					<dt class="font-semibold text-slate-700">{isPolish ? 'E-mail' : 'Email'}</dt>
-					<dd class="text-slate-600">[ {isPolish ? 'wpisz adres e-mail' : 'add email address'} ]</dd>
-				</div>
-				<div class="grid gap-1 py-4 sm:grid-cols-[12rem_1fr] sm:gap-4">
-					<dt class="font-semibold text-slate-700">{isPolish ? 'Osoba / podmiot' : 'Person / organization'}</dt>
-					<dd class="text-slate-600">[ {isPolish ? 'wpisz imię i nazwisko lub nazwę' : 'add your name or organization'} ]</dd>
-				</div>
-				<div class="grid gap-1 py-4 sm:grid-cols-[12rem_1fr] sm:gap-4">
-					<dt class="font-semibold text-slate-700">{isPolish ? 'Adres' : 'Address'}</dt>
-					<dd class="text-slate-600">[ {isPolish ? 'wpisz adres korespondencyjny, jeśli jest wymagany' : 'add a mailing address if required'} ]</dd>
+					<dd class="text-slate-600"> {isPolish ? 'contact@icetrip.eu' : 'contact@icetrip.eu'} </dd>
 				</div>
 			</dl>
-			<p class="rounded-xl border border-sky-200 bg-sky-50 p-4 text-sm leading-relaxed text-sky-950">
-				{isPolish
-					? 'Przed publikacją uzupełnij nawiasy własnymi danymi kontaktowymi.'
-					: 'Replace the bracketed placeholders with your real contact details before publishing.'}
-			</p>
+		</section>
+		<section class="space-y-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-xs sm:p-8" aria-labelledby="contact-details-heading">
+			<h2 class="text-xl font-bold text-slate-900 font-serif">
+				{isPolish ? 'O nas' : 'About us'}
+			</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 		</section>
 	</article>
 </Layout>
