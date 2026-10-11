@@ -3,7 +3,7 @@ import Layout from '../../../layouts/Layout.astro';
 import ImageGallery from '../../../components/ImageGallery.astro';
 import AdBanner from '../../../components/AdBanner.astro';
 import { daysData, type Language } from '../../../utils/i18n';
-import { getDayMapScreenshot, getDayPhotos } from '../../../utils/dayAssets';
+import { getDayMapScreenshot, getDayPhotos, resolveSafetyPhoto, getSafetyPhotoAlt } from '../../../utils/dayAssets';
 
 export function getStaticPaths() {
 	const paths = [];
@@ -129,19 +129,37 @@ const safetyNotes = day.safetyTips ?? (day.safetyTip ? [day.safetyTip] : []);
 		<!-- Safety Tip Box if present -->
 		{safetyNotes.length > 0 && (
 			<div class="space-y-4">
-				{safetyNotes.map((tip) => (
-					<div class="p-6 rounded-2xl bg-violet-50/80 border border-violet-200 text-violet-950 space-y-2 shadow-xs">
-						<div class="flex items-center gap-2 font-bold text-violet-900 text-sm uppercase tracking-wide">
-							<svg class="w-5 h-5 shrink-0 text-violet-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-								<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-							</svg>
-							<span>{lang === 'pl' ? 'Uwaga' : 'Note'}</span>
+				{safetyNotes.map((tip) => {
+					const photoUrl = resolveSafetyPhoto(tip.image ?? tip.photo, day.dayNumber);
+					return (
+						<div class="p-6 rounded-2xl bg-violet-50/80 border border-violet-200 text-violet-950 space-y-3 shadow-xs">
+							<div class="flex items-center gap-2 font-bold text-violet-900 text-sm uppercase tracking-wide">
+								<svg class="w-5 h-5 shrink-0 text-violet-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+									<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+								</svg>
+								<span>{lang === 'pl' ? 'Uwaga' : 'Note'}</span>
+							</div>
+							<p class="text-sm leading-relaxed text-violet-950/90">
+								{tip[lang]}
+							</p>
+							{photoUrl && (
+								<figure class="mt-3 overflow-hidden rounded-xl border border-violet-200/80 bg-white shadow-2xs">
+									<img
+										src={photoUrl}
+										alt={getSafetyPhotoAlt(tip.image ?? tip.photo, day.dayNumber, tip.imageAlt)[lang]}
+										class="block w-full h-auto object-cover"
+										loading="lazy"
+									/>
+									{tip.imageCaption?.[lang] && (
+										<figcaption class="px-3.5 py-2 text-xs text-violet-900/80 bg-violet-100/50 border-t border-violet-200/60 font-medium">
+											{tip.imageCaption[lang]}
+										</figcaption>
+									)}
+								</figure>
+							)}
 						</div>
-						<p class="text-sm leading-relaxed text-violet-950/90">
-							{tip[lang]}
-						</p>
-					</div>
-				))}
+					);
+				})}
 			</div>
 		)}
 

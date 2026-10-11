@@ -6,6 +6,15 @@ export const languages: Record<Language, string> = {
   en: 'English',
 };
 
+export interface SafetyTip {
+  pl: string;
+  en: string;
+  image?: string;
+  photo?: string;
+  imageAlt?: { pl: string; en: string };
+  imageCaption?: { pl: string; en: string };
+}
+
 export interface DayData {
   slug: string;
   dayNumber: number;
@@ -20,8 +29,8 @@ export interface DayData {
   highlights: { pl: string[]; en: string[] };
   food: { pl: string[]; en: string[] };
   content: { pl: string; en: string };
-  safetyTip?: { pl: string; en: string };
-  safetyTips?: { pl: string; en: string }[];
+  safetyTip?: SafetyTip;
+  safetyTips?: SafetyTip[];
   images: { url: string; alt: { pl: string; en: string }; caption: { pl: string; en: string } }[];
 }
 
@@ -52,7 +61,12 @@ export const daysData: DayData[] = [
       },
       {
         pl: 'Zanim odjedziesz spod wypożyczalni, rzuć oko na auto, a w szczególności POD auto - nasze miało rozerwaną matę w podwoziu.',
-        en: 'Before driving away from the rental company, take a close look at the car, and especially UNDER the car — ours had a torn underbody shield.'
+        en: 'Before driving away from the rental company, take a close look at the car, and especially UNDER the car — ours had a torn underbody shield.',
+        image: '01-IMG_3633',
+        imageAlt: {
+          pl: 'Rozerwana mata w podwoziu samochodu z wypożyczalni',
+          en: 'Torn underbody shield on the rental car'
+        }
       }
     ],
     content: {
@@ -70,7 +84,7 @@ At 11:00 PM, it was still broad daylight.`
     images: [
       {
         url: 'https://images.unsplash.com/photo-1504893524553-b855bce32c67?auto=format&fit=crop&w=1200&q=80',
-        alt: { pl: 'Krajobraz drogi na Islandii', en: 'Icelandic highway landscape' },
+        alt: { pl: 'Malownicza islandzka droga krajowa przecinająca surowe pola lawowe', en: 'Scenic Icelandic Ring Road highway winding across rugged lava fields' },
         caption: { pl: 'Trasa z Keflavíku w stronę południowych fiordów', en: 'Scenic route heading towards Southern Iceland' }
       }
     ]
@@ -119,7 +133,7 @@ We didn't stop at any restaurants that day, instead having freeze-dried meals at
     images: [
       {
         url: 'https://images.unsplash.com/photo-1529963183134-61a90db47eaf?auto=format&fit=crop&w=1200&q=80',
-        alt: { pl: 'Wybuch Gejzera Strokkur', en: 'Strokkur Geyser Eruption' },
+        alt: { pl: 'Potężny wybuch gejzeru Strokkur w dolinie Haukadalur', en: 'Spectacular eruption of Strokkur geyser in Haukadalur valley' },
         caption: { pl: 'Gejzer Strokkur w dolinie Haukadalur', en: 'Strokkur geyser blasting into the sky' }
       }
     ]
@@ -162,7 +176,7 @@ On the way back, we stopped in Selfoss for lunch at Kaffi Krús and picked up so
     images: [
       {
         url: 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1200&q=80',
-        alt: { pl: 'Gorąca rzeka Reykjadalur', en: 'Reykjadalur thermal river' },
+        alt: { pl: 'Kąpielisko w gorącej rzece termalnej Reykjadalur pośród zielonych wzgórz', en: 'Bathing area in the naturally heated Reykjadalur thermal river amidst green hills' },
         caption: { pl: 'Kąpiel w gorącej rzece Reykjadalur', en: 'Bathing in the natural warm waters of Reykjadalur' }
       }
     ]
@@ -227,7 +241,7 @@ After lunch, we went to see Fjaðrárgljúfur canyon before heading straight to 
     images: [
       {
         url: 'https://images.unsplash.com/photo-1517411032315-54ef2cb783bb?auto=format&fit=crop&w=1200&q=80',
-        alt: { pl: 'Wodospad Skógafoss z tęczą', en: 'Skógafoss Waterfall with Rainbow' },
+        alt: { pl: 'Potężna ściana wody wodospadu Skógafoss z tęczą', en: 'Towering Skógafoss waterfall with a vibrant rainbow' },
         caption: { pl: 'Wodospad Skógafoss na południowym wybrzeżu', en: 'Skógafoss waterfall in South Iceland' }
       }
     ]
@@ -278,7 +292,7 @@ In the afternoon, we had booked an amphibian boat tour on the Jökulsárlón gla
     images: [
       {
         url: 'https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=1200&q=80',
-        alt: { pl: 'Góry lodowe na Jökulsárlón', en: 'Floating icebergs at Jökulsárlón' },
+        alt: { pl: 'Błękitne góry lodowe dryfujące na tafli laguny lodowcowej Jökulsárlón', en: 'Luminous blue icebergs floating in the Jökulsárlón glacier lagoon' },
         caption: { pl: 'Laguna lodowcowa Jökulsárlón', en: 'Glacier lagoon Jökulsárlón with blue icebergs' }
       }
     ]
@@ -317,7 +331,7 @@ The drive to Mývatn is quite long, featuring a gravel section along the way. In
     images: [
       {
         url: 'https://images.unsplash.com/photo-1504893524553-b855bce32c67?auto=format&fit=crop&w=1200&q=80',
-        alt: { pl: 'Góra Vestrahorn na Stokksnes', en: 'Vestrahorn Mountain at Stokksnes' },
+        alt: { pl: 'Czarne wydmy i poszarpany grzbiet góry Vestrahorn na półwyspie Stokksnes', en: 'Black sand dunes and the jagged peaks of Mount Vestrahorn at Stokksnes' },
         caption: { pl: 'Ikoniczny Stokksnes i góra Vestrahorn', en: 'Dramatic black sand lagoon and Vestrahorn peak' }
       }
     ]
@@ -358,9 +372,9 @@ The drive to Mývatn is quite long, featuring a gravel section along the way. In
       en: 'Swarms of non-biting midges hover around Lake Mývatn on calm summer days. Wearing a head mesh net will save your sanity.'
     },
     content: {
-      pl: `Dzień pełen wulkanicznej energii. Jadąc przez niesamowity marsjański krajobraz, dotarliśmy Dettifoss. Trafiliśmy na poziomo padający deszcz i porywisty wiatr, przez sam wodospad był praktycznie niewidoczny, a my w ciągu 15 minut byliśmy przemoczeni do suchej nitki.
+      pl: `Dzień pełen wulkanicznej energii. Jadąc przez niesamowity marsjański krajobraz, dotarliśmy Dettifoss. Trafiliśmy na poziomo padający deszcz i porywisty wiatr, przez co sam wodospad był praktycznie niewidoczny, a my w ciągu 15 minut byliśmy przemoczeni do suchej nitki.
 
-Następnie skierowaliśmy się w stronę wulkanu Krafla i krateru Víti. Gęsta mgła uniemożliwiła jednak zobaczenie turkusowego jeziora. Teren ten stanowi własność prywatną i nie oferuje dłuższego szlaku pieszego - generalnie można było to pominąć. Pogoda poprawiła się na polach geotermalnych Hverir, co pozwoliło na spacer pośród dymiących formacji siarkowych. Popołudnie spędziliśmy w luksusowych termach Earth Lagoon Mývatn (drogo, ale warto; mało ludzi).
+Następnie skierowaliśmy się w stronę wulkanu Krafla i krateru Víti. Gęsta mgła również uniemożliwiła nam zobaczenie turkusowego jeziora. Teren ten stanowi własność prywatną i nie oferuje dłuższego szlaku pieszego - generalnie można było to pominąć. Pogoda poprawiła się na polach geotermalnych Hverir, co pozwoliło na spacer pośród dymiących formacji siarkowych. Popołudnie spędziliśmy w luksusowych termach Earth Lagoon Mývatn (drogo, ale warto; mało ludzi).
 
 Kolację zjedliśmy w polecanej restauracji z widokiem na oborę - fajna odmiana, a do obory można wejść i pogłaskać krowy. Korzystając z tego, że dzień się nie kończy, pojechaliśmy jeszcze na krótką wędrówkę na wulkan Hverfell i to był bardzo dobry pomysł, bo widok z góry jest naprawdę atrakcyjny.`,
       en: `A day packed with volcanic energy. Driving through an incredible, Mars-like terrain, we reached Dettifoss. We were met with sideways rain and gusty winds, rendering the waterfall practically invisible and leaving us soaked to the bone within 15 minutes.
@@ -372,7 +386,7 @@ We had dinner at a recommended restaurant with a view directly into a cowshed—
     images: [
       {
         url: 'https://images.unsplash.com/photo-1529963183134-61a90db47eaf?auto=format&fit=crop&w=1200&q=80',
-        alt: { pl: 'Pola geotermalne Hverir', en: 'Hverir Geothermal Fields' },
+        alt: { pl: 'Błękitne baseny termalne i dymiące solfatary w rejonie jeziora Mývatn', en: 'Steaming solfataras and geothermal baths near Lake Mývatn' },
         caption: { pl: 'Dymiące pola siarkowe Hverir pod Mývatn', en: 'Steaming geothermal vents and sulfur hills at Hverir' }
       }
     ]
@@ -418,7 +432,7 @@ On the drive to Lækjarkot, we stopped in Blönduós for coffee and a turn on th
     images: [
       {
         url: 'https://images.unsplash.com/photo-1517411032315-54ef2cb783bb?auto=format&fit=crop&w=1200&q=80',
-        alt: { pl: 'Wodospad Goðafoss', en: 'Goðafoss Waterfall' },
+        alt: { pl: 'Szeroki łuk kaskad wodospadu Goðafoss w północnej Islandii', en: 'Wide sweeping horseshoe falls of Goðafoss in northern Iceland' },
         caption: { pl: 'Goðafoss – Wodospad Bogów', en: 'Goðafoss Waterfall of the Gods' }
       }
     ]
@@ -459,7 +473,7 @@ On the drive to Lækjarkot, we stopped in Blönduós for coffee and a turn on th
     images: [
       {
         url: 'https://images.unsplash.com/photo-1504893524553-b855bce32c67?auto=format&fit=crop&w=1200&q=80',
-        alt: { pl: 'Wodospady Hraunfossar', en: 'Hraunfossar Lava Falls' },
+        alt: { pl: 'Kaskady wodospadów Hraunfossar wypływające spod czarnego pola lawowego', en: 'Delicate cascades of Hraunfossar emerging from beneath a black lava field' },
         caption: { pl: 'Wodospady Hraunfossar wypływające z pola lawy', en: 'Hraunfossar waterfalls emerging from porous lava rock' }
       }
     ]
@@ -494,7 +508,7 @@ On the drive to Lækjarkot, we stopped in Blönduós for coffee and a turn on th
       en: ['FRISTA Food Truck Arnarstapi - fantastic fish of the day', 'Local cafes in Arnarstapi: coffee, homemade cakes.']
     },
     safetyTip: {
-      pl: 'Podczas obserwacji fok należy zachować dystans 50m lub 100m, gdy mają młode.',
+      pl: 'Podczas obserwacji fok należy zachować dystans 50 m lub 100 m, gdy mają młode.',
       en: 'When seal watching, keep a safe distance of at least 50 meters (or 100 meters when pups are present).'
     },
     content: {
@@ -508,7 +522,7 @@ Our next stop was the black sand beach at Djúpalónssandur, where we relaxed to
     images: [
       {
         url: 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1200&q=80',
-        alt: { pl: 'Góra Kirkjufell', en: 'Kirkjufell Mountain' },
+        alt: { pl: 'Góra Kirkjufell o charakterystycznym stożkowym kształcie na półwyspie Snæfellsnes', en: 'Conical peak of Mount Kirkjufell bathed in daylight on Snæfellsnes' },
         caption: { pl: 'Góra Kirkjufell na półwyspie Snæfellsnes', en: 'Iconic Kirkjufell mountain peak' }
       }
     ]
@@ -567,7 +581,7 @@ Hótel Ísland Spa & Wellness was completely fine and decent, but since the spa 
     images: [
       {
         url: 'https://images.unsplash.com/photo-1504893524553-b855bce32c67?auto=format&fit=crop&w=1200&q=80',
-        alt: { pl: 'Kościół Hallgrímskirkja', en: 'Hallgrímskirkja Church' },
+        alt: { pl: 'Strzelista wieża kościoła Hallgrímskirkja dominująca nad panoramą Reykjaviku', en: 'Soaring expressionist tower of Hallgrímskirkja church over the Reykjavik skyline' },
         caption: { pl: 'Kościół Hallgrímskirkja w centrum Reykjavíku', en: 'Hallgrímskirkja church landmark in Reykjavík' }
       }
     ]
@@ -610,7 +624,7 @@ Around 3:00 PM, we returned our car at Lotus Car Rental and were promptly shuttl
     images: [
       {
         url: 'https://images.unsplash.com/photo-1529963183134-61a90db47eaf?auto=format&fit=crop&w=1200&q=80',
-        alt: { pl: 'Most między kontynentami', en: 'Bridge between continents' },
+        alt: { pl: 'Kładka Most Między Kontynentami łącząca płyty tektoniczne na Reykjanes', en: 'Bridge Between Continents spanning the tectonic rift on Reykjanes peninsula' },
         caption: { pl: 'Most Między Kontynentami na półwyspie Reykjanes', en: 'Bridge Between Continents on Reykjanes Peninsula' }
       }
     ]
@@ -619,7 +633,7 @@ Around 3:00 PM, we returned our car at Lotus Car Rental and were promptly shuttl
 
 export const generalInfo = {
   eclipseNotice: {
-    title: { pl: 'Zaćmienie słońca 12 sierpnia 2026', en: 'Total Solar Eclipse on August 12, 2026' },
+    title: { pl: 'Kwestia zaćmienia 12 sierpnia 2026', en: 'Total Solar Eclipse on August 12, 2026' },
     text: {
       pl: 'Wyprawa w sierpniu 2026 roku zbiega się z historycznym wydarzeniem – całkowitym zaćmieniem słońca widocznym z Europy po raz pierwszy od 1999 roku. W szczególności na zachodnim wybrzeżu Islandii dochodzi absolutny rekord długości trwania zaćmienia - ponad 2 minuty. Już na etapie planowania noclegów w lutym 2026 średnie ceny za noc w stolicy były powyżej 1000 USD (ok. 4000 zł), a co bardziej fantazyjne apartamenty i luksusowe obiekty próbowały łowić chętnych za spekulacyjne kwoty sięgające wręcz absurdalnych $20,000–$25,000 (80 000-100 000 zł).',
       en: 'The August 2026 trip coincides with a historic event—a total solar eclipse visible from Europe for the first time since 1999. On the west coast of Iceland in particular, the duration of totality reaches an absolute record of over 2 minutes. As early as the accommodation planning stage in February 2026, average nightly rates in the capital exceeded $1,000, while more extravagant apartments and luxury properties attempted to lure buyers with speculative prices reaching absurd levels of $20,000–$25,000.'
