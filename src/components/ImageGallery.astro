@@ -12,14 +12,20 @@ interface Props {
 }
 
 const { images, lang = 'pl' } = Astro.props;
+const isPl = lang === 'pl';
+const closeLabel = isPl ? 'Zamknij galerię (Esc)' : 'Close gallery (Esc)';
+const prevLabel = isPl ? 'Poprzednie zdjęcie' : 'Previous photo';
+const nextLabel = isPl ? 'Następne zdjęcie' : 'Next photo';
+const dialogLabel = isPl ? 'Galeria zdjęć w pełnym rozmiarze' : 'Fullscreen photo gallery';
+const hintText = isPl ? '← / → nawigacja, przesuń palcem na telefonie' : '← / → to navigate, swipe on mobile';
 ---
 
-<section class="my-10 space-y-4" aria-label="Galeria zdjęć / Photo gallery">
+<section class="my-10 space-y-4" aria-label={isPl ? 'Galeria zdjęć z trasy' : 'Route photo gallery'}>
 	<h3 class="text-xl font-bold text-slate-900 font-serif flex items-center gap-2">
 		<svg class="w-5 h-5 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
 			<path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
 		</svg>
-		<span>{lang === 'pl' ? 'Galeria zdjęć' : 'Photo Gallery'}</span>
+		<span>{isPl ? 'Galeria zdjęć' : 'Photo Gallery'}</span>
 	</h3>
 
 	<div data-photo-gallery class="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
@@ -30,8 +36,8 @@ const { images, lang = 'pl' } = Astro.props;
 				data-full={img.url}
 				data-alt={img.alt[lang]}
 				data-caption={img.caption[lang]}
-				aria-label={lang === 'pl' ? `Otwórz ${img.alt[lang]}` : `Open ${img.alt[lang]}`}
-				class="group overflow-hidden rounded-xl border border-slate-200 bg-slate-100 shadow-sm transition hover:border-sky-400 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600"
+				aria-label={isPl ? `Otwórz zdjęcie: ${img.alt[lang]}` : `Open photo: ${img.alt[lang]}`}
+				class="group overflow-hidden rounded-xl border border-slate-200 bg-slate-100 shadow-sm transition hover:border-sky-400 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600 cursor-pointer text-left"
 			>
 				<img
 					src={img.thumbnailUrl}
@@ -48,20 +54,74 @@ const { images, lang = 'pl' } = Astro.props;
 
 	<dialog
 		data-gallery-dialog
-		aria-label={lang === 'pl' ? 'Galeria pełnoekranowa' : 'Fullscreen gallery'}
-		class="fixed inset-0 m-0 h-screen max-h-none w-screen max-w-none border-0 bg-slate-950/95 p-0 text-white backdrop:bg-slate-950/95"
+		aria-label={dialogLabel}
+		aria-modal="true"
+		class="fixed inset-0 m-0 h-screen max-h-none w-screen max-w-none border-0 bg-slate-950/95 p-0 text-white backdrop:bg-slate-950/95 z-50 backdrop-blur-sm"
 	>
-		<div class="flex h-full flex-col">
-			<div class="flex items-center justify-between px-4 py-3 sm:px-6">
-				<p data-gallery-counter class="text-sm font-semibold" aria-live="polite"></p>
-				<button data-gallery-close type="button" class="rounded-full p-2 text-2xl leading-none hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white" aria-label={lang === 'pl' ? 'Zamknij galerię' : 'Close gallery'}>×</button>
+		<div class="flex h-full flex-col select-none">
+			<!-- Lightbox Header -->
+			<div class="flex items-center justify-between px-4 py-3 sm:px-6 z-30">
+				<div class="flex items-center gap-3">
+					<p
+						data-gallery-counter
+						class="text-xs sm:text-sm font-semibold tracking-wider px-3 py-1.5 rounded-full bg-slate-900/85 backdrop-blur-md border border-white/20 text-white shadow-xs"
+						aria-live="polite"
+					></p>
+					<span class="hidden md:inline-block text-xs text-white/50 tracking-wide font-normal">{hintText}</span>
+				</div>
+				<button
+					data-gallery-close
+					type="button"
+					class="p-2 sm:p-2.5 rounded-full bg-slate-900/85 hover:bg-slate-800 text-white backdrop-blur-md border border-white/20 shadow-md transition-all duration-200 hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 cursor-pointer"
+					aria-label={closeLabel}
+				>
+					<svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+					</svg>
+				</button>
 			</div>
-			<div class="flex min-h-0 flex-1 items-center justify-center gap-2 px-2 sm:gap-6 sm:px-6">
-				<button data-gallery-previous type="button" class="shrink-0 rounded-full bg-white/10 px-3 py-4 text-xl hover:bg-white/20 sm:px-5" aria-label={lang === 'pl' ? 'Poprzednie zdjęcie' : 'Previous photo'}>‹</button>
-				<img data-gallery-full-image alt="" class="hidden max-h-full max-w-full object-contain" />
-				<button data-gallery-next type="button" class="shrink-0 rounded-full bg-white/10 px-3 py-4 text-xl hover:bg-white/20 sm:px-5" aria-label={lang === 'pl' ? 'Następne zdjęcie' : 'Next photo'}>›</button>
+
+			<!-- Main Photo Stage (Interactive with Hover Overlay and Touch Swipe) -->
+			<div
+				data-gallery-stage
+				class="relative group flex-1 min-h-0 w-full flex items-center justify-center p-2 sm:p-6 overflow-hidden touch-pan-y"
+			>
+				<!-- Previous Button (Layered on photo with contrast background, visible on hover / focus / mobile) -->
+				<button
+					data-gallery-previous
+					type="button"
+					class="absolute left-3 sm:left-6 z-20 p-3 sm:p-4 rounded-full bg-slate-950/85 hover:bg-black text-white border border-white/30 shadow-2xl backdrop-blur-md transition-all duration-200 -translate-y-1/2 top-1/2 active:scale-95 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 opacity-90 md:opacity-0 md:group-hover:opacity-100 focus-visible:opacity-100 cursor-pointer"
+					aria-label={prevLabel}
+				>
+					<svg class="w-6 h-6 sm:w-7 sm:h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+					</svg>
+				</button>
+
+				<!-- Image Display -->
+				<img
+					data-gallery-full-image
+					alt=""
+					class="hidden max-h-full max-w-full object-contain rounded-lg shadow-2xl transition-opacity duration-200 pointer-events-none select-none"
+				/>
+
+				<!-- Next Button (Layered on photo with contrast background, visible on hover / focus / mobile) -->
+				<button
+					data-gallery-next
+					type="button"
+					class="absolute right-3 sm:right-6 z-20 p-3 sm:p-4 rounded-full bg-slate-950/85 hover:bg-black text-white border border-white/30 shadow-2xl backdrop-blur-md transition-all duration-200 -translate-y-1/2 top-1/2 active:scale-95 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 opacity-90 md:opacity-0 md:group-hover:opacity-100 focus-visible:opacity-100 cursor-pointer"
+					aria-label={nextLabel}
+				>
+					<svg class="w-6 h-6 sm:w-7 sm:h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+					</svg>
+				</button>
 			</div>
-			<p data-gallery-caption class="min-h-10 px-4 py-2 text-center text-sm text-white/80"></p>
+
+			<!-- Caption Display -->
+			<div class="px-4 py-3 min-h-12 flex items-center justify-center text-center">
+				<p data-gallery-caption class="text-xs sm:text-sm text-slate-200 font-medium max-w-3xl leading-relaxed" aria-live="polite"></p>
+			</div>
 		</div>
 	</dialog>
 </section>
@@ -76,6 +136,10 @@ const { images, lang = 'pl' } = Astro.props;
 		const counter = dialog.querySelector<HTMLElement>('[data-gallery-counter]')!;
 		const caption = dialog.querySelector<HTMLElement>('[data-gallery-caption]')!;
 		const closeButton = dialog.querySelector<HTMLButtonElement>('[data-gallery-close]')!;
+		const prevButton = dialog.querySelector<HTMLButtonElement>('[data-gallery-previous]')!;
+		const nextButton = dialog.querySelector<HTMLButtonElement>('[data-gallery-next]')!;
+		const stage = dialog.querySelector<HTMLElement>('[data-gallery-stage]') ?? dialog;
+
 		let activeIndex = 0;
 		let opener: HTMLButtonElement | undefined;
 
@@ -95,17 +159,30 @@ const { images, lang = 'pl' } = Astro.props;
 			dialog.showModal();
 			closeButton.focus();
 		}));
-		dialog.querySelector('[data-gallery-close]')?.addEventListener('click', () => dialog.close());
-		dialog.querySelector('[data-gallery-previous]')?.addEventListener('click', () => showImage(activeIndex - 1));
-		dialog.querySelector('[data-gallery-next]')?.addEventListener('click', () => showImage(activeIndex + 1));
-		dialog.addEventListener('click', (event) => {
-			if (event.target === dialog) dialog.close();
+
+		closeButton.addEventListener('click', () => dialog.close());
+		prevButton.addEventListener('click', (e) => {
+			e.stopPropagation();
+			showImage(activeIndex - 1);
 		});
+		nextButton.addEventListener('click', (e) => {
+			e.stopPropagation();
+			showImage(activeIndex + 1);
+		});
+
+		// Close when clicking empty backdrop or stage area outside buttons and image
+		dialog.addEventListener('click', (event) => {
+			if (event.target === dialog || event.target === stage) {
+				dialog.close();
+			}
+		});
+
 		dialog.addEventListener('close', () => {
 			fullImage.removeAttribute('src');
 			fullImage.classList.add('hidden');
 			opener?.focus();
 		});
+
 		dialog.addEventListener('keydown', (event) => {
 			if (event.key === 'ArrowLeft') {
 				event.preventDefault();
@@ -116,5 +193,43 @@ const { images, lang = 'pl' } = Astro.props;
 				showImage(activeIndex + 1);
 			}
 		});
+
+		// Mobile Touch Swipe Handling
+		let touchStartX = 0;
+		let touchStartY = 0;
+		let touchEndX = 0;
+		let touchEndY = 0;
+		const minSwipeDistance = 45;
+
+		stage.addEventListener('touchstart', (e: TouchEvent) => {
+			if (e.touches.length === 1) {
+				touchStartX = e.touches[0].clientX;
+				touchStartY = e.touches[0].clientY;
+				touchEndX = touchStartX;
+				touchEndY = touchStartY;
+			}
+		}, { passive: true });
+
+		stage.addEventListener('touchmove', (e: TouchEvent) => {
+			if (e.touches.length === 1) {
+				touchEndX = e.touches[0].clientX;
+				touchEndY = e.touches[0].clientY;
+			}
+		}, { passive: true });
+
+		stage.addEventListener('touchend', () => {
+			const deltaX = touchEndX - touchStartX;
+			const deltaY = touchEndY - touchStartY;
+			// Only trigger if horizontal swipe is prominent and exceeds threshold
+			if (Math.abs(deltaX) > minSwipeDistance && Math.abs(deltaX) > Math.abs(deltaY) * 1.3) {
+				if (deltaX < 0) {
+					// Swiped left -> next photo
+					showImage(activeIndex + 1);
+				} else {
+					// Swiped right -> previous photo
+					showImage(activeIndex - 1);
+				}
+			}
+		}, { passive: true });
 	}
 </script>
