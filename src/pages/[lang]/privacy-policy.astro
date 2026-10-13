@@ -35,10 +35,10 @@ const description = isPolish
 			<h2 class="text-xl font-bold text-slate-900 font-serif">{isPolish ? 'Administrator danych' : 'Data controller'}</h2>
 			<p class="text-sm leading-relaxed text-slate-700 sm:text-base">
 				{isPolish
-					? 'Administratorem danych jest autor bloga icetrip.eu, kontaktująca się pod adresem e-mail: contact@icetrip.eu. W sprawach prywatności skontaktuj się z nami przez '
-					: 'The data controller is author of icetrip.eu blog with an email address: contact@icetrip.eu. For privacy questions, contact us through the '
+					? 'Administratorem danych osobowych zbieranych za pośrednictwem serwisu icetrip.eu jest autor bloga. W sprawach związanych z ochroną prywatności oraz przetwarzaniem danych osobowych możesz skontaktować się z nami za pośrednictwem formularza na '
+					: 'The data controller for personal data collected through icetrip.eu is the author of the blog. If you have questions about privacy or the processing of personal data, you can contact us using the form on the '
 				}
-				<a href={`/${lang}/contact`} class="font-semibold text-sky-700 underline underline-offset-4 hover:text-sky-900">{isPolish ? 'stronę kontaktową' : 'Contact page'}</a>.
+				<a href={`/${lang}/contact`} class="font-semibold text-sky-700 underline underline-offset-4 hover:text-sky-900">{isPolish ? 'stronie kontaktowej' : 'Contact page'}</a>.
 			</p>
 		</section>
 
@@ -46,8 +46,8 @@ const description = isPolish
 			<h2 class="text-xl font-bold text-slate-900 font-serif">{isPolish ? 'Jakie dane przetwarzamy' : 'Information we process'}</h2>
 			<ul class="list-disc space-y-2 pl-5 text-sm leading-relaxed text-slate-700 sm:text-base">
 				<li>{isPolish
-					? 'Strona nie ma formularza kontaktowego ani kont użytkowników. Jeśli napiszesz do nas e-mail, wykorzystamy adres nadawcy i treść wiadomości, aby odpowiedzieć; przechowamy wiadomość przez 30 dni.'
-					: 'The site has no contact form or user accounts. If you email us, we use your address and message to reply, and keep the message for 30 days.'}</li>
+					? 'Formularz kontaktowy zbiera imię, adres e-mail i treść wiadomości. Dane są przekazywane do Web3Forms, który przekazuje je na nasz adres e-mail w celu odpowiedzi. Wiadomości przechowujemy przez 30 dni. Web3Forms informuje, że nie przechowuje zgłoszeń, ale jego serwery znajdują się w USA i mogą okresowo przechowywać logi techniczne.'
+					: 'The contact form collects your name, email address, and message. The data is sent to Web3Forms, which forwards it to our email so we can reply. We keep messages for 30 days. Web3Forms says it does not store submissions, but its servers are in the US and may temporarily retain technical logs.'}</li>
 				<li>{isPolish
 					? 'Przeglądarka może zapisać w pamięci lokalnej wybór języka, aby zapamiętać preferowany język.'
 					: 'Your browser may store your language preference in local storage, so the site can remember your preferred language.'}</li>
