@@ -56,11 +56,11 @@ const hintText = isPl ? '← / → nawigacja, przesuń palcem na telefonie' : '�
 		data-gallery-dialog
 		aria-label={dialogLabel}
 		aria-modal="true"
-		class="fixed inset-0 m-0 h-screen max-h-none w-screen max-w-none border-0 bg-slate-950/95 p-0 text-white backdrop:bg-slate-950/95 z-50 backdrop-blur-sm"
+		class="fixed inset-0 m-0 h-screen h-[100dvh] max-h-[100dvh] w-screen max-w-none border-0 bg-slate-950/95 p-0 text-white backdrop:bg-slate-950/95 z-50 backdrop-blur-sm overflow-hidden"
 	>
-		<div class="flex h-full flex-col select-none">
-			<!-- Lightbox Header -->
-			<div class="flex items-center justify-between px-4 py-3 sm:px-6 z-30">
+		<div class="flex h-full w-full flex-col select-none overflow-hidden">
+			<!-- Lightbox Header (Protected with Safe Area Inset) -->
+			<div class="shrink-0 flex items-center justify-between px-4 py-3 sm:px-6 pt-[max(0.75rem,env(safe-area-inset-top))] z-30">
 				<div class="flex items-center gap-3">
 					<p
 						data-gallery-counter
@@ -84,7 +84,7 @@ const hintText = isPl ? '← / → nawigacja, przesuń palcem na telefonie' : '�
 			<!-- Main Photo Stage (Interactive with Hover Overlay and Touch Swipe) -->
 			<div
 				data-gallery-stage
-				class="relative group flex-1 min-h-0 w-full flex items-center justify-center p-2 sm:p-6 overflow-hidden touch-pan-y"
+				class="relative group flex-1 min-h-0 w-full flex items-center justify-center px-2 py-1 sm:p-6 overflow-hidden touch-pan-y"
 			>
 				<!-- Previous Button (Layered on photo with contrast background, visible on hover / focus / mobile) -->
 				<button
@@ -98,12 +98,26 @@ const hintText = isPl ? '← / → nawigacja, przesuń palcem na telefonie' : '�
 					</svg>
 				</button>
 
-				<!-- Image Display -->
-				<img
-					data-gallery-full-image
-					alt=""
-					class="hidden max-h-full max-w-full object-contain rounded-lg shadow-2xl transition-opacity duration-200 pointer-events-none select-none"
-				/>
+				<!-- Image + Caption wrapper (caption overlays bottom of image) -->
+				<div data-gallery-image-wrap class="relative hidden max-h-full max-w-full pointer-events-none select-none">
+					<img
+						data-gallery-full-image
+						alt=""
+						class="block max-h-full max-w-full object-contain rounded-lg shadow-2xl transition-opacity duration-200"
+						style="max-height: calc(100dvh - 120px);"
+					/>
+					<!-- Caption overlay: sits at the bottom of the image, always visible -->
+					<div
+						data-gallery-caption-container
+						class="absolute bottom-0 left-0 right-0 z-30 px-3 py-2 sm:px-4 sm:py-2.5 bg-slate-950/80 backdrop-blur-sm rounded-b-lg flex items-center justify-center text-center"
+					>
+						<p
+							data-gallery-caption
+							class="text-xs sm:text-sm text-slate-100 font-medium max-w-2xl leading-snug"
+							aria-live="polite"
+						></p>
+					</div>
+				</div>
 
 				<!-- Next Button (Layered on photo with contrast background, visible on hover / focus / mobile) -->
 				<button
@@ -117,11 +131,6 @@ const hintText = isPl ? '← / → nawigacja, przesuń palcem na telefonie' : '�
 					</svg>
 				</button>
 			</div>
-
-			<!-- Caption Display -->
-			<div class="px-4 py-3 min-h-12 flex items-center justify-center text-center">
-				<p data-gallery-caption class="text-xs sm:text-sm text-slate-200 font-medium max-w-3xl leading-relaxed" aria-live="polite"></p>
-			</div>
 		</div>
 	</dialog>
 </section>
@@ -132,9 +141,11 @@ const hintText = isPl ? '← / → nawigacja, przesuń palcem na telefonie' : '�
 		const dialog = gallery.parentElement?.querySelector<HTMLDialogElement>('[data-gallery-dialog]');
 		if (!dialog || buttons.length === 0) continue;
 
+		const imageWrap = dialog.querySelector<HTMLElement>('[data-gallery-image-wrap]')!;
 		const fullImage = dialog.querySelector<HTMLImageElement>('[data-gallery-full-image]')!;
 		const counter = dialog.querySelector<HTMLElement>('[data-gallery-counter]')!;
 		const caption = dialog.querySelector<HTMLElement>('[data-gallery-caption]')!;
+		const captionContainer = dialog.querySelector<HTMLElement>('[data-gallery-caption-container]');
 		const closeButton = dialog.querySelector<HTMLButtonElement>('[data-gallery-close]')!;
 		const prevButton = dialog.querySelector<HTMLButtonElement>('[data-gallery-previous]')!;
 		const nextButton = dialog.querySelector<HTMLButtonElement>('[data-gallery-next]')!;
@@ -148,8 +159,16 @@ const hintText = isPl ? '← / → nawigacja, przesuń palcem na telefonie' : '�
 			const button = buttons[activeIndex];
 			fullImage.src = button.dataset.full ?? '';
 			fullImage.alt = button.dataset.alt ?? '';
-			fullImage.classList.remove('hidden');
-			caption.textContent = button.dataset.caption ?? '';
+			imageWrap.classList.remove('hidden');
+			const text = button.dataset.caption?.trim() || button.dataset.alt?.trim() || '';
+			caption.textContent = text;
+			if (captionContainer) {
+				if (text) {
+					captionContainer.classList.remove('hidden');
+				} else {
+					captionContainer.classList.add('hidden');
+				}
+			}
 			counter.textContent = `${activeIndex + 1} / ${buttons.length}`;
 		}
 
@@ -179,7 +198,7 @@ const hintText = isPl ? '← / → nawigacja, przesuń palcem na telefonie' : '�
 
 		dialog.addEventListener('close', () => {
 			fullImage.removeAttribute('src');
-			fullImage.classList.add('hidden');
+			imageWrap.classList.add('hidden');
 			opener?.focus();
 		});
 
