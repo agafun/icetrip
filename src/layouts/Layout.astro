@@ -2,6 +2,7 @@
 import Header from '../components/Header.astro';
 import Sidebar from '../components/Sidebar.astro';
 import Footer from '../components/Footer.astro';
+import Analytics from '@vercel/analytics/astro';
 
 interface Props {
 	title?: string;
@@ -92,6 +93,7 @@ const enUrl = `${siteUrl}/en${pathWithoutLang}`;
 
 		<!-- Footer -->
 		<Footer lang={lang} />
+		<Analytics />
 
 		<!-- Client-Side Interactivity Script -->
 		<script is:inline>
