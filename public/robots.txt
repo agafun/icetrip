@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://icetrip.eu/sitemap.xml
