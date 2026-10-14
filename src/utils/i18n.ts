@@ -531,7 +531,7 @@ Our next stop was the black sand beach at Djúpalónssandur, where we relaxed to
     slug: 'day-11',
     dayNumber: 11,
     date: '05.08.2026',
-    mapsUrl: 'https://www.google.pl/maps/dir/64.5904162,-21.8456665/Volcano+Skali+Parking+P2,+VP5C%2BFG,+241+Grindavik,+Islandia/Hótel+Ísland+Spa+%26+Wellness,+Ármúli+9+108,+108+Reykjavík,+Islandia/@64.2188905,-22.6374878,175338m/data=!3m1!1e3!4m15!4m14!1m0!1m5!1m1!1s0x48d61d2ca3160fbd:0xf7d0de03586eafe!2m2!1d-22.2786669!2d63.8586865!1m5!1m1!1s0x48d674bee49027a3:0x951f7e27652991de!2m2!1d-21.883311!2d64.138727!3e0?entry=ttu&g_ep=EgoyMDI2MDkzMC4wIKXMDSoASAFQAw%3D%3D',
+    mapsUrl: 'https://www.google.pl/maps/dir/Laekjarkot+Rooms+And+Cottages,+H4VX%2BJJG,+L%C3%A6kjarkot,+311+Borgarnes,+Islandia/Volcano+Skali+Parking+P2,+VP5C%2BFG,+241+Grindavik,+Islandia/H%C3%B3tel+%C3%8Dsland+Spa+%26+Wellness,+%C3%81rm%C3%BAli+9+108,+108+Reykjav%C3%ADk,+Islandia/@64.2207078,-22.6388083,166162m/data=!3m2!1e3!4b1!4m20!4m19!1m5!1m1!1s0x48d5c9b82a7f68c9:0x8abaec16f91bbfbc!2m2!1d-21.8509331!2d64.5940628!1m5!1m1!1s0x48d61d2ca3160fbd:0xf7d0de03586eafe!2m2!1d-22.2786669!2d63.8586865!1m5!1m1!1s0x48d674bee49027a3:0x951f7e27652991de!2m2!1d-21.883311!2d64.138727!3e0?entry=ttu&g_ep=EgoyMDI2MTAxMi4wIKXMDSoASAFQAw%3D%3D',
     title: { pl: 'Dzień 11: Reykjavík', en: 'Day 11: Reykjavík' },
     description: { pl: 'Pola lawowe w dolinie Nátthagi i centrum Reykjavíku: spacer ulicą Laugavegur, kościół Hallgrímskirkja, port.', en: 'Nátthagadalur lava fields and Reykjavík center: Laugavegur shopping street, Hallgrímskirkja church, harbor.' },
     distance: '182 km',
