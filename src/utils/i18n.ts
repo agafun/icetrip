@@ -635,8 +635,8 @@ export const generalInfo = {
   eclipseNotice: {
     title: { pl: 'Kwestia zaćmienia 12 sierpnia 2026', en: 'Total Solar Eclipse on August 12, 2026' },
     text: {
-      pl: 'Wyprawa w sierpniu 2026 roku zbiega się z historycznym wydarzeniem – całkowitym zaćmieniem słońca widocznym z Europy po raz pierwszy od 1999 roku. W szczególności na zachodnim wybrzeżu Islandii dochodzi absolutny rekord długości trwania zaćmienia - ponad 2 minuty. Już na etapie planowania noclegów w lutym 2026 średnie ceny za noc w stolicy były powyżej 1000 USD (ok. 4000 zł), a co bardziej fantazyjne apartamenty i luksusowe obiekty próbowały łowić chętnych za spekulacyjne kwoty sięgające wręcz absurdalnych $20,000–$25,000 (80 000-100 000 zł).',
-      en: 'The August 2026 trip coincides with a historic event—a total solar eclipse visible from Europe for the first time since 1999. On the west coast of Iceland in particular, the duration of totality reaches an absolute record of over 2 minutes. As early as the accommodation planning stage in February 2026, average nightly rates in the capital exceeded $1,000, while more extravagant apartments and luxury properties attempted to lure buyers with speculative prices reaching absurd levels of $20,000–$25,000.'
+      pl: 'Wyprawa w sierpniu 2026 roku zbiega się z historycznym wydarzeniem – całkowitym zaćmieniem słońca widocznym z Europy po raz pierwszy od 1999 roku. W szczególności na zachodnim wybrzeżu Islandii dochodzi absolutny rekord długości trwania zaćmienia - ponad 2 minuty. Już na etapie planowania noclegów w lutym 2026 średnie ceny za noc w stolicy były powyżej 1 000 USD (ok. 4 000 zł), niektóre apartamenty próbowały łowić chętnych za spekulacyjne kwoty sięgające wręcz $20 000–$25 000 (80 000-100 000 zł).',
+      en: 'The August 2026 trip coincides with a historic event—a total solar eclipse visible from Europe for the first time since 1999. On the west coast of Iceland in particular, the duration of totality reaches an absolute record of over 2 minutes. As early as the accommodation planning stage in February 2026, average nightly rates in the capital exceeded $1 000, while more extravagant apartments and luxury properties attempted to lure buyers with speculative prices reaching $20 000–$25 000.'
     }
   },
   logisticsKm: [
@@ -656,36 +656,36 @@ export const generalInfo = {
   budgetSummary: {
     flights: {
       title: { pl: 'Loty', en: 'Flights' },
-      content: { pl: 'Wizz Air KTW-KEF: 9,352 PLN', en: 'Wizz Air KTW-KEF: 9,352 PLN' }
+      content: { pl: 'Wizz Air KTW-KEF: 9 352 PLN', en: 'Wizz Air KTW-KEF: 9 352 PLN' }
     },
     carRental: {
       title: { pl: 'Wypożyczenie auta', en: 'Car Rental' },
-      content: { pl: 'LOTUS Car Rental: 8,820 PLN', en: 'LOTUS Car Rental: 8,820 PLN' }
+      content: { pl: 'LOTUS Car Rental: 8 820 PLN', en: 'LOTUS Car Rental: 8 820 PLN' }
     },
     accommodations: {
       title: { pl: 'Noclegi razem', en: 'Accommodations Total' },
       content: {
-        pl: '29,433 PLN dla 2 rodzin = ~15,000 PLN na rodzinę',
-        en: '29,433 PLN for 2 families = ~15,000 PLN per family'
+        pl: '29 433 PLN dla 2 rodzin = ~15 000 PLN na rodzinę',
+        en: '29 433 PLN for 2 families = ~15 000 PLN per family'
       }
     },
     oneFamilySummary: {
       title: { pl: 'Podsumowanie kosztów podstawowych dla 1 rodziny', en: 'Basic Cost Summary for 1 Family' },
-      total: '32,889 PLN',
-      totalApprox: '(~32,889 PLN)',
+      total: '32 889 PLN',
+      totalApprox: '(~32 889 PLN)',
       totalLabel: { pl: 'Szacowany koszt (1 rodzina)', en: 'Estimated Total (1 family)' },
       items: [
         {
           label: { pl: '1. Loty (Wizz Air)', en: '1. Flights (Wizz Air)' },
-          value: '9,352 PLN'
+          value: '9 352 PLN'
         },
         {
           label: { pl: '2. Samochód (Lotus Car Rental)', en: '2. Car (Lotus Car Rental)' },
-          value: '8,820 PLN'
+          value: '8 820 PLN'
         },
         {
-          label: { pl: '3. Noclegi (50% z 29,433 PLN)', en: '3. Accommodations (50% of 29,433 PLN)' },
-          value: '14,717 PLN'
+          label: { pl: '3. Noclegi (50% z 29 433 PLN)', en: '3. Accommodations (50% of 29 433 PLN)' },
+          value: '14 717 PLN'
         }
       ],
       note: {
@@ -695,11 +695,11 @@ export const generalInfo = {
     }
   },
   accommodations: [
-    { dates: { pl: '26.07 - 29.07 (3 noclegi)', en: '26.07 - 29.07 (3 nights)' }, hub: 'Árhús Cottage & Camping, Hella', price: '7,101 PLN', link: 'https://www.booking.com/hotel/is/arhus-cottage-and-camping.pl.html' },
-    { dates: { pl: '29.07 - 31.07 (2 noclegi)', en: '29.07 - 31.07 (2 nights)' }, hub: 'Höfn Cottages', price: '4,919 PLN', link: 'https://www.booking.com/hotel/is/hofn-cottages.pl.html' },
-    { dates: { pl: '31.07 - 02.08 (2 noclegi)', en: '31.07 - 02.08 (2 nights)' }, hub: 'Vogar Travel Service, Mývatn', price: '7,500 PLN', link: 'https://www.booking.com/hotel/is/vogahraun-guesthouse.pl.html' },
-    { dates: { pl: '02.08 - 05.08 (3 noclegi)', en: '02.08 - 05.08 (3 nights)' }, hub: 'Lækjarkot Rooms and Cottages, Borgarnes', price: '6,091 PLN', link: 'https://www.booking.com/hotel/is/laekjarkot-mobile-homes-and-rooms.pl.html' },
-    { dates: { pl: '05.08 - 06.08 (1 nocleg)', en: '05.08 - 06.08 (1 night)' }, hub: 'Hótel Ísland Spa & Wellness, Reykjavík', price: '3,822 PLN', link: 'https://www.booking.com/hotel/is/hotel-island.pl.html' }
+    { dates: { pl: '26.07 - 29.07 (3 noclegi)', en: '26.07 - 29.07 (3 nights)' }, hub: 'Árhús Cottage & Camping, Hella', price: '7 101 PLN', link: 'https://www.booking.com/hotel/is/arhus-cottage-and-camping.pl.html' },
+    { dates: { pl: '29.07 - 31.07 (2 noclegi)', en: '29.07 - 31.07 (2 nights)' }, hub: 'Höfn Cottages', price: '4 919 PLN', link: 'https://www.booking.com/hotel/is/hofn-cottages.pl.html' },
+    { dates: { pl: '31.07 - 02.08 (2 noclegi)', en: '31.07 - 02.08 (2 nights)' }, hub: 'Vogar Travel Service, Mývatn', price: '7 500 PLN', link: 'https://www.booking.com/hotel/is/vogahraun-guesthouse.pl.html' },
+    { dates: { pl: '02.08 - 05.08 (3 noclegi)', en: '02.08 - 05.08 (3 nights)' }, hub: 'Lækjarkot Rooms and Cottages, Borgarnes', price: '6 091 PLN', link: 'https://www.booking.com/hotel/is/laekjarkot-mobile-homes-and-rooms.pl.html' },
+    { dates: { pl: '05.08 - 06.08 (1 nocleg)', en: '05.08 - 06.08 (1 night)' }, hub: 'Hótel Ísland Spa & Wellness, Reykjavík', price: '3 822 PLN', link: 'https://www.booking.com/hotel/is/hotel-island.pl.html' }
   ],
   packingList: [
     {

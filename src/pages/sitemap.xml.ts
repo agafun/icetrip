@@ -7,11 +7,11 @@ export const GET: APIRoute = () => {
 	const paths = [
 		'/pl/',
 		'/en/',
-		'/pl/contact/',
-		'/en/contact/',
-		'/pl/privacy-policy/',
-		'/en/privacy-policy/',
-		...daysData.flatMap(({ slug }) => [`/pl/day/${slug}/`, `/en/day/${slug}/`]),
+		'/pl/contact',
+		'/en/contact',
+		'/pl/privacy-policy',
+		'/en/privacy-policy',
+		...daysData.flatMap(({ slug }) => [`/pl/day/${slug}`, `/en/day/${slug}`]),
 	];
 
 	const urls = paths
