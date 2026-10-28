@@ -13,8 +13,13 @@ export function getStaticPaths() {
 const { lang } = Astro.params as { lang: Language };
 
 const pageTitles = {
-	pl: 'icetrip - Islandia 2026',
-	en: 'icetrip - Iceland 2026',
+	pl: 'icetrip - Wyprawa rodzinna na Islandię 2026',
+	en: 'icetrip - Iceland Family Expedition 2026',
+};
+
+const heroTitles = {
+	pl: 'Islandia 2026 - Wyprawa rodzinna',
+	en: 'Iceland 2026 – Family Expedition',
 };
 
 const pageDescriptions = {
@@ -76,7 +81,7 @@ const packingListText = generalInfo.packingList.map((cat) => {
 			</div>
 
 			<h1 class="max-w-4xl text-3xl font-extrabold leading-[1.5] tracking-tight text-slate-950 font-serif sm:text-5xl lg:text-6xl">
-				<span class="box-decoration-clone rounded-sm bg-slate-100/90 px-2 shadow-sm">{pageTitles[lang]}</span>
+				<span class="box-decoration-clone rounded-sm bg-slate-100/90 px-2 shadow-sm">{heroTitles[lang]}</span>
 			</h1>
 
 			<p class="max-w-3xl text-base leading-relaxed text-slate-800 sm:text-lg">
@@ -90,7 +95,6 @@ const packingListText = generalInfo.packingList.map((cat) => {
 		<!-- Główne założenia Section -->
 		<section id="assumptions" class="space-y-6 pt-6">
 			<h2 class="text-2xl sm:text-3xl font-bold text-slate-900 font-serif flex items-center gap-3">
-				<span class="w-8 h-8 rounded-lg bg-sky-100 text-sky-800 border border-sky-200 flex items-center justify-center text-sm font-black">01</span>
 				<span>{introContext[lang].title}</span>
 			</h2>
 			<div class="rounded-2xl border border-slate-200 bg-white shadow-xs">
@@ -129,7 +133,6 @@ const packingListText = generalInfo.packingList.map((cat) => {
 		<!-- Logistics Kilometers Table -->
 		<section id="logistics" class="space-y-6 pt-6 border-t border-slate-200">
 			<h2 class="text-2xl sm:text-3xl font-bold text-slate-900 font-serif flex items-center gap-3">
-				<span class="w-8 h-8 rounded-lg bg-sky-100 text-sky-800 border border-sky-200 flex items-center justify-center text-sm font-black">02</span>
 				<span>{lang === 'pl' ? 'Tabela logistyczna – kilometry' : 'Logistics Table – Kilometers'}</span>
 			</h2>
 
@@ -176,7 +179,6 @@ const packingListText = generalInfo.packingList.map((cat) => {
 		<!-- Accommodations & Budget Section -->
 		<section id="budget" class="space-y-6 pt-6 border-t border-slate-200">
 			<h2 class="text-2xl sm:text-3xl font-bold text-slate-900 font-serif flex items-center gap-3">
-				<span class="w-8 h-8 rounded-lg bg-sky-100 text-sky-800 border border-sky-200 flex items-center justify-center text-sm font-black">03</span>
 				<span>{lang === 'pl' ? 'Koszty i noclegi' : 'Budget & Accommodations'}</span>
 			</h2>
 
@@ -267,7 +269,6 @@ const packingListText = generalInfo.packingList.map((cat) => {
 		<section id="packing" class="space-y-6 pt-6 border-t border-slate-200">
 			<div class="flex flex-wrap items-center justify-between gap-4">
 				<h2 class="text-2xl sm:text-3xl font-bold text-slate-900 font-serif flex items-center gap-3">
-					<span class="w-8 h-8 rounded-lg bg-sky-100 text-sky-800 border border-sky-200 flex items-center justify-center text-sm font-black">04</span>
 					<span>{lang === 'pl' ? 'Lista rzeczy do spakowania i sprzęt' : 'Packing List & Required Gear'}</span>
 				</h2>
 
@@ -335,7 +336,6 @@ const packingListText = generalInfo.packingList.map((cat) => {
 		<section id="days-grid" class="space-y-6 pt-6 border-t border-slate-200">
 			<div class="flex items-center justify-between">
 				<h2 class="text-2xl sm:text-3xl font-bold text-slate-900 font-serif flex items-center gap-3">
-					<span class="w-8 h-8 rounded-lg bg-sky-100 text-sky-800 border border-sky-200 flex items-center justify-center text-sm font-black">05</span>
 					<span>{lang === 'pl' ? 'Harmonogram dzień po dniu' : 'Day-by-Day Itinerary'}</span>
 				</h2>
 			</div>

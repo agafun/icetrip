@@ -9,6 +9,8 @@ export const GET: APIRoute = () => {
 		'/en/',
 		'/pl/contact',
 		'/en/contact',
+		'/pl/about',
+		'/en/about',
 		'/pl/privacy-policy',
 		'/en/privacy-policy',
 		...daysData.flatMap(({ slug }) => [`/pl/day/${slug}`, `/en/day/${slug}`]),

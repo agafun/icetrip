@@ -17,13 +17,21 @@ const { lang = 'pl' } = Astro.props;
 
 			<!-- Right: Accessible Links -->
 			<nav aria-label={lang === 'pl' ? 'Nawigacja w stopce' : 'Footer navigation'}>
-				<ul class="flex items-center gap-8 text-xs font-semibold text-slate-600">
+				<ul class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs font-semibold text-slate-600 sm:gap-x-8">
 					<li>
-						<a 
+						<a
 							href={`/${lang}/privacy-policy`}
 							class="hover:text-sky-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 rounded-md px-2 py-1 transition-colors underline underline-offset-4 decoration-slate-300 hover:decoration-sky-600"
 						>
 							{lang === 'pl' ? 'Polityka prywatności' : 'Privacy Policy'}
+						</a>
+					</li>
+					<li>
+						<a
+							href={`/${lang}/about`}
+							class="hover:text-sky-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 rounded-md px-2 py-1 transition-colors underline underline-offset-4 decoration-slate-300 hover:decoration-sky-600"
+						>
+							{lang === 'pl' ? 'O nas' : 'About us'}
 						</a>
 					</li>
 					<li>

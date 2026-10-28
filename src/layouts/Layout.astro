@@ -5,20 +5,20 @@ import Footer from '../components/Footer.astro';
 import Analytics from '@vercel/analytics/astro';
 
 interface Props {
-	title?: string;
-	description?: string;
-	lang?: 'pl' | 'en';
-	activeSlug?: string;
-	canonicalPath?: string;
+	title: string;
+	description: string;
+	lang: 'pl' | 'en';
+	activeSlug: string;
+	canonicalPath: string;
 	ogImage?: string;
 }
 
-const { 
-	title = "IceTrip - przewodnik po wyprawie islandzkiej", 
-	description = "Kompleksowy, dostępny przewodnik wyprawy po Islandii z opisem trasy, lodowców i atrakcji kulturowych.",
-	lang = 'pl',
-	activeSlug = 'overview',
-	canonicalPath = '/pl/',
+const {
+	title,
+	description,
+	lang,
+	activeSlug,
+	canonicalPath,
 	ogImage = 'https://icetrip.eu/images/highlight1IMG_5298.jpeg'
 } = Astro.props;
 

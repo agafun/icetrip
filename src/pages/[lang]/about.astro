@@ -1,0 +1,48 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import type { Language } from '../../utils/i18n';
+
+export function getStaticPaths() {
+	return [
+		{ params: { lang: 'pl' } },
+		{ params: { lang: 'en' } },
+	];
+}
+
+const { lang } = Astro.params as { lang: Language };
+const isPolish = lang === 'pl';
+const title = isPolish ? 'O nas - icetrip' : 'About us - icetrip';
+const description = isPolish
+	? 'Poznaj icetrip i rodzinny przewodnik po Islandii przygotowany z myślą o podróży z dziećmi.'
+	: 'Meet icetrip and our family travel guide to Iceland, created with trips with children in mind.';
+---
+
+<Layout title={title} description={description} lang={lang} activeSlug="about" canonicalPath={`/${lang}/about`}>
+	<article class="mx-auto max-w-3xl space-y-8 py-4">
+		<header class="space-y-3">
+			<p class="text-xs font-bold uppercase tracking-widest text-sky-700">icetrip</p>
+			<h1 class="text-3xl font-extrabold tracking-tight text-slate-900 font-serif sm:text-4xl">
+				{isPolish ? 'O nas' : 'About us'}
+			</h1>
+			<p class="text-base leading-relaxed text-slate-600 sm:text-lg">
+				{isPolish
+					? 'Hæ, to my: Agnieszka i Kamil, a icetrip to nasz rodzinny projekt podróżniczy. Wiemy, że podróżowanie z dziećmi jest szczególnym wyzwaniem i ogromnie napracowaliśmy się nad tym, żeby wszyscy byli z tego wyjazdu zadowoleni. Dlatego dzielimy się planem wyprawy po Islandii, a w przyszłości chcemy rozbudować stronę o relację z wyjazdów do Norwegii.'
+					: 'Hi, it’s us: Agnieszka and Kamil, and icetrip is our family travel project. We know that traveling with kids is a unique challenge, and we worked exceptionally hard to make sure everyone enjoys this trip. That’s why we’re sharing our Iceland itinerary, and in the future, we plan to expand the site with stories and reports from our trips to Norway.'}
+			</p>
+		</header>
+
+		<figure class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xs">
+			<img
+				src="/images/copy1IMG_5714.jpeg"
+				alt={isPolish ? 'Dwoje podróżników na tle rzeźby Sólfar w Reykjavíku' : 'Two travelers in front of the Sun Voyager sculpture in Reykjavík'}
+				class="block h-auto w-full"
+				loading="lazy"
+				decoding="async"
+			/>
+			<figcaption class="border-t border-slate-200 px-4 py-3 text-sm text-slate-600">
+				{isPolish ? 'Autorzy przy rzeźbie Sólfar w Reykjavíku.' : 'Authors by the Sun Voyager sculpture in Reykjavík.'}
+			</figcaption>
+		</figure>
+
+	</article>
+</Layout>

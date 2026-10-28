@@ -1,0 +1,2 @@
+# Add the authorized seller record supplied by your advertising network here.
+# Google AdSense format: google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0

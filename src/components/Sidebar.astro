@@ -78,8 +78,14 @@ const chapters = [
 			})}
 		</nav>
 
+		<nav aria-label={lang === 'pl' ? 'Informacje' : 'Information'} class="space-y-1 border-t border-slate-200 pt-4">
+			<a href={`/${lang}/privacy-policy`} class="block rounded-xl px-3.5 py-2.5 text-xs sm:text-sm font-semibold text-slate-600 hover:bg-slate-100/80 hover:text-slate-950">{lang === 'pl' ? 'Polityka prywatności' : 'Privacy Policy'}</a>
+			<a href={`/${lang}/about`} class="block rounded-xl px-3.5 py-2.5 text-xs sm:text-sm font-semibold text-slate-600 hover:bg-slate-100/80 hover:text-slate-950">{lang === 'pl' ? 'O nas' : 'About us'}</a>
+			<a href={`/${lang}/contact`} class="block rounded-xl px-3.5 py-2.5 text-xs sm:text-sm font-semibold text-slate-600 hover:bg-slate-100/80 hover:text-slate-950">{lang === 'pl' ? 'Kontakt' : 'Contact'}</a>
+		</nav>
+
 		<!-- Sidebar AdBanner Placement -->
-		<div class="pt-4 border-t border-slate-200">
+		<div class="hidden pt-4 border-t border-slate-200">
 			<AdBanner slotType="sidebar" />
 		</div>
 	</div>
