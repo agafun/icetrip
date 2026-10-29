@@ -9,6 +9,7 @@ export const languages: Record<Language, string> = {
 export interface SafetyTip {
   pl: string;
   en: string;
+  link?: { href: string; label: { pl: string; en: string } };
   image?: string;
   photo?: string;
   imageAlt?: { pl: string; en: string };
@@ -60,8 +61,8 @@ export const daysData: DayData[] = [
         en: 'Some campsite shared kitchens are only equipped with a stove and a kettle — no pots, plates, mugs, or cutlery (this is not an issue for campervan travelers, but you might expect cookware when renting a cabin). It is a good idea to bring your own mess kit and camping mugs.'
       },
       {
-        pl: 'Zanim odjedziesz spod wypożyczalni, rzuć oko na auto, a w szczególności POD auto - nasze miało rozerwaną matę w podwoziu.',
-        en: 'Before driving away from the rental company, take a close look at the car, and especially UNDER the car — ours had a torn underbody shield.',
+        pl: 'Zanim odjedziesz spod wypożyczalni, rzuć oko na auto, a w szczególności POD auto - nasze miało rozerwaną matę w podwoziu. Koniecznie trzeba takie uszkodzenia udokumentować i zgłosić wypożyczalni.',
+        en: 'Before driving away from the rental company, take a close look at the car, and especially UNDER the car — ours had a torn underbody shield. It is essential to document any such damage and report it to the rental company immediately.',
         image: '01-IMG_3633',
         imageAlt: {
           pl: 'Rozerwana mata w podwoziu samochodu z wypożyczalni',
@@ -70,16 +71,16 @@ export const daysData: DayData[] = [
       }
     ],
     content: {
-      pl: `Samolot wylądował na lotnisku w Keflavíku z półtoragodzinnym opóźnieniem - po 18:00 czasu lokalnego. Dojazd do wypożyczalni Lotus Car Rental i wypożyczenie samochodu przebiegło bardzo sprawnie. Zaraz obok znajduje market Netto - szybkie zakupy i jazda w kierunku Południowego Wybrzeża. Droga prowadziła przez przez surowy krajobraz czarnych pól lawowych, co nas ogromnie zaciekawiło.
+      pl: `Samolot wylądował na lotnisku w Keflavíku z półtoragodzinnym opóźnieniem - po 18:00 czasu lokalnego. Dojazd do wypożyczalni Lotus Car Rental i wypożyczenie samochodu przebiegło bardzo sprawnie. Zaraz obok znajduje market Netto - zrobiliśmy szybkie zakupy i wyruszyliśmy w kierunku Południowego Wybrzeża. Droga prowadziła przez przez surowy krajobraz czarnych pól lawowych, co nas bardzo rozentuzjazmowało, bo świadomość, że dosłownie kilka lat temu płynęła tędy lawa, robi ogromne wrażenie.
 
-Zakwaterowaliśmy się w domkach Árhús Cottage and Camping dopiero około 22:00. Na miejscu okazało się, że jeden domek nie ma łazienki, ani kuchni, a drugi dysponuje jedynie trzema łóżkami. W ogólnodostępnej kuchni kempingowej nie ma w ogóle wyposażenia typu talerze, sztućce, czy garnki - trzeba mieć swoje, by móc gotować. Jest natomiast czajnik i kuchenka.
+Zakwaterowaliśmy się w domkach Árhús Cottage and Camping dopiero około 22:00. Na miejscu okazało się, że jeden domek nie ma łazienki, ani kuchni, a drugi dysponuje jedynie trzema łóżkami. W ogólnodostępnej kuchni kempingowej nie było w ogóle wyposażenia typu talerze, sztućce, czy garnki - trzeba mieć swoje, by móc gotować. Był natomiast czajnik i kuchenka. Okolica bardzo fajna: dużo zieleni i strumyk przy samym kempingu.
 
-O 23:00 wciąż jest jasno.`,
-      en: `Our flight landed at Keflavík Airport with a hour-and-a-half delay—just after 6:00 PM local time. Transferring to Lotus Car Rental and picking up the car went very smoothly. Right next door is a Netto supermarket, where we grabbed a few quick groceries before setting off toward the South Coast. The drive took us through a rugged landscape of black lava fields, which completely fascinated us.
+O 23:00 wciąż było jasno!`,
+      en: `Our flight landed at Keflavík Airport with a hour-and-a-half delay—just after 6:00 PM local time. Transferring to Lotus Car Rental and picking up the car went very smoothly. Right next door is a Netto supermarket, where we grabbed a few quick groceries before setting off toward the South Coast. The drive took us through a rugged landscape of black lava fields, which got us super excited—knowing that actual lava was flowing right here just a few years ago is mind-blowing.
 
-We checked into our cabins at Árhús Cottage and Camping around 10:00 PM. Upon arrival, we found out that one cabin had neither a bathroom nor a kitchen, while the second one only had three beds. The shared campsite kitchen had no equipment whatsoever—no plates, cutlery, or pots—so you need to bring your own if you plan to cook. There was, however, a kettle and a stovetop.
+We checked into our cabins at Árhús Cottage and Camping around 10:00 PM. Upon arrival, we found out that one cabin had neither a bathroom nor a kitchen, while the second one only had three beds. The shared campsite kitchen had no equipment whatsoever—no plates, cutlery, or pots—so you need to bring your own if you plan to cook. There was, however, a kettle and a stovetop. The surroundings are great though: lots of greenery and a lovely stream right by the campsite.
 
-At 11:00 PM, it was still broad daylight.`
+At 11:00 PM, it was still broad daylight!`
     },
     images: [
       {
@@ -106,29 +107,39 @@ At 11:00 PM, it was still broad daylight.`
     },
     food: {
       pl: [
-        'Efstidalur II (między Þingvellir a Geysir): Działająca farma krów z genialnymi domowymi lodami i restauracją z widokiem na oborę. Świetna zupa i burgery z własnej wołowiny.',
-        'Kaffi Krús (Selfoss): Wyśmienita pizza i lunche w rozsądnych cenach.'
+        'Efstidalur II (między Þingvellir a Geysir): Działająca farma krów z restauracją z widokiem na oborę. Świetna zupa i burgery z własnej wołowiny.',
+        'Kaffi Krús (Selfoss): Pizza i lunche w rozsądnych cenach.'
       ],
       en: [
         'Efstidalur II: Working dairy farm serving famous homemade ice cream and farm-to-table beef burgers.',
-        'Kaffi Krús (Selfoss): Great pizza and cozy atmosphere at fair local prices.'
+        'Kaffi Krús (Selfoss): Pizza and cozy atmosphere at fair local prices.'
       ]
     },
-    safetyTip: {
-      pl: 'Przy wodospadzie Gullfoss pył wodny moczy do suchej nitki. Przydadzą się kurtki/płaszcze przeciwdeszczowe!',
-      en: 'Water mist at Gullfoss will soak you instantly. Waterproof jackets/ponchos are recommended!'
+    safetyTips: [
+    {
+      pl: 'Przy wodospadzie Gullfoss pył wodny moczy do suchej nitki. Przydadzą się kurtki/płaszcze przeciwdeszczowe.',
+      en: 'Water mist at Gullfoss will soak you instantly. Waterproof jackets/ponchos are recommended.'
     },
+    {
+      pl: 'W ogólnodostępnych kuchniach na kempingu nie zostawiaj cennych rzeczy. Nam ukradziono z lodówki mięso.',
+      en: 'Do not leave valuable items in shared camping kitchens. Someone actually stole our meat right out of the fridge.'
+    },
+    ],
     content: {
       pl: `Dzień poświęcony klasycznej pętli Złotego Kręgu. Pierwszym punktem był Park Narodowy Þingvellir, gdzie przeszliśmy wąwozem Almannagjá, wyznaczającym styk płyt tektonicznych. Warto podjechać na Öxarárfoss Parking P2 - najbliżej wodospadu. Ścieżki widoczne przy Thingvellir National Park Service Centre są wyłączone z ruchu ze względu na ochronę roślinności.
 
-Z Þingvellir skierowaliśmy się do doliny gejzerów Haukadalur, gdzie obserwowaliśmy wyrzuty wody z gejzeru Strokkur, powtarzające się co 5–10 minut. Następnie podjechaliśmy pod wodospad Gullfoss. Dzień zakończyliśmy w gorącym źródle Hrunalaug - wymagana wcześniejsza rezerwacja (wejścia limitowane). Nam szczęśliwie udało się wejść czekając ok. 15 minut.
+Z Þingvellir skierowaliśmy się do doliny gejzerów Haukadalur, gdzie obserwowaliśmy wyrzuty wody z gejzeru Strokkur, powtarzające się co 5–10 minut. Następnie podjechaliśmy pod wodospad Gullfoss. Dzień zakończyliśmy w gorącym źródle Hrunalaug - tutaj wymagana jest wcześniejsza rezerwacja ze względu na limitowane wejścia. Nam szczęśliwie udało się wejść czekając ok. 15 minut.
 
-Tego dnia nie zatrzymywaliśmy się w restauracjach, jedliśmy liofilizaty na całkiem urokliwym parkingu przy Öxarárfoss.`,
+Tego dnia nie zatrzymywaliśmy się w restauracjach, jedliśmy liofilizaty na całkiem urokliwym parkingu przy Öxarárfoss.
+
+Po powrocie do domków okazało się, że z lodówki zniknęły kotlety z kurczaka, które mieliśmy przeznaczone na kolację. Na szczęście mieliśmy jeszcze inne zapasy, ale rozczarowanie trochę zepsuło pobyt w tym miejscu.`,
       en: `A day dedicated to the classic Golden Circle loop. Our first stop was Þingvellir National Park, where we walked through the Almannagjá gorge marking the boundary between two tectonic plates. It's worth driving up to Öxarárfoss Parking P2, as it's closest to the waterfall. The paths near the Þingvellir National Park Service Centre are closed off to protect the local vegetation.
 
 From Þingvellir, we headed to the Haukadalur geothermal valley to watch Strokkur erupt every 5–10 minutes. Next, we drove over to Gullfoss waterfall. We finished the day with a relaxing soak in the Hrunalaug hot spring—advance booking is required as entry is limited. Luckily, we managed to get in after waiting about 15 minutes.
 
-We didn't stop at any restaurants that day, instead having freeze-dried meals at a quite charming parking area near Öxarárfoss.`
+We didn't stop at any restaurants that day, instead having freeze-dried meals at a quite charming parking area near Öxarárfoss.
+
+When we got back to the cabins, we discovered that the chicken cutlets we had planned for dinner were missing from the fridge. Luckily, we had other food supplies left, but the disappointment put a bit of a damper on our stay there.`
     },
     images: [
       {
@@ -150,12 +161,12 @@ We didn't stop at any restaurants that day, instead having freeze-dried meals at
     hub: { pl: 'Árhús Cottage & Camping, Hella', en: 'Árhús Cottage & Camping, Hella' },
     accommodation: { pl: 'Árhús Cottage & Camping, Hella', en: 'Árhús Cottage & Camping, Hella' },
     highlights: {
-      pl: ['Krater wulkaniczny Kerið z turkusowym jeziorem (1h)', 'Reykjadalur: Trekking do 40°C gorącej rzeki (3 km w jedną stronę, 4h)', 'Ukryty wodospad Ægissíðufoss blisko Hella'],
-      en: ['Kerið volcanic crater with neon turquoise water (1h)', 'Reykjadalur: Hike to a 40°C natural hot spring river (3 km one way, 4h)', 'Hidden Ægissíðufoss waterfall near Hella']
+      pl: ['Krater wulkaniczny Kerið z turkusowym jeziorem (1h)', 'Reykjadalur: Trekking do gorącej rzeki (3 km w jedną stronę, 4h)', 'Ukryty wodospad Ægissíðufoss blisko Hella'],
+      en: ['Kerið volcanic crater with neon turquoise water (1h)', 'Reykjadalur: Hike to a natural hot spring river (3 km one way, 4h)', 'Hidden Ægissíðufoss waterfall near Hella']
     },
     food: {
-      pl: ['Kaffi Krús (Selfoss): Pyszne lunche, tradycyjna zupa i dobra pizza.'],
-      en: ['Kaffi Krús (Selfoss): Delicious lunches, traditional soups, and hearty pizzas.']
+      pl: ['Kaffi Krús (Selfoss): Dobra pizza i lunche w rozsądnych cenach.'],
+      en: ['Kaffi Krús (Selfoss): Pizza and cozy atmosphere at fair local prices.']
     },
     safetyTip: {
       pl: 'Przebieralnie nad gorącą rzeką Reykjadalur to tylko proste drewniane parawany. Warto ubrać strój kąpielowy pod spód przed trekkingiem.',
@@ -164,12 +175,12 @@ We didn't stop at any restaurants that day, instead having freeze-dried meals at
     content: {
       pl: `Jadąc do Reykjadalur uznaliśmy, że odwrócimy kolejność zwiedzania i najpierw podjedziemy na krater Kerið, ponieważ trekking może okazać się dłuższy niż szacowany czas. Wstęp na krater Kerið jest płatny – bilet kupuje się w budce przy wejściu. 
 
-Trekking z parkingu w Hveragerði do ciepłej rzeki Reykjadalur to ok. 3 km podejścia - z dziećmi zajęło 1,5-2h w jedną stronę. Kąpiel w naturalnie podgrzewanej wodzie o temperaturze blisko 40°C zrekompensowała wysiłek. Do jedzenia zupa pomidorowa w termosach.
+Trekking z parkingu w Hveragerði do ciepłej rzeki Reykjadalur to ok. 3 km podejścia - z dziećmi zajęło 1,5-2h w jedną stronę. Trasa nie jest trudna, ale momentami uciążliwa - za każdym razem, gdy wydaje się, że to już koniec, wyłania się kolejny odcinek drogi. Kąpiel w naturalnie podgrzewanej wodzie o temperaturze blisko 40°C zrekompensowała wysiłek. Do jedzenia zupa pomidorowa w termosach.
 
 W drodze powrotnej zatrzymaliśmy się w Selfoss na obiad w restauracji Kaffi Krús i zakupy. Na wodospad Ægissíðufoss zabrakło chęci i sił.`,
       en: `On the way to Reykjadalur, we decided to reverse the order of our itinerary and visit the Kerið crater first, as we anticipated the hike might take longer than estimated. Admission to Kerið crater is paid—you buy tickets at the booth near the entrance.
 
-The hike from the parking lot in Hveragerði up to the warm Reykjadalur river is an uphill walk of about 3 km—with kids, it took us 1.5 to 2 hours one way. Bathing in naturally heated water close to 40°C made the effort completely worthwhile. For food, we had hot tomato soup from our thermoses.
+The hike from the parking lot in Hveragerði up to the warm Reykjadalur river is an uphill walk of about 3 km—with kids, it took us 1.5 to 2 hours one way. The trail isn't difficult, but it can be a test of patience — just when you think you've reached the end, another section of the road opens up. Bathing in naturally heated water close to 40°C made the effort completely worthwhile. For food, we had hot tomato soup from our thermoses.
 
 On the way back, we stopped in Selfoss for lunch at Kaffi Krús and picked up some groceries. We simply lacked the energy and motivation to visit the Ægissíðufoss waterfall.`
     },
@@ -223,16 +234,16 @@ On the way back, we stopped in Selfoss for lunch at Kaffi Krús and picked up so
       ]
     },
     safetyTip: {
-      pl: 'ŚMIERTELNE NIEBEZPIECZEŃSTWO: Plaża Reynisfjara słynie z podstępnych fal. Bezwzględnie zakazane jest zbliżanie się do linii wody i odwracanie plecami do oceanu!',
-      en: 'DANGER: Reynisfjara beach is infamous for lethal sneaker waves. Never turn your back to the ocean or step close to the tide!'
+      pl: 'NIEBEZPIECZEŃSTWO: Plaża Reynisfjara słynie z podstępnych fal. Bezwzględnie zakazane jest zbliżanie się do linii wody i odwracanie plecami do oceanu.',
+      en: 'DANGER: Reynisfjara beach is infamous for lethal sneaker waves. Never turn your back to the ocean or step close to the tide.'
     },
     content: {
-      pl: `Najbardziej obfity w atrakcje dzień wyprawy wymagał ścisłego trzymania się harmonogramu. Wyjechaliśmy z Helli o 8:30. Pierwszym przystankiem był wodospad Seljalandsfoss, gdzie ścieżka prowadzi za ścianę spadającej wody. Warto podejść jeszcze kawałek dalej pod wodospad Gljúfrabúi, gdzie woda wpada do kanionu szczelinowego. Następnie podjechaliśmy pod Skógafoss, by wspiąć się po metalowych schodach na taras widokowy.
+      pl: `Najbardziej obfity w atrakcje dzień wyprawy wymagał ścisłego trzymania się harmonogramu. Wyjechaliśmy z Helli o 8:30. Pierwszym przystankiem był wodospad Seljalandsfoss, gdzie ścieżka prowadzi za ścianę spadającej wody. Warto podejść jeszcze kawałek dalej pod wodospad Gljúfrabúi, gdzie woda wpada do kanionu szczelinowego - to była mega atrakcja, woda lała się ze wszystkich stron i byliśmy kompletnie mokrzy! Następnie podjechaliśmy pod Skógafoss, by wspiąć się po metalowych schodach na taras widokowy.
 
 Przed południem dotarliśmy do klifu Dyrhólaey z myślą o obserwacji maskonurów, gdzie okazało się, że można zrobić bardzo fajny spacer klifami aż do plaży. Tam dzieci zgłodniały, więc postanowiliśmy podjechać do Black Beach Restaurant (dużo ludzi, ale dość sprawnie poszło) i zwiedzić czarną plażę od drugiej strony, przy jaskini Hálsanefshellir. To było warte zobaczenia.
 
 Po obiedzie podjechaliśmy zobaczyć kanion Fjaðrárgljúfur, po czym ruszyliśmy bezpośrednio na nocleg do Höfn, przekładając wizytę przy Svartifoss na kolejny dzień. Domki w Höfn Cottages mają aneks kuchenny, więc można śmiało gotować. Prysznice ogólnodostępne, ale czysto i woda ciepła.`,
-      en: `The most packed day of our trip required sticking strictly to our schedule. We set off from Hella at 8:30 AM. Our first stop was Seljalandsfoss, where the path takes you right behind the cascading wall of water. It’s well worth walking a bit further to Gljúfrabúi waterfall, where the water plunges into a hidden canyon. Next, we drove up to Skógafoss to climb the metal stairs up to the observation deck.
+      en: `The most packed day of our trip required sticking strictly to our schedule. We set off from Hella at 8:30 AM. Our first stop was Seljalandsfoss, where the path takes you right behind the cascading wall of water. It was an absolute blast — water was pouring from every direction, and we got completely soaked! It’s well worth walking a bit further to Gljúfrabúi waterfall, where the water plunges into a hidden canyon. Next, we drove up to Skógafoss to climb the metal stairs up to the observation deck.
 
 Before noon, we reached the Dyrhólaey cliff hoping to spot puffins, where we discovered a great walking trail along the cliffs leading down toward the beach. By then, the kids were getting hungry, so we drove over to Black Beach Restaurant (it was crowded, but service was fairly quick) and explored the black sand beach from the other side, near the Hálsanefshellir cave. That was well worth seeing.
 
@@ -262,32 +273,40 @@ After lunch, we went to see Fjaðrárgljúfur canyon before heading straight to 
         'Park Skaftafell: Wodospad Svartifoss wśród bazaltowych organów (2h)',
         'Skaftafellsjökull: Wejście na lodowiec (1h)',
         'Jökulsárlón & Diamond Beach: Dryfujące bryły lodu na wulkanicznym czarnym piasku',
-        'Rejs amfibią wśród gór lodowych (icelagoon.is - konieczna rezerwacja!)'
+        'Rejs amfibią wśród gór lodowych'
       ],
       en: [
         'Skaftafell National Park: Hike to Svartifoss basalt waterfall (2h)',
         'Skaftafellsjökull: Glacier tongue (1h)',
         'Jökulsárlón & Diamond Beach: Glistening icebergs stranded on black volcanic sand',
-        'Amphibian Boat Tour navigating giant icebergs (icelagoon.is - booking necessary!)'
+        'Amphibian Boat Tour navigating giant icebergs'
       ]
     },
     food: {
       pl: [
         'Pakkhús Restaurant (Höfn): Klimatyczny lokal w portowym magazynie słynący z lokalnej langusty.',
-        'Hafnarbúðin (Höfn): Budżetowy bar portowy w stylu lat 80. Pyszna bagietka z langustą i burgery za ułamek ceny.'
+        'Hafnarbúðin (Höfn): Budżetowy bar portowy w stylu lat 80. Bagietki z langustą i burgery w niskich cenach.'
       ],
       en: [
         'Pakkhús Restaurant (Höfn): Renowned harbor warehouse restaurant specializing in langoustine.',
         'Hafnarbúðin (Höfn): Retro 80s harbor diner serving affordable langoustine baguettes and burgers.'
       ]
     },
+    safetyTip: {
+      pl: 'Rejs amfibią w Jökulsárlón trzeba wcześniej zarezerwować na stronie',
+      en: 'The Jökulsárlón amphibian boat tour must be booked in advance on',
+      link: {
+        href: 'https://icelagoon.is',
+        label: { pl: 'icelagoon.is', en: 'icelagoon.is' }
+      }
+    },
     content: {
       pl: `Nie odpuściliśmy wodospadu Svartifoss i całe szczęście, bo jest chyba najbardziej urokliwy ze wszysktich na Islandii. To ten z bazaltowymi kolumnami przypominającymi organy. Przy wejściu na szlak działa spore centrum turystyczne z ławeczkami, tam zjedliśmy na obiad liofilizaty. Niedaleko znajduje się łatwo dostępny szlak na samo czoło lodowca Skaftafellsjökull, więc tym bardziej powrót w tę okolicę był trafioną decyzją. 
 
-Popołudniu mieliśmy zarezerwowany rejs amfibią po lagunie lodowcowej Jökulsárlón, ale wcześniej mieliśmy chwilę, by przespacerować się na Diamentową Plażę.`,
+Popołudniu mieliśmy zarezerwowany rejs amfibią po lagunie lodowcowej Jökulsárlón, ale wcześniej mieliśmy chwilę, by przespacerować się na Diamentową Plażę. Ponieważ od kilku dni pogoda była stabilna i bezwietrzna, bryły lodowe na plaży były nieduże i było ich dosłownie kilka.`,
       en: `We didn't skip Svartifoss, and thank goodness, as it is probably the most charming waterfall in all of Iceland. This is the one surrounded by basalt columns resembling church organ pipes. There is a sizable visitor center with benches at the trailhead, where we had freeze-dried meals for lunch. Nearby, there is an easily accessible trail leading right up to the Skaftafellsjökull glacier tongue, making our decision to return to this area even more worthwhile.
 
-In the afternoon, we had booked an amphibian boat tour on the Jökulsárlón glacier lagoon, but beforehand, we had enough time for a stroll along Diamond Beach.`
+In the afternoon, we had booked an amphibian boat tour on the Jökulsárlón glacier lagoon, but beforehand, we had enough time for a stroll along Diamond Beach. Since the weather had been calm and windless for a few days, the ice chunks on the beach were small, and there were literally only a few of them.`
     },
     images: [
       {
@@ -313,8 +332,8 @@ In the afternoon, we had booked an amphibian boat tour on the Jökulsárlón gla
       en: ['Stokksnes / Vestrahorn: Viking village and jagged black peak towering above tidal beach lagoons', 'Djúpivogur: Fishing village & granite bird egg sculptures', 'Drive winding through East Fjords and Egilsstaðir to Vogar Travel Service, Mývatn', 'Grjótagjá: Volcanic cave housing a geothermal spring']
     },
     food: {
-      pl: ['Vogafjós Farm Resort (obok noclegu Vogar): Restauracja wewnątrz obory. Pijesz kawę patrzac na dojenie krów! Słynny podziemny chleb geotermalny Geysir bread z wędzonym pstrągiem.'],
-      en: ['Vogafjós Farm Resort (next to Vogar stay): Unique restaurant inside a cowshed. Enjoy Geysir rye bread baked underground with smoked trout.']
+      pl: ['Vogafjós Farm Resort (obok noclegu Vogar Travel Service): Restauracja wewnątrz obory z widokiem na dojenie krów. Słynny podziemny chleb geotermalny Geysir bread z wędzonym pstrągiem.'],
+      en: ['Vogafjós Farm Resort (next to Vogar Travel Service stay): Unique restaurant inside a cowshed. Enjoy Geysir rye bread baked underground with smoked trout.']
     },
     content: {
       pl: `Rano ruszyliśmy na półwysep Stokksnes, położony niedaleko od Höfn, u stóp góry Vestrahorn. Na miejscu okazało się, że można tam zwiedzać wioskę Wikingów, zbudowaną na potrzeby produkcji filmowej. Następnie ruszyliśmy w jedną z najpiękniejszych tras widokowych Europy – przez meandrujące Fiordy Wschodnie.
@@ -372,16 +391,16 @@ The drive to Mývatn is quite long, featuring a gravel section along the way. In
       en: 'Swarms of non-biting midges hover around Lake Mývatn on calm summer days. Wearing a head mesh net will save your sanity.'
     },
     content: {
-      pl: `Dzień pełen wulkanicznej energii. Jadąc przez niesamowity marsjański krajobraz, dotarliśmy Dettifoss. Trafiliśmy na poziomo padający deszcz i porywisty wiatr, przez co sam wodospad był praktycznie niewidoczny, a my w ciągu 15 minut byliśmy przemoczeni do suchej nitki.
+      pl: `Dzień pełen wulkanicznej energii. Jadąc przez niesamowity marsjański krajobraz, dotarliśmy Dettifoss. Niestety, trafiliśmy na poziomo (sic!) padający deszcz i porywisty wiatr, przez co sam wodospad był praktycznie niewidoczny, a my w ciągu 15 minut byliśmy przemoczeni do suchej nitki.
 
 Następnie skierowaliśmy się w stronę wulkanu Krafla i krateru Víti. Gęsta mgła również uniemożliwiła nam zobaczenie turkusowego jeziora. Teren ten stanowi własność prywatną i nie oferuje dłuższego szlaku pieszego - generalnie można było to pominąć. Pogoda poprawiła się na polach geotermalnych Hverir, co pozwoliło na spacer pośród dymiących formacji siarkowych. Popołudnie spędziliśmy w luksusowych termach Earth Lagoon Mývatn (drogo, ale warto; mało ludzi).
 
-Kolację zjedliśmy w polecanej restauracji z widokiem na oborę - fajna odmiana, a do obory można wejść i pogłaskać krowy. Korzystając z tego, że dzień się nie kończy, pojechaliśmy jeszcze na krótką wędrówkę na wulkan Hverfell i to był bardzo dobry pomysł, bo widok z góry jest naprawdę atrakcyjny.`,
+Kolację zjedliśmy w polecanej restauracji z widokiem na oborę - fajna odmiana, a do obory można wejść i pogłaskać krowy. Korzystając z tego, że dzień się nie kończy, pojechaliśmy jeszcze na krótką wędrówkę na wulkan Hverfell i to był bardzo dobry pomysł, bo widok z góry jest naprawdę atrakcyjny, a w środku zobaczyliśmy gigantyczny krater.`,
       en: `A day packed with volcanic energy. Driving through an incredible, Mars-like terrain, we reached Dettifoss. We were met with sideways rain and gusty winds, rendering the waterfall practically invisible and leaving us soaked to the bone within 15 minutes.
 
 Next, we headed toward the Krafla volcano and the Víti crater, but dense fog completely blocked the view of the turquoise crater lake. The site is private property and doesn't offer much in terms of longer hiking trails—honestly, we could have skipped it. The weather improved at the Hverir geothermal fields, allowing for a walk among the steaming sulfur vents. We spent the afternoon unwinding at the luxurious Mývatn Nature Baths / Earth Lagoon (expensive, but worth it; uncrowded).
 
-We had dinner at a recommended restaurant with a view directly into a cowshed—a fun change of pace, and you can actually go inside the barn to pet the cows. Taking advantage of the endless summer daylight, we went on a short hike up the Hverfjall volcano, which turned out to be a fantastic idea—the view from the rim is truly spectacular.`
+We had dinner at a recommended restaurant with a view directly into a cowshed—a fun change of pace, and you can actually go inside the barn to pet the cows. Taking advantage of the endless summer daylight, we went on a short hike up the Hverfjall volcano, which turned out to be a fantastic idea, because the view from the top is truly stunning, and inside, we were greeted by a massive crater.`
     },
     images: [
       {
@@ -417,17 +436,17 @@ We had dinner at a recommended restaurant with a view directly into a cowshed—
       ]
     },
     content: {
-      pl: `Po spokojnym dniu spędzonym lokalnie, kolejny dzień "tranzytowy". Z Mývatn wyruszyliśmy pod Goðafoss związanego z legendą o wrzuceniu pogańskich posągów bogów w 1000 roku.
+      pl: `Po spokojnym dniu spędzonym lokalnie, kolejny dzień "tranzytowy". Z Mývatn wyruszyliśmy pod wodospad Goðafoss, z którym wiąże się legenda. Według podań, w 1000 roku głosiciel praw Þorgeir Ljósvetningagoði podjął decyzję o przyjęciu przez wyspę chrześcijaństwa, a na znak porzucenia dawnej wiary wrzucił do wzburzonej wody posążki pogańskich bogów, od czego wodospad zyskał miano „Wodospadu Bogów”.
 
 Kolejnym przystankiem było Akureyri, klimatyczna stolica Północy. Zwiedziliśmy najdalej na północ wysunięty ogród botaniczny na świecie, a w ramach drugiego śniadania zjedliśmy tradycyjne lody w Brynja. Porcje w Brynja są bardzo obfite, a lody mocno maślane, więc warto wziąć mniejsze.
 
-Po drodze do Lækjarkot zrobiliśmy przerwę na kawę i trampoliny w Blönduós. W Lækjarkot Rooms and Cottages mamy zarezerwowane domki holenderskie - standard bardzo dobry. Z każdym noclegiem było trochę lepiej, więc dobrze, że nie jechaliśmy w przeciwną stronę.`,
+Po drodze do Lækjarkot zrobiliśmy przerwę na kawę i trampoliny w Blönduós. W Lækjarkot Rooms and Cottages mieliśmy zarezerwowane domki holenderskie - standard bardzo dobry. W ogóle, z każdym noclegiem warunki były coraz lepsze, więc dobrze, że nie jechaliśmy w przeciwną stronę!`,
 
-      en: `After a quiet day spent exploring locally, we had another "transit" day. From Mývatn, we set off for Goðafoss, a waterfall tied to the legend of pagan idols being cast into its waters in the year 1000.
+      en: `After a quiet day spent exploring locally, we had another "transit" day. From Mývatn, we set off for the Goðafoss waterfall, which is tied to a legend. According to tales, in the year 1000, the lawspeaker Þorgeir Ljósvetningagoði made the decision for Iceland to adopt Christianity and as a sign of abandoning the old faith, he threw his pagan idols into the roaring water, earning the cascade the name "Waterfall of the Gods".
 
 Our next stop was Akureyri, the charming capital of the North. We visited the world's northernmost botanical garden and grabbed traditional ice cream at Brynja for a mid-morning treat. Portions at Brynja are huge and the ice cream is rich and buttery, so it's wise to order a smaller size.
 
-On the drive to Lækjarkot, we stopped in Blönduós for coffee and a turn on the trampolines. At Lækjarkot Rooms and Cottages, we had booked Dutch-style cabins—the standard was very high. Every accommodation seemed to be a step up from the last, so we were glad we weren't travelling in the opposite direction.`
+On the drive to Lækjarkot, we stopped in Blönduós for coffee and a turn on the trampolines. At Lækjarkot Rooms and Cottages, we had booked Dutch-style cabins—the standard was very high. Every accommodation seemed to be a step up from the last, so we were glad we weren't travelling in the opposite direction!`
     },
     images: [
       {
@@ -463,12 +482,20 @@ On the drive to Lækjarkot, we stopped in Blönduós for coffee and a turn on th
       ]
     },
     food: {
-      pl: ['Settlement Center Restaurant (Borgarnes): Niezwykle opłacalny bufet sałatkowo-zupowy w porze lunchu (jesz ile chcesz).'],
+      pl: ['Settlement Center Restaurant (Borgarnes): Bufet sałatkowo-zupowy typu jesz ile chcesz.'],
       en: ['Settlement Center Restaurant (Borgarnes): Excellent value all-you-can-eat soup & salad lunch buffet.']
     },
     content: {
-      pl: `Spokojniejszy dzień poświęcony lokalnym atrakcjom. Najpierw pojechaliśmy do wodospadów Hraunfossar, wypływających wprost spod pola lawy - ciekawe miejsce, króciutki spacer wzdłuż rzeki. Następnie w Krauma obejrzeliśmy gorące źródło Deildartunguhver, pompujące 180 litrów wrzącej wody na sekundę. Nie chcąc wydawać majątku na termy, postanowiliśmy odwiedzić miejski basen w Borgarnes (tak samo zasilany wodą geotermalną). Sam basen był super, choć niestety tymczasowo nie działały zjeżdżalnie, ku rozczarowaniu dzieci. Wcześniej odwiedziliśmy Ogród Trolli Fossatún - ścieżkę edukacyjną wśród skał z elementami zabawowymi. Na obiad liofilizaty w parku koło basenu.`,
-      en: `A more relaxed day focused on local sights. First, we drove to Hraunfossar waterfalls, which flow directly out from under a lava field—a fascinating spot for a short walk along the river. Next, at Krauma, we checked out Deildartunguhver, a hot spring pumping 180 liters of boiling water per second. Not wanting to spend a fortune on thermal baths, we opted for the public swimming pool in Borgarnes instead (also heated by geothermal water). The pool itself was great, though the waterslides were temporarily closed, much to the kids' disappointment. Earlier, we visited Fossatún Troll Garden—an educational trail among rocks with interactive play elements. For lunch, we had freeze-dried meals in the park next to the pool.`
+      pl: `Spokojniejszy dzień poświęcony lokalnym atrakcjom. Najpierw pojechaliśmy do wodospadów Hraunfossar, wypływających wprost spod pola lawy - ciekawe miejsce, króciutki spacer wzdłuż rzeki. Następnie w Krauma obejrzeliśmy gorące źródło Deildartunguhver, pompujące 180 litrów wrzącej wody na sekundę. Nie chcąc wydawać majątku na termy, postanowiliśmy odwiedzić miejski basen w Borgarnes (tak samo zasilany wodą geotermalną). Sam basen był super, choć niestety tymczasowo nie działały zjeżdżalnie, ku rozczarowaniu dzieci. 
+      
+      Wcześniej, w drodze na basen, odwiedziliśmy Ogród Trolli Fossatún, związany z legendą o trollicy imieniem Grýla, która według lokalnych podań zamieszkiwała pobliskie skały i wodospad Tröllafossar. Była to postać groźna i potężna, z wielkim koszem na plecach, do którego porywała niegrzeczne dzieci. Jest tam ścieżka edukacyjna z elementami zabawowymi, która opowiada o obyczajach i codziennym życiu trolli, zamieniając dawne straszydło w barwne i przyjazne postacie z islandzkiego folkloru.
+      
+        Na obiad liofilizaty w parku koło basenu.`,
+      en: `A more relaxed day focused on local sights. First, we drove to Hraunfossar waterfalls, which flow directly out from under a lava field—a fascinating spot for a short walk along the river. Next, at Krauma, we checked out Deildartunguhver, a hot spring pumping 180 liters of boiling water per second. Not wanting to spend a fortune on thermal baths, we opted for the public swimming pool in Borgarnes instead (also heated by geothermal water). The pool itself was great, though the waterslides were temporarily closed, much to the kids' disappointment. 
+      
+      Earlier, on our way to the pool, we visited the Fossatún Troll Garden, home to the legend of a giantess troll named Grýla, who local folklore says lived in the nearby rocks and Tröllafossar waterfall. She was historically a fierce and powerful creature with a giant basket on her back used to kidnap naughty children. Today, the park features an educational trail with interactive play elements that shares stories of troll customs and daily life, transforming this ancient bogeyman into colorful, friendly characters from Icelandic folklore."
+      
+      For lunch, we had freeze-dried meals in the park next to the pool.`
     },
     images: [
       {
@@ -656,36 +683,36 @@ export const generalInfo = {
   budgetSummary: {
     flights: {
       title: { pl: 'Loty', en: 'Flights' },
-      content: { pl: 'Wizz Air KTW-KEF: 9 352 PLN', en: 'Wizz Air KTW-KEF: 9 352 PLN' }
+      content: { pl: 'Wizz Air KTW-KEF: 9 352 PLN', en: 'Wizz Air KTW-KEF: $2 512' }
     },
     carRental: {
       title: { pl: 'Wypożyczenie auta', en: 'Car Rental' },
-      content: { pl: 'LOTUS Car Rental: 8 820 PLN', en: 'LOTUS Car Rental: 8 820 PLN' }
+      content: { pl: 'LOTUS Car Rental: 8 820 PLN', en: 'LOTUS Car Rental: $2 369' }
     },
     accommodations: {
       title: { pl: 'Noclegi razem', en: 'Accommodations Total' },
       content: {
         pl: '29 433 PLN dla 2 rodzin = ~15 000 PLN na rodzinę',
-        en: '29 433 PLN for 2 families = ~15 000 PLN per family'
+        en: '$7 904 for 2 families = ~$4 028 per family'
       }
     },
     oneFamilySummary: {
       title: { pl: 'Podsumowanie kosztów podstawowych dla 1 rodziny', en: 'Basic Cost Summary for 1 Family' },
-      total: '32 889 PLN',
-      totalApprox: '(~32 889 PLN)',
+      total: { pl: '32 889 PLN', en: '$8 833' },
+      totalApprox: { pl: '(~32 889 PLN)', en: '(~$8 833)' },
       totalLabel: { pl: 'Szacowany koszt (1 rodzina)', en: 'Estimated Total (1 family)' },
       items: [
         {
           label: { pl: '1. Loty (Wizz Air)', en: '1. Flights (Wizz Air)' },
-          value: '9 352 PLN'
+          value: { pl: '9 352 PLN', en: '$2 512' }
         },
         {
           label: { pl: '2. Samochód (Lotus Car Rental)', en: '2. Car (Lotus Car Rental)' },
-          value: '8 820 PLN'
+          value: { pl: '8 820 PLN', en: '$2 369' }
         },
         {
-          label: { pl: '3. Noclegi (50% z 29 433 PLN)', en: '3. Accommodations (50% of 29 433 PLN)' },
-          value: '14 717 PLN'
+          label: { pl: '3. Noclegi (50% z 29 433 PLN)', en: '3. Accommodations (50% of $7 904)' },
+          value: { pl: '14 717 PLN', en: '$3 952' }
         }
       ],
       note: {
@@ -695,11 +722,11 @@ export const generalInfo = {
     }
   },
   accommodations: [
-    { dates: { pl: '26.07 - 29.07 (3 noclegi)', en: '26.07 - 29.07 (3 nights)' }, hub: 'Árhús Cottage & Camping, Hella', price: '7 101 PLN', link: 'https://www.booking.com/hotel/is/arhus-cottage-and-camping.pl.html' },
-    { dates: { pl: '29.07 - 31.07 (2 noclegi)', en: '29.07 - 31.07 (2 nights)' }, hub: 'Höfn Cottages', price: '4 919 PLN', link: 'https://www.booking.com/hotel/is/hofn-cottages.pl.html' },
-    { dates: { pl: '31.07 - 02.08 (2 noclegi)', en: '31.07 - 02.08 (2 nights)' }, hub: 'Vogar Travel Service, Mývatn', price: '7 500 PLN', link: 'https://www.booking.com/hotel/is/vogahraun-guesthouse.pl.html' },
-    { dates: { pl: '02.08 - 05.08 (3 noclegi)', en: '02.08 - 05.08 (3 nights)' }, hub: 'Lækjarkot Rooms and Cottages, Borgarnes', price: '6 091 PLN', link: 'https://www.booking.com/hotel/is/laekjarkot-mobile-homes-and-rooms.pl.html' },
-    { dates: { pl: '05.08 - 06.08 (1 nocleg)', en: '05.08 - 06.08 (1 night)' }, hub: 'Hótel Ísland Spa & Wellness, Reykjavík', price: '3 822 PLN', link: 'https://www.booking.com/hotel/is/hotel-island.pl.html' }
+    { dates: { pl: '26.07 - 29.07 (3 noclegi)', en: '26.07 - 29.07 (3 nights)' }, hub: 'Árhús Cottage & Camping, Hella', price: { pl: '7 101 PLN', en: '$1 907' }, link: 'https://www.booking.com/hotel/is/arhus-cottage-and-camping.pl.html' },
+    { dates: { pl: '29.07 - 31.07 (2 noclegi)', en: '29.07 - 31.07 (2 nights)' }, hub: 'Höfn Cottages', price: { pl: '4 919 PLN', en: '$1 321' }, link: 'https://www.booking.com/hotel/is/hofn-cottages.pl.html' },
+    { dates: { pl: '31.07 - 02.08 (2 noclegi)', en: '31.07 - 02.08 (2 nights)' }, hub: 'Vogar Travel Service, Mývatn', price: { pl: '7 500 PLN', en: '$2 014' }, link: 'https://www.booking.com/hotel/is/vogahraun-guesthouse.pl.html' },
+    { dates: { pl: '02.08 - 05.08 (3 noclegi)', en: '02.08 - 05.08 (3 nights)' }, hub: 'Lækjarkot Rooms and Cottages, Borgarnes', price: { pl: '6 091 PLN', en: '$1 636' }, link: 'https://www.booking.com/hotel/is/laekjarkot-mobile-homes-and-rooms.pl.html' },
+    { dates: { pl: '05.08 - 06.08 (1 nocleg)', en: '05.08 - 06.08 (1 night)' }, hub: 'Hótel Ísland Spa & Wellness, Reykjavík', price: { pl: '3 822 PLN', en: '$1 026' }, link: 'https://www.booking.com/hotel/is/hotel-island.pl.html' }
   ],
   packingList: [
     {

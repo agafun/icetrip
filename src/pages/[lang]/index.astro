@@ -23,8 +23,8 @@ const heroTitles = {
 };
 
 const pageDescriptions = {
-	pl: 'Hæ, cześć! Zorganizowaliśmy 12-dniową wyprawę na Islandię w 2 rodziny z dziećmi w wieku 8–10 lat. Dzielimy się kompleksowym planem naszej podróży, który zawiera: trasę wokół wyspy, budżet, rezerwacje, noclegi, kilometry oraz listę rzeczy do wzięcia.',
-	en: 'Hæ, hi! We organized a 12-day trip to Iceland for 2 families with kids aged 8–10. Here you’ll find our complete trip plan, including the route around the island, budget, bookings, accommodation, mileage, and a packing list.',
+	pl: 'Hæ, cześć! Zorganizowaliśmy 12-dniową wyprawę na Islandię w 2 rodziny z dziećmi w wieku 8–10 lat. Dzielimy się planem naszej podróży, który zawiera trasę wokół wyspy, informacje o noclegach, kosztorys oraz przydatne wskazówki.',
+	en: 'Hæ, hi! We organized a 12-day trip to Iceland for two families with kids aged 8–10. We’re sharing our complete itinerary, which includes a full road trip around the island, accommodation details, a budget breakdown, and practical tips.',
 };
 
 const introContext = {
@@ -33,8 +33,8 @@ const introContext = {
 		items: [
 			'Objazd Islandii klasyczną trasą Ring Road (droga krajowa nr 1) z rozszerzeniami (m.in. o Półwysep Snæfellsnes), połączony z trekkingami, kąpielami w gorących źródłach oraz podziwianiem wodospadów, lodowców, wulkanów i gejzerów.',
 			'Domki zamiast campera – wynajem campera to koszt rzędu 600 EUR za dobę. Przy 12-dniowym wyjeździe wychodzi to 1,5 razy drożej, niż suma wydatków na wynajem auta i noclegi.',
-			'Nocujemy w 4 głównych bazach wypadowych (Hella, Höfn, Mývatn, Borgarnes) na 2–3 noce każda, co ogranicza poranne zamieszanie z pakowaniem.',
-			'Tempo dostosowane do dzieci: codziennie aktywności na świeżym powietrzu (krótkie trekkingi, zabawy przy wodospadach, wejścia na kratery, czarne plaże) + atrakcje: rejs amfibią pośród gór lodowych (Jökulsárlón), restauracja z widokiem na krowy w oborze i kąpiele w gorących źródłach.',
+			'Nocujemy w 4 głównych bazach wypadowych: Hella, Höfn, Mývatn, Borgarnes, w każdej po 2–3 noce. Ogranicza to poranne zamieszanie z pakowaniem i daje dzieciom możliwość wieczornej eksploracji okolicy.',
+			'Tempo dostosowane do dzieci: codziennie aktywności na świeżym powietrzu (krótkie trekkingi, zabawy przy wodospadach, wejścia na kratery, czarne plaże) i atrakcje: rejs amfibią pośród gór lodowych, restauracja z widokiem na krowy w oborze i kąpiele w gorących źródłach.',
 			'Optymalizacja kosztów: samodzielne gotowanie do termosów obiadowych + liofilizaty.'
 		]
 	},
@@ -43,8 +43,8 @@ const introContext = {
 		items: [
 			'Circumnavigating Iceland along the Ring Road (Route 1) with extensions (e.g., Snæfellsnes Peninsula), combining hikes, hot springs, waterfalls, glaciers, volcanoes and geysers.',
 			'Renting cottages instead of a camper van – camper van rental runs around €600 per night. For a 12-day trip, that is 1.5 times more expensive than the combined cost of renting a car and staying in cabins.',
-			'Staying in 4 main accommodation hubs (Hella, Höfn, Mývatn, Borgarnes) for 2–3 nights each, minimizing morning packing chaos.',
-			'Child-friendly pace: daily outdoor activities (short hikes, walking behind waterfalls, crater climbs, black sand beaches) plus amphibian boat tours and cowshed restaurants.',
+			'We are staying at four main base camps: Hella, Höfn, Mývatn, and Borgarnes, spending 2–3 nights in each. This cuts down on the morning packing hassle and gives the kids a chance to explore the area in the evenings.',
+			'Child-friendly pace: daily outdoor activities (short hikes, walking behind waterfalls, crater climbs, black sand beaches) and attractions: amphibian boat tour, cowshed restaurants and hot springs.',
 			'Cost optimization: cooking in cottages and preparing food flasks for day trips.'
 		]
 	}
@@ -133,7 +133,7 @@ const packingListText = generalInfo.packingList.map((cat) => {
 		<!-- Logistics Kilometers Table -->
 		<section id="logistics" class="space-y-6 pt-6 border-t border-slate-200">
 			<h2 class="text-2xl sm:text-3xl font-bold text-slate-900 font-serif flex items-center gap-3">
-				<span>{lang === 'pl' ? 'Tabela logistyczna – kilometry' : 'Logistics Table – Kilometers'}</span>
+				<span>{lang === 'pl' ? 'Trasy dzień po dniu' :'Day-by-Day Routes'}</span>
 			</h2>
 
 			<div class="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-xs">
@@ -204,7 +204,7 @@ const packingListText = generalInfo.packingList.map((cat) => {
 										</a>
 									) : acc.hub}
 								</td>
-								<td class="px-5 py-3.5 text-right font-bold text-sky-800">{acc.price}</td>
+				<td class="px-5 py-3.5 text-right font-bold text-sky-800">{acc.price[lang]}</td>
 							</tr>
 						))}
 					</tbody>
@@ -213,7 +213,7 @@ const packingListText = generalInfo.packingList.map((cat) => {
 							<td class="px-5 py-3.5 text-slate-500">{lang === 'pl' ? 'Suma (11 noclegów)' : 'Total (11 nights)'}</td>
 							<td class="px-5 py-3.5 text-slate-500">{lang === 'pl' ? '5 obiektów' : '5 properties'}</td>
 							<td class="px-5 py-3.5 text-right font-bold text-sky-900 text-sm">
-								29 433 PLN <span class="text-xs text-slate-500 font-normal">({lang === 'pl' ? '~14 717 PLN / rodzina' : '~14 717 PLN / family'})</span>
+								{lang === 'pl' ? '29 433 PLN' : '$7 904'} <span class="text-xs text-slate-500 font-normal">({lang === 'pl' ? '~14 717 PLN / rodzina' : '~$3 952 / family'})</span>
 							</td>
 						</tr>
 					</tfoot>
@@ -234,7 +234,7 @@ const packingListText = generalInfo.packingList.map((cat) => {
 					<div class="text-left md:text-right">
 						<div class="flex items-baseline md:justify-end gap-2">
 							<span class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight font-serif">
-								{generalInfo.budgetSummary.oneFamilySummary.total}
+								{generalInfo.budgetSummary.oneFamilySummary.total[lang]}
 							</span>
 						</div>
 					</div>
@@ -245,7 +245,7 @@ const packingListText = generalInfo.packingList.map((cat) => {
 					{generalInfo.budgetSummary.oneFamilySummary.items.map((item) => (
 						<div class="flex items-center justify-between p-3.5 rounded-xl bg-white border border-slate-200 shadow-2xs">
 							<span class="text-xs text-slate-600 font-medium">{item.label[lang]}</span>
-							<span class="text-sm font-bold text-slate-900">{item.value}</span>
+							<span class="text-sm font-bold text-slate-900">{item.value[lang]}</span>
 						</div>
 					))}
 				</div>
